@@ -1,6 +1,6 @@
-# Structured C Sources
+# Structured C Codes
 
-After being used to some Object-Oriented programming languages like PHP and Java, I find it is very difficult to programming in C. Mainly because I don't know how to write the structured code in C. After quite a bit efforts, I've figured out something.
+After being used to some Object-Oriented programming languages like PHP and Java, I find it is very difficult to programming in C. Mainly because I don't know how to write the structured code in C. After quite a bit efforts, I've figured out a guildline to write "OO-like" codes in C.
 
 ## Use `struct` as the Class Attributes
 
