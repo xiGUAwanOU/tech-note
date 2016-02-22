@@ -2,7 +2,7 @@
 
   ```java
 FileInputStream fis = new FileInputStream(
-        getClass().getResource("somefile.gz").getFile());
+        getClass().getResource("somefile.gz").getPath());
 
 GZIPInputStream gzis = new GZIPInputStream(fis);
 InputStreamReader reader = new InputStreamReader(gzis);
