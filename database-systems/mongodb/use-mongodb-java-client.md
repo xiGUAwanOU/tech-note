@@ -1,4 +1,4 @@
-# Use MongoDB Client
+# Use MongoDB Java Client
 
 In maven, the dependencies should be:
 
@@ -27,15 +27,15 @@ public class Main {
 		MongoClient mongoClient = new MongoClient("localhost", 27017);
 		MongoDatabase db = mongoClient.getDatabase("test");
 
-		insert(db);
+		create(db);
 		update(db);
-		search(db);
+		read(db);
 		delete(db);
 
 		mongoClient.close();
 	}
 
-	public static void insert(MongoDatabase db) {
+	public static void create(MongoDatabase db) {
 		db.getCollection("restaurant").insertOne(
 		        new Document()
 		                .append("name", Arrays.asList("John", "Doe"))
@@ -59,7 +59,7 @@ public class Main {
 		                                .append("name", Arrays.asList("Jane", "Joe"))));
 	}
 	
-	public static void search(MongoDatabase db) {
+	public static void read(MongoDatabase db) {
 		FindIterable<Document> results = db.getCollection("restaurant").find();
 		for(Document d : results) {
 			@SuppressWarnings("unchecked")
