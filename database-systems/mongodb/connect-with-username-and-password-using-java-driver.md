@@ -1,4 +1,4 @@
-# Connect with Username and Password
+# Connect with Username and Password Using Java Driver
 
 If the MongoDB server has enabled the authorization, we have to connect to it with username and password. The MongDB URI will help us to do this:
 
