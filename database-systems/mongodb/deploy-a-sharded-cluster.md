@@ -109,4 +109,4 @@ db.createUser( {
 } )
   ```
 
-Now, a MongoDB shard cluster is ready to use. To add databases and collections in MongoDB, read this article.
+Now, a MongoDB shard cluster is ready to use. To add databases and collections in MongoDB, read [this article](shard-for-databases-and-collections.md).
