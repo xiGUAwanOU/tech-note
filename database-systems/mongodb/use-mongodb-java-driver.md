@@ -1,4 +1,4 @@
-# Use MongoDB Java Client
+# Use MongoDB Java Driver
 
 In maven, the dependencies should be:
 
