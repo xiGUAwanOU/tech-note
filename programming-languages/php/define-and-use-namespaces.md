@@ -16,7 +16,7 @@ Firstly the `Class1.php`:
 <?php
 namespace ns1;
 
-require_once('AnotherClass1.php');
+require_once(__DIR__ . '/AnotherClass1.php');
 
 class Class1 {
   public function go() {
@@ -59,8 +59,8 @@ At last the `Main.php`:
   ```php
 <?php
 
-require_once('Class1.php');
-require_once('Class2.php');
+require_once(__DIR__ . '/Class1.php');
+require_once(__DIR__ . '/Class2.php');
 
 use \ns1\Class1;
 use \ns2\Class2;
