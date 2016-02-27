@@ -53,8 +53,10 @@ Simply followed the instructions on the official tutorial, we use `sharding.conf
 
   ```text
 sharding:
-  configDB: 172.21.40.186:27019
+  configDB: configReplSet/172.21.40.186:27019
   ```
+
+Notice: Here the configDB __MUST__ start with the replica set name! Other wise, the `mongos` will use the legacy SCCC (Sync Cluster Connection Configuration) protocol instead of CSRS (config server replica set), and will be incompatable with config server replica set. We will get an error in this case like: "Need to swap sharding catalog manager. Config server reports that it is in replica set mode, but we are still using the legacy SCCC protocol for config server communication."
 
 Don't forget to comment those storage settings out, because mongos do not need any storage. And don't forget to change the port of mongos to `27017`. We could use following command to start a mongos service:
 
