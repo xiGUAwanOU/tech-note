@@ -50,8 +50,8 @@ In the second `RewriteRule`, we wrote `Pattern` as a single dot `.`, this means 
 The whole example above defines rewriting rules as:
 
   0. Define the URL-path prefix as `/wordpress/`;
-  1. if the URL-path after prefix is exactly `index.php`, leave it unchanged;
+  1. if the URL-path after prefix is exactly `index.php`, leave it unchanged and stop rewriting engine;
   2. if the local filesystem path matching the request is not a file or a directory, then ...
-  3. for any URL-path after prefix, replace the whole URL-path with `/wordpress/index.php`.
+  3. for any URL-path after prefix, replace the whole URL-path with `/wordpress/index.php` and stop rewriting engine.
 
 However, all the URLs now is mapped to `index.php`, how could WordPress know which post are we querying? The answer is, although the URL has been rewritten, the original URL can still be accessed with `$_SERVER['REQUEST_URI']` in PHP.
