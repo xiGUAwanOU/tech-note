@@ -23,6 +23,8 @@ CREATE TABLE IF NOT EXISTS articles (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
   ```
 
+Notice, since MySQL 5.5, InnoDB is the default data storage engine. There is no need to specify it explicitly. In contrast, if we want to use MyISAM, we have to specify it.
+
 Create and delete databases:
 
   ```sql
