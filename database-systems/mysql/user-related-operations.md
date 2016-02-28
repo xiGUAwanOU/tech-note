@@ -6,6 +6,12 @@ List all the users in MySQL server:
 select user, host from mysql.users;
   ```
 
+List all the grants in MySQL server:
+
+  ```sql
+GRANT ALL PRIVILEGES ON db_name.* TO username@hostname;
+  ```
+
 Add a user:
 
   ```sql
