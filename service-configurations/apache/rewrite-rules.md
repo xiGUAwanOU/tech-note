@@ -17,15 +17,15 @@ RewriteRule . /wordpress/index.php [L]
 </IfModule>
   ```
 
-## `RewriteEngine`
+## RewriteEngine
 
 `RewriteEngine` is used to enable or disable the rewriting engine. Here we wrote `On` to enable it.
 
-## `RewriteBase`
+## RewriteBase
 
 `RewriteBase`, according to the official document, "specifies the URL prefix to be used for per-directory (htaccess) RewriteRule directives that substitute a relative path." Here we wrote `/wordpress/`, which means only URLs like `http://hostname/wordpress/path/to/something/else/` will be matched with following rules and conditions.
 
-## `RewriteRule`
+## RewriteRule
 
 `RewriteRule` defines how an URL will be mapped to another. A rule should follow the syntax below:
 
@@ -41,7 +41,7 @@ In the example above... In the first `RewriteRule` we wrote the `Pattern` as `^i
 
 In the second `RewriteRule`, we wrote `Pattern` as a single dot `.`, this means any other URLs. We don't need to write `.*` because regular expressions here are substring matches, which only matches part of the URL string. Next, the `Substitution` is `/wordpress/index.php`, which means the __whole URL-path__ (including URL-prefix defined before) is completely replaced by `/wordpress/index.php`. For example, if we have the URL as `http://hostname/wordpress/2016/02/28/the-title-of-the-post/`, the result will be `http://hostname/wordpress/index.php`.
 
-## `RewriteCond`
+## RewriteCond
 
 `RewriteCond`s define a set of conditions for the following rule. The following rule is then only used if these conditions are met. Many `Server-Variables` can be used in `RewriteCond`. In the example above, we used `REQUEST_FILENAME`, which means "the full local filesystem path to the file or script matching the request". `!` means not, `-d` means it is a directory and `-f` means it is a file.
 
