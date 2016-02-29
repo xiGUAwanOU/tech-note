@@ -5,7 +5,7 @@ Before doing this, we should check if the PHPUnit is correctly installed. If not
 An example of `phpunit.xml` should be like this:
 
   ```xml
-<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://schema.phpunit.de/5.2/phpunit.xsd">
+<phpunit>
     <testsuites>
         <testsuite name="Test All">
             <directory>test</directory>
