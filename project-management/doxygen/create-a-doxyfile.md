@@ -8,7 +8,8 @@ $ doxygen -g
 
 The Doxygen will generate a default `Doxyfile` in the working directory.
 
-Open the `Doxyfile` and edit the value of following keys:
+Open the `Doxyfile` and edit the value of following variabless (not all required, just frequently edited variables):
+
   * `PROJECT_NAME`: set to the correct project name;
   * `PROJECT_BRIEF`: write an introduction of the project;
   * `PROJECT_LOGO`: the name explains itself;
