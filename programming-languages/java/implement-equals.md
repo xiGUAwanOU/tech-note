@@ -34,9 +34,9 @@ And don't forget the hash code! A simple recipe from _Effective Java (2nd Editio
       2. If the field is a `byte`, `char`, `short`, or `int`, compute `(int) f`.
       3. If the field is a `long`, compute `(int) (f ^ (f >>> 32))`.
       4. If the field is a `float`, compute `Float.floatToIntBits(f)`.
-      5. If the field is a `double`, compute `Double.doubleToLongBits(f)`, and then hash the resulting `long` as in step 2.1.3.
+      5. If the field is a `double`, compute `Double.doubleToLongBits(f)`, and then hash the resulting `long` as in step 2.i.c.
       6. If the field is an object reference and this class’s `equals` method compares the field by recursively invoking `equals`, recursively invoke `hashCode` on the field. If a more complex comparison is required, compute a "canonical representation" for this field and invoke `hashCode` on the canonical representation. If the value of the field is `null`, return `0` (or some other constant, but `0` is traditional).
-      7. If the field is an array, treat it as if each element were a separate field. That is, compute a hash code for each significant element by applying these rules recursively, and combine these values per step 2.2. If every element in an array field is significant, you can use one of the Arrays.hashCode methods added in release 1.5.
-    2. Combine the hash code `c` computed in step 2.1 into `result` as follows: `result = 31 * result + c;`
+      7. If the field is an array, treat it as if each element were a separate field. That is, compute a hash code for each significant element by applying these rules recursively, and combine these values per step 2.ii. If every element in an array field is significant, you can use one of the Arrays.hashCode methods added in release 1.5.
+    2. Combine the hash code `c` computed in step 2.i into `result` as follows: `result = 31 * result + c;`
   3. Return `result`.
   4. When you are finished writing the `hashCode` method, ask yourself whether equal instances have equal hash codes. Write unit tests to verify your intuition! If equal instances have unequal hash codes, figure out why and fix the problem.
