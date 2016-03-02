@@ -28,4 +28,6 @@ db.orders.aggregate([
 ])
   ```
 
-But once we wrote `aggregate`, we can't use `find` anymore, because they both return a cursor to the documents. So if we want to do the filtering in aggregation, we could use `$match` operator. `$match` operator accepts a similar format to the parameters of the `find` function. And notice, since the operators in `aggregate` is a pipeline, so we should put filters as in front as possible, so that the number of "rest" documents to be processed is minimal.
+But once we wrote `aggregate`, we can't use `find` anymore, because they both return a cursor to the documents. So if we want to do the filtering in aggregation, we could use `$match` operator. `$match` operator accepts a similar format to the parameters of the `find` function. 
+
+Notice, since the operators in `aggregate` is a pipeline, so we should put filters (`$match` operators) as in front as possible, so that the number of "rest" documents to be processed is minimal.
