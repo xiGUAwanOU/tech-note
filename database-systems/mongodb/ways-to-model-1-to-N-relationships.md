@@ -62,8 +62,6 @@ Querying could be something like this:
 > product_parts = db.parts.find({_id: { $in : product.parts }}).toArray();
   ```
 
-Or maybe use `$lookup` aggregation from MongoDB 3.2, see this [link](https://docs.mongodb.org/manual/reference/operator/aggregation/lookup/) for more information.
-
 ## 1-to-Squillions
 
 Like SQL, we use "parent" reference in this case.
@@ -94,3 +92,7 @@ Querying could be like this:
 > host = db.hosts.findOne({ipaddr : '127.66.66.66'});  // assumes unique index
 > last_5k_msg = db.logmsg.find({host: host._id}).sort({time : -1}).limit(5000).toArray()
   ```
+
+## `$lookup` Aggregation
+
+In MongoDB 3.2 a new aggregation operator `$lookup` has been introduced. It performs left outer join, which is perfect for the latter two cases. For detailed information, read [this article](https://github.com/xiGUAwanOU/tech-note/tree/master/database-systems/mongodb).
