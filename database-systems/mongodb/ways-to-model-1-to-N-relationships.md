@@ -8,7 +8,7 @@ This article only covers part 1 of the original article. For more detailed infor
 
 Use embedding documents:
 
-  ```json
+  ```text
 {
   name: 'Kate Monster',
   ssn: '123-456-7890',
@@ -25,7 +25,7 @@ Use "child" references.
 
 The "child" document should be like this:
 
-  ```json
+  ```text
 {
   _id : ObjectID('AAAA'),
   partno : '123-aff-456',
@@ -38,7 +38,7 @@ The "child" document should be like this:
 
 And the "parent" document:
 
-  ```json
+  ```text
 {
   name : 'left-handed smoke shifter',
   manufacturer : 'Acme Corp',
@@ -70,7 +70,7 @@ Like SQL, we use "parent" reference in this case.
 
 This is a "parent" document:
 
-  ```json
+  ```text
 {
     _id : ObjectID('AAAB'),
     name : 'goofy.example.com',
@@ -80,7 +80,7 @@ This is a "parent" document:
 
 And this is a "child" document:
 
-  ```json
+  ```text
 {
     time : ISODate("2014-03-28T09:42:41.382Z"),
     message : 'cpu is on fire!',
