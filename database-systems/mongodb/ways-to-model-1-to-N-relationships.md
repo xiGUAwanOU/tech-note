@@ -1,6 +1,6 @@
 # Ways to Model 1-to-N Relationships.md
 
-__Original: [6 Rules of Thumb for MongoDB Schema Design](http://blog.mongodb.org/post/87200945828/6-rules-of-thumb-for-mongodb-schema-design-part-1) by William Zola, Lead Technical Support Engineer at MongoDB__
+_Original: [6 Rules of Thumb for MongoDB Schema Design](http://blog.mongodb.org/post/87200945828/6-rules-of-thumb-for-mongodb-schema-design-part-1) by William Zola, Lead Technical Support Engineer at MongoDB._
 
 This article only covers part 1 of the original article. For more detailed information, read the original article (part 2 and part 3).
 
