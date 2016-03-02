@@ -4,7 +4,7 @@ On inserting of the record, we should save an `ISODate` typed (in MongoDB shell)
 
 In MongoDB shell, we could use:
 
-  ```js
+  ```javascript
 db.articles.find( {
     "publishDate" : {
       $gte: ISODate("2015-08-07T00:00:00Z"),
