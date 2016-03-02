@@ -7,8 +7,8 @@ In MongoDB shell, we could use:
   ```javascript
 db.articles.find( {
     "publishDate" : {
-      $gte: ISODate("2015-08-07T00:00:00Z"),
-      $lt: ISODate("2015-08-08T00:00:00Z") 
+        $gte: ISODate("2015-08-07T00:00:00Z"),
+        $lt: ISODate("2015-08-08T00:00:00Z") 
     }
 } );
   ```
