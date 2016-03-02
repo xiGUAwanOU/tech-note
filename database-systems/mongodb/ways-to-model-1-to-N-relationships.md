@@ -95,4 +95,4 @@ Querying could be like this:
 
 ## `$lookup` Aggregation
 
-In MongoDB 3.2 a new aggregation operator `$lookup` has been introduced. It performs left outer join, which is perfect for the latter two cases. For detailed information, read [this article](https://github.com/xiGUAwanOU/tech-note/blob/master/database-systems/mongodb/aggregation-and-loopup.md).
+In MongoDB 3.2 a new aggregation operator `$lookup` has been introduced. It performs left outer join, which is perfect for the latter two cases. For detailed information, read [this article](https://github.com/xiGUAwanOU/tech-note/blob/master/database-systems/mongodb/aggregation-and-lookup.md).
