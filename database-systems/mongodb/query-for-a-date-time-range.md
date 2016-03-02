@@ -5,7 +5,12 @@ On inserting of the record, we should save an `ISODate` typed (in MongoDB shell)
 In MongoDB shell, we could use:
 
   ```console
-> db.articles.find( { "publishDate" : { $gte: ISODate("2015-08-07T00:00:00Z"), $lt: ISODate("2015-08-08T00:00:00Z") } } );
+db.articles.find( {
+    "publishDate" : {
+      $gte: ISODate("2015-08-07T00:00:00Z"),
+      $lt: ISODate("2015-08-08T00:00:00Z") 
+    }
+} );
   ```
 
 And in Java, we could do this (in OpenJDK 1.7, Joda DateTime library used):
