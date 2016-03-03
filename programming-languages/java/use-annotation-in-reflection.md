@@ -1,6 +1,6 @@
 # Use Annotation in Reflection
 
-To define an annotation:
+To define an annotation for methods:
 
   ```java
 @Retention(RetentionPolicy.RUNTIME)
