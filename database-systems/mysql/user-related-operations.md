@@ -3,13 +3,13 @@
 List all the users in MySQL server:
 
   ```sql
-select user, host from mysql.users;
+SELECT user, host FROM mysql.users;
   ```
 
-List all the grants in MySQL server:
+List all the global grants in MySQL server:
 
   ```sql
-GRANT ALL PRIVILEGES ON db_name.* TO username@hostname;
+SHOW GRANTS FOR user;
   ```
 
 Add a user:
