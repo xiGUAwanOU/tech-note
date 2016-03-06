@@ -33,3 +33,5 @@ A `composer.json` file for publishing a package on [Packagist](https://packagist
   ```
 
 The required fields are `"name"`, `"description"` and `"require"`.
+
+Type field could be `library`, `project`, `metapackage` or `composer-plugin`.
