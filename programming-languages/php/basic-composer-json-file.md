@@ -4,42 +4,32 @@ A `composer.json` file for publishing a package on [Packagist](https://packagist
 
   ```json
 {
-    "name": "monolog/monolog",
-    "type": "library",
-    "description": "Logging for PHP 5.3",
-    "keywords": ["log","logging"],
-    "homepage": "https://github.com/Seldaek/monolog",
-    "license": "MIT",
-    "authors": [
-        {
-            "name": "Jordi Boggiano",
-            "email": "j.boggiano@seld.be",
-            "homepage": "http://seld.be",
-            "role": "Developer"
-        }
-    ],
-    "require": {
-        "php": ">=5.3.0"
-    },
-    "autoload": {
-        "psr-0": {
-            "Monolog": "src"
-        }
+  "name": "seagull/seagull-framework",
+  "type": "project",
+  "description": "Yet another (reinvented wheels) web application framework.",
+  "keywords": ["webapp", "framework"],
+  "homepage": "https://github.com/xiGUAwanOU/seagull-framework",
+  "license": "BSD-2-Clause",
+  "authors": [
+    {
+      "name": "Zihan LIN",
+      "email": "xiguawanou@gmail.com",
+      "role": "Developer"
     }
+  ],
+  "require": {
+    "php": "~5.6 || ~7.0",
+    "monolog/monolog": "~1"    
+  },
+  "require-dev": {
+    "phpunit/phpunit": "~5"
+  },
+  "autoload": {
+    "psr-4": {
+      "Seagull\\": [ "src/", "test/" ]
+    }
+  }
 }
   ```
 
 The required fields are `"name"`, `"description"` and `"require"`.
-
-Monolog uses PSR-0 for autoloading. If we want to use PSR-4, write something like this:
-
-  ```json
-...
-"autoload": {
-    "psr-4": {
-        "Monolog\\": "src/"
-    }
-}
-...
-  ```
-
