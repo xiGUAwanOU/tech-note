@@ -2,6 +2,8 @@
 
 Keep it alphabetically sorted:
 
-| Class         | Read-Only | Read & Write|
+| Class         | Read      | Write       |
 | ------------- |-----------| ----------- |
+| ArrayList     | Yes       | No          |
 | HashSet       | Yes       | No          |
+| LinkedList    | Yes       | No          |
