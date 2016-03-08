@@ -19,4 +19,5 @@ Open the `Doxyfile` and edit the value of following variabless (not all required
   * `INPUT`: specify the input directory of the source code;
   * `FILE_PATTERNS`: specify which files should be treated as the input of Doxygen;
   * `RECURSIVE`: if `YES`, search sub directories;
-  * `GENERATE_LATEX`: default is `YES`, if we don't need that, set it to `NO`.
+  * `GENERATE_LATEX`: default is `YES`, if we don't need that, set it to `NO`;
+  * `HTML_EXTRA_STYLESHEET`: specify the extra css files for HTML output.
