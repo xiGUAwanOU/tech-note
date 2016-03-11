@@ -32,3 +32,9 @@ def fact(i: Int): Int = {
 ![Image of Unified Types](https://raw.githubusercontent.com/xiGUAwanOU/tech-note/master/programming-languages/scala/classhierarchy.png)
 
 _Image source: http://ochsenreither.de/talks/simplifying-scala-standalone/images/classhierarchy.png_
+
+## 5. Function as Parameter
+
+  ```scala
+def apply(callback: (Int, Int) => Int, i: Int, j: Int): Int = { callback(i, j) }
+  ```
