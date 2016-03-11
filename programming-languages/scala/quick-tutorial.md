@@ -26,3 +26,9 @@ def fact(i: Int): Int = {
   }
 }
   ```
+
+## 4. Unified Types
+
+![Image of Unified Types](https://raw.githubusercontent.com/xiGUAwanOU/tech-note/master/programming-languages/scala/classhierarchy.png)
+
+_Image source: http://ochsenreither.de/talks/simplifying-scala-standalone/images/classhierarchy.png_
