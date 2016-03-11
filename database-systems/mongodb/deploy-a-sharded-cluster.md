@@ -8,7 +8,7 @@ Firstly some words about the `bindIp` field under `net` section in `mongod.conf`
 
 Following the offical tutorial, the first step should be deploying the replica set of config servers. Edit following fields in `mongod.conf` file for each config servers:
 
-  ```text
+  ```yaml
 sharding:
    clusterRole: configsvr
 replication:
@@ -51,7 +51,7 @@ Notice, even there is only one config server in the replica set, and it runs on 
 
 Simply followed the instructions on the official tutorial, we use `sharding.configDB` to specify the config server replica set. So in `mongos.conf` file, add these two lines:
 
-  ```text
+  ```yaml
 sharding:
   configDB: configReplSet/172.21.40.186:27019
   ```
@@ -90,7 +90,7 @@ Notice, the user and group for this file must be `mongodb`, otherwise it won't w
 
 Then, we copy this file to each machine on the cluster, and do the settings for each mongod and mongos:
 
-  ```text
+  ```yaml
 security:
   keyFile: /srv/mongodb/keyfile
   ```
