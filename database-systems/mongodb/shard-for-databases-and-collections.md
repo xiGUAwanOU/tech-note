@@ -2,19 +2,19 @@
 
 To enable sharding for a specified database, we should firstly connect to mongos with mongo shell. And then run the following commands:
 
-  ```text
+  ```javascript
 sh.enableSharding("<database>")
   ```
 
 To shard a colleciont, run the following commands:
 
-  ```text
+  ```javascript
 sh.shardCollection("<database>.<collection>", shard-key-pattern)
   ```
 
 Some example from the MongoDB official website:
 
-  ```text
+  ```javascript
 sh.shardCollection("records.people", { "zipcode": 1, "name": 1 } )
 sh.shardCollection("people.addresses", { "state": 1, "_id": 1 } )
 sh.shardCollection("assets.chairs", { "type": 1, "_id": 1 } )
