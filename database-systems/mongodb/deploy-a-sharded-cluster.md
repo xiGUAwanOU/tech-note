@@ -23,7 +23,7 @@ By convention, the port of a config server should be `27019`.
 
 And then connect a mongo shell to one of the config servers and run rs.initiate() to initiate the replica set:
 
-  ```text
+  ```javascript
 rs.initiate( {
    _id: "configReplSet",
    configsvr: true,
@@ -37,7 +37,7 @@ rs.initiate( {
 
 The following is my working configuration:
 
-  ```text
+  ```javascript
 rs.initiate( {
   _id: "configReplSet",
   configsvr: true,
@@ -68,7 +68,7 @@ $ mongos -f /path/to/mongos.conf &
 
 Use mongo shell to connect to the mongos service we just started, and add other server on which mongod is running:
 
-  ```text
+  ```javascript
 sh.addShard("172.21.40.187:27017");
 sh.addShard("172.21.40.188:27017");
 sh.addShard("172.21.40.189:27017");
@@ -97,7 +97,7 @@ security:
 
 At last, we connect to mongos through the [localhost exception](https://docs.mongodb.org/manual/core/security-users/#localhost-exception), and run the following commands:
 
-  ```text
+  ```javascript
 use admin
 db.createUser( {
   user: "admin",
