@@ -57,9 +57,9 @@ Notice that in "parent" document, `ObjectID('AAAA')` is the reference to the "ch
 
 Querying could be something like this:
 
-  ```console
-> product = db.products.findOne({catalog_number: 1234});
-> product_parts = db.parts.find({_id: { $in : product.parts }}).toArray();
+  ```javascript
+product = db.products.findOne({catalog_number: 1234});
+product_parts = db.parts.find({_id: { $in : product.parts }}).toArray();
   ```
 
 ## 1-to-Squillions
@@ -88,9 +88,9 @@ And this is a "child" document:
 
 Querying could be like this:
 
-  ```console
-> host = db.hosts.findOne({ipaddr : '127.66.66.66'});  // assumes unique index
-> last_5k_msg = db.logmsg.find({host: host._id}).sort({time : -1}).limit(5000).toArray()
+  ```javascript
+host = db.hosts.findOne({ipaddr : '127.66.66.66'});  // assumes unique index
+last_5k_msg = db.logmsg.find({host: host._id}).sort({time : -1}).limit(5000).toArray()
   ```
 
 ## `$lookup` Aggregation
