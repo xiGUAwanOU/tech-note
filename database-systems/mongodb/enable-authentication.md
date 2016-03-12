@@ -2,7 +2,7 @@
 
 Run following command in mongo shell:
 
-  ```text
+  ```javascript
 use admin
 db.createUser(
   {
