@@ -73,4 +73,4 @@ The relationship between lookbehind and negative lookbehind (`'(?<!)'`) is just 
 '#(?P<prefix>A+)C#'
   ```
 
-It will match strings like `'AAAAC'`, and save `'AAAA'` to `$matches` with both numerical key (index 1 in this case) and string key (`'prefix'`).
+It will match strings like `'AAAAC'`, and save `'AAAA'` to `$matches` with both numerical key (1 in this case) and string key (`'prefix'`).
