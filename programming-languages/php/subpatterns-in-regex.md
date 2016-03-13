@@ -31,4 +31,4 @@ Notice, this is only an example. It is a bad practise, use `parse_url` function 
 '#\d*(?= mm)#'
   ```
 
-This matches strings like `'100 mm'`, and the match with index 1 will be `100`.
+This matches strings like `'100 mm'`, and the match with index __0__ (notice, the index is 0, not 1, which means the whole match has been affected) will be `'100'` (not `'100 mm'`).
