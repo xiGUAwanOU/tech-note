@@ -27,7 +27,7 @@ Notice, this is only an example. It is a bad practise, use `parse_url` function 
 
 ### Lookahead
 
-This means roughly: check the content at this point whether it matches a particular subpattern, but the subpattern itself won't be consumed, and once the subpattern matches, continue match other patterns after it.
+This means roughly: read the content after this point, check whether it matches a particular subpattern, but the subpattern itself won't be consumed, and once the subpattern matches, continue match other patterns after it.
 
   ```php
 '#\d*(?= mm)#'
@@ -52,3 +52,13 @@ Similar to lookahead, except that the subpattern must not match.
   ```
 
 This matches strings like `'100 cm'`, there need to be a `\d` in the subpattern. Otherwise, for `'100 mm'`, it will match `'10'`, for `'0 mm'` is not `' mm'`.
+
+### Lookbehind
+
+Similar to lookahead, except that the content before this point will be read.
+
+  ```php
+'#(?=EUR )\d*#'
+  ```
+
+This matches strings like `'EUR 100'`, match with index 0 will be `'100'`.
