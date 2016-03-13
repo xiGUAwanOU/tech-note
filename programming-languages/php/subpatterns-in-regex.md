@@ -67,4 +67,10 @@ This matches strings like `'EUR 100'`, match with index 0 will be `'100'`.
 
 The relationship between lookbehind and negative lookbehind (`'(?<!)'`) is just like it between lookahead and negative lookahead. Example is omitted here.
 
-### 
+### Named Match
+
+  ```php
+'#(?P<prefix>A+)C#'
+  ```
+
+It will match strings like `'AAAAC'`, and save `'AAAA'` to `$matches` with both numerical key (index 1 in this case) and string key (`'prefix'`).
