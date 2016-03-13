@@ -25,10 +25,20 @@ Notice, here `gte` must be placed before `gt`.
 
 Notice, this is only an example. It is a bad practise, use `parse_url` function instead.
 
-### Lookahead After the Match
+### Lookahead
+
+This means roughly: check the content at this point whether it matches a particular subpattern, but the subpattern itself won't be consumed, and once the subpattern matches, continue match other patterns after it.
 
   ```php
 '#\d*(?= mm)#'
   ```
 
 This matches strings like `'100 mm'`, and the match with index __0__ (notice, the index is 0, not 1, which means the whole match has been affected) will be `'100'` (not `'100 mm'`).
+
+Another example would be matching the valid password pattern:
+
+  ```php
+'#^(?=\w{8,20}$)(?=[^A-Z]*[A-Z])(?=[^a-z]*[a-z])(?=\D*\d)(?=[^_]*_).*$#'
+  ```
+
+It firstly checks different conditions but does not consume them, if all conditions have matched, continue match the whole password string.
