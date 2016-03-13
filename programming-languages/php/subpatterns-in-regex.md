@@ -65,6 +65,6 @@ This matches strings like `'EUR 100'`, match with index 0 will be `'100'`.
 
 ### Negative Lookbehind
 
-The relationship between lookbehind and negative lookbehind (`(?<!)`) is just like it between lookahead and negative lookahead. Example is omitted here.
+The relationship between lookbehind and negative lookbehind (`'(?<!)'`) is just like it between lookahead and negative lookahead. Example is omitted here.
 
 ### 
