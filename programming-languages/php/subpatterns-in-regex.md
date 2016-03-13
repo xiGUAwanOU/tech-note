@@ -58,7 +58,13 @@ This matches strings like `'100 cm'`, there need to be a `\d` in the subpattern.
 Similar to lookahead, except that the content before this point will be read.
 
   ```php
-'#(?=EUR )\d*#'
+'#(?<=EUR )\d*#'
   ```
 
 This matches strings like `'EUR 100'`, match with index 0 will be `'100'`.
+
+### Negative Lookbehind
+
+The relationship between lookbehind and negative lookbehind (`(?<!)`) is just like it between lookahead and negative lookahead. Example is omitted here.
+
+### 
