@@ -42,3 +42,13 @@ Another example would be matching the valid password pattern:
   ```
 
 It firstly checks different conditions but does not consume them, if all conditions have matched, continue match the whole password string.
+
+### Negative Lookahead
+
+Similar to lookahead, except that the subpattern must not match.
+
+  ```php
+'#\d*(?!\d| mm)#'
+  ```
+
+This matches strings like `'100 cm'`, there need to be a `\d` in the subpattern. Otherwise, for `'100 mm'`, it will match `'10'`, for `'0 mm'` is not `' mm'`.
