@@ -65,7 +65,7 @@ This matches strings like `'EUR 100'`, match with index 0 will be `'100'`.
 
 ### Negative Lookbehind
 
-The relationship between lookbehind and negative lookbehind (`'(?<!)'`) is just like it between lookahead and negative lookahead. Example is omitted here.
+The relationship between lookbehind and negative lookbehind (`(?<!)`) is just like it between lookahead and negative lookahead. Example is omitted here.
 
 ### Named Match
 
@@ -85,7 +85,7 @@ Subroutines call will reuse the predefined subpatterns but won't capture the mat
 
 It will match strings like `'foo bar'`, however only `'foo'` will be captured as a match.
 
-`(?1)` means the first subpattern, `(?-1)` means the last defined subpattern, and (?+1) refers to the next defined subpattern.
+`(?1)` means the first subpattern, `(?-1)` means the last defined subpattern, and `(?+1)` refers to the next defined subpattern.
 
 Subpattern could also be referred by pattern names:
 
@@ -99,6 +99,18 @@ Recursive is possible:
 '#(\w+, (?1)?)(\w+)#'
   ```
 
-It will match something like `'foo, bar, baz, qux'`, match with index 1 is `'foo, bar, baz, '`, match with index 2 is `'qux'`.
+It will match something like `'foo, bar, baz, qux'`, match with index 1 is `'foo, bar, baz, '` and index 2 is `'qux'`.
 
-### 
+### Branch Reset
+
+This is mentioned in PHP official document:
+
+  ```php
+'#(?:(Sat)ur|(Sun))day#'
+  ```
+
+While matching `'Sunday'`, there will be an empty match with index 1, because it tried to match `(Sat)`. To reset the branch if the branch is not matched, use this instead:
+
+  ```php
+'#(?|(Sat)ur|(Sun))day#'
+  ```
