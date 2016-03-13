@@ -1,5 +1,7 @@
 # Subpatterns in Regex
 
+__Order Is Important__
+
 If a shorter string is a prefix of the longer string, then the longer must be put before the shorter in the set of alternatives:
 
   ```php
@@ -8,13 +10,13 @@ If a shorter string is a prefix of the longer string, then the longer must be pu
 
 Notice, here `gte` must be placed before `gt`.
 
-Non-greedy match:
+__Non-greedy Match__
 
   ```php
 '#<p>.*?</p>#'
   ```
 
-Non-capturing subpatterns:
+__Non-Capturing Subpatterns__
 
   ```php
 '#(?:https?|ftp)://([A-Za-z\.]+)#'
