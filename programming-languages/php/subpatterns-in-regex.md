@@ -74,3 +74,31 @@ The relationship between lookbehind and negative lookbehind (`'(?<!)'`) is just 
   ```
 
 It will match strings like `'AAAAC'`, and save `'AAAA'` to `$matches` with both numerical key (1 in this case) and string key (`'prefix'`).
+
+### Call Subroutines
+
+Subroutines call will reuse the predefined subpatterns but won't capture the match:
+
+  ```php
+'#(\w+) (?1)#'
+  ```
+
+It will match strings like `'foo bar'`, however only `'foo'` will be captured as a match.
+
+`(?1)` means the first subpattern, `(?-1)` means the last defined subpattern, and (?+1) refers to the next defined subpattern.
+
+Subpattern could also be referred by pattern names:
+
+  ```php
+'#(?<pattern>\w+) (?&pattern)#'
+  ```
+
+Recursive is possible:
+
+  ```php
+'#(\w+, (?1)?)(\w+)#'
+  ```
+
+It will match something like `'foo, bar, baz, qux'`, match with index 1 is `'foo, bar, baz, '`, match with index 2 is `'qux'`.
+
+### 
