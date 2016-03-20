@@ -16,7 +16,7 @@ public boolean equals(Object o) {
 		return true;
 	}
 
-	if (!(o instanceof FeatureExtractor)) {
+	if (!(o instanceof MyType)) {
 		return false;
 	}
 	MyType mt = (MyType) o;
