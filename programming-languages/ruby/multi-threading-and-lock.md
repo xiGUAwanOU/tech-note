@@ -6,7 +6,7 @@ A simple example should be like this:
 mutex = Mutex.new
 for i in 1 .. 10
 	t = Thread.new(i) { |number|
-        	mutex.synchronize {
+		mutex.synchronize {
 			puts "Start thread #{number}."
 			puts "Thread #{number} finished."
 		}
