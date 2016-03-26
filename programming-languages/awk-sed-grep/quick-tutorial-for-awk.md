@@ -1,4 +1,4 @@
-# Quick Tutorial for `awk`
+# Quick Tutorial for awk
 
 The basic usage of awk is to get the specific column of a line:
 
