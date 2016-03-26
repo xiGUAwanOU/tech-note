@@ -46,7 +46,7 @@ Filter the result:
 db.<collection_name>.find({
     "retrieved_date": {
         $gte: ISODate("2016-01-06T00:00:00Z"),
-        $lt: ISODate(2016-01-07T00:00:00Z)
+        $lt: ISODate("2016-01-07T00:00:00Z")
     }
 }).limit(3).pretty();
   ```
