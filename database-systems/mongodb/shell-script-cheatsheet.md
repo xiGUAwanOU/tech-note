@@ -51,6 +51,16 @@ db.<collection_name>.find({
 }).limit(3).pretty();
   ```
 
+Filter documents with conditions of the fields in a list:
+
+  ```javascript
+db.<collection_name>.find({
+    <list_field_name>: {
+        $elemMatch: {<field_name>: <field_value>}
+    }
+}).count();
+  ```
+
 ### `aggregate`-Related
 
 Left outter join:
