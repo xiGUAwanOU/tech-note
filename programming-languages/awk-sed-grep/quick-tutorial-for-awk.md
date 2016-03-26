@@ -1,6 +1,6 @@
-# Quick Tutorial
+# Quick Tutorial for `awk`
 
-The basic usage of AWK is to get the specific column of a line:
+The basic usage of awk is to get the specific column of a line:
 
   ```awk
 awk '{print $1, $4}' filename.txt
