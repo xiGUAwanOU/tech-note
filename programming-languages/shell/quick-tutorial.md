@@ -95,12 +95,14 @@ Notice the position of the whitespace and the semicolon between `]` and `then`. 
 
 
 | String Comparison  | Description |
-| -----------------: | ----------- |
+| ------------------ | ----------- |
 | Str1 = Str2        | Returns true if the strings are equal |
 | Str1 != Str2       | Returns true if the strings are not equal |
 | -n Str1            | Returns true if the string is not null |
 | -z Str1            | Returns true if the string is null |
+
 | Numeric Comparison | Description |
+| ------------------ | ----------- |
 | expr1 -eq expr2    | Returns true if the expressions are equal |
 | expr1 -ne expr2    | Returns true if the expressions are not equal |
 | expr1 -gt expr2    | Returns true if expr1 is greater than expr2 |
@@ -108,7 +110,9 @@ Notice the position of the whitespace and the semicolon between `]` and `then`. 
 | expr1 -lt expr2    | Returns true if expr1 is less than expr2 |
 | expr1 -le expr2    | Returns true if expr1 is less than or equal to expr2 |
 | ! expr1            | Negates the result of the expression |
+
 | File Conditionals  | Description |
+| ------------------ | ----------- |
 | -d file            | True if the file is a directory |
 | -e file            | True if the file exists (note that this is not particularly portable, thus -f is generally used) |
 | -f file            | True if the provided string is a file |
