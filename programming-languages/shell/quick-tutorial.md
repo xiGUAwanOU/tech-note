@@ -93,6 +93,7 @@ fi
 
 Notice the position of the whitespace and the semicolon between `]` and `then`. We could also write `then` to the next line of `if`, in this case we don't need semicolon any more.
 
+If condition (argument patterns of `[` command) list:
 
 | String Comparison  | Description |
 | ------------------ | ----------- |
