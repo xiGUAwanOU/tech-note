@@ -1,4 +1,4 @@
-# Get Surrounding Lines with grep
+# grep: Get Surrounding Lines
 
 Use `-B <NUM>` to get `<NUM>` lines before the target line, use `-A <NUM>` to get `<NUM>` lines after the target line, and use `-C <NUM>` to get `<NUM>` lines before and after the target line.
 
