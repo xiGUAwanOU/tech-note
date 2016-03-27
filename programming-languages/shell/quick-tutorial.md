@@ -83,7 +83,7 @@ An `if` statement in shell script could be like this:
 echo -n "Please enter the password: "
 read PASSWORD
 
-if [ $PASSWORD = "nopassword" ]; then
+if [ "$PASSWORD" = "nopassword" ]; then
 # Or write "then" here...
   echo "Hey! How do you know the password?!"
 else
@@ -101,6 +101,7 @@ If condition (argument patterns of `[` command) list:
 | Str1 != Str2       | Returns true if the strings are not equal |
 | -n Str1            | Returns true if the string is not null |
 | -z Str1            | Returns true if the string is null |
+
 | Numeric Comparison | Description |
 | ------------------ | ----------- |
 | expr1 -eq expr2    | Returns true if the expressions are equal |
@@ -122,3 +123,35 @@ If condition (argument patterns of `[` command) list:
 | -u                 | True if the user id is set on a file |
 | -w                 | True if the file is writable |
 | -x                 | True if the file is an executable |
+
+### 6. For Statement
+
+The `for` statement in shell script is simple:
+
+  ```sh
+for VAR in whitespace seperated string
+do
+  echo $VAR
+done
+# Output:
+# whitespace
+# seperated
+# string
+  ```
+
+### 7. While Statement
+
+The `while` statement:
+
+  ```sh
+echo -n "Enter the password: "
+read PASSWORD
+
+while [ "$PASSWORD" != "nopassword" ]
+do
+  echo -n "Wrong password. Enter the password again: "
+  read PASSWORD
+done
+
+echo "Welcome!"
+  ```
