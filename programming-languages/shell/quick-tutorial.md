@@ -95,6 +95,7 @@ Notice the position of the whitespace and the semicolon between `]` and `then`. 
 
 
 | String Comparison  | Description |
+| -----------------: | ----------- |
 | Str1 = Str2        | Returns true if the strings are equal |
 | Str1 != Str2       | Returns true if the strings are not equal |
 | -n Str1            | Returns true if the string is not null |
