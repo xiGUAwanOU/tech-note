@@ -101,7 +101,6 @@ If condition (argument patterns of `[` command) list:
 | Str1 != Str2       | Returns true if the strings are not equal |
 | -n Str1            | Returns true if the string is not null |
 | -z Str1            | Returns true if the string is null |
-
 | Numeric Comparison | Description |
 | ------------------ | ----------- |
 | expr1 -eq expr2    | Returns true if the expressions are equal |
