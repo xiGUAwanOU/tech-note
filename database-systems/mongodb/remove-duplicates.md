@@ -17,7 +17,6 @@ db.<collection_name>.aggregate([
         }
     }
 ], { allowDiskUse: true })
-.result
 .forEach(function(doc) {
     doc.dups.shift();
     db.textAnnotations.remove({ _id: { $in: doc.dups } });
