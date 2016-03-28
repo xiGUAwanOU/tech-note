@@ -16,10 +16,12 @@ db.<collection_name>.aggregate([
             count: { $gt: 1 }
         }
     }
-], {allowDiskUse: true})
+], { allowDiskUse: true })
 .result
 .forEach(function(doc) {
     doc.dups.shift();
-    db.textAnnotations.remove({_id: {$in: doc.dups}});
+    db.textAnnotations.remove({ _id: { $in: doc.dups } });
 });
   ```
+
+The `allowDiskUse: true` option is used only if the `group` operation is memory consuming.
