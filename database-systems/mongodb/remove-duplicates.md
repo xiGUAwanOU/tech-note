@@ -16,12 +16,9 @@ db.<collection_name>.aggregate([
             count: { $gt: 1 }
         }
     }
-], { allowDiskUse: true })
-.noCursorTimeout()
+])
 .forEach(function(doc) {
     doc.dups.shift();
     db.textAnnotations.remove({ _id: { $in: doc.dups } });
 });
   ```
-
-The `allowDiskUse: true` option is used only if the `group` operation is memory consuming, and `.noCursorTimeout()` is for the long looping time.
