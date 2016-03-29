@@ -26,13 +26,15 @@ The index type could be:
   * `"hashed"`: hashed index;
   * `"text"`: text index.
 
+### Create Index in Background
+
 Use background option for potentially long running index building operations:
 
   ```javascript
 db.people.createIndex( { zipcode: 1}, {background: true} );
   ```
 
-To create a unique index:
+### Create a Unique Index
 
   ```javascript
 db.collection.createIndex( { a: 1 }, { unique: true } );
