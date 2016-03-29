@@ -1,6 +1,6 @@
 # Indexes in MongoDB
 
-Always set indexes early, especially the unique indexes.
+Always set indexes early, especially the unique indexes. After the collection already contains data that would violate the unique constraint, it's too late for index creation.
 
 ### Types of Index
 
