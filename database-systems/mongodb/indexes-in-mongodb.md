@@ -21,10 +21,10 @@ db.people.createIndex( { zipcode: 1} );
 
 The index type could be:
 
-  * 1: ascending ordered index;
-  * -1: descending ordered index;
-  * "hashed": hashed index;
-  * "text": text index.
+  * `1`: ascending ordered index;
+  * `-1`: descending ordered index;
+  * `"hashed"`: hashed index;
+  * `"text"`: text index.
 
 Use background option for potentially long running index building operations:
 
