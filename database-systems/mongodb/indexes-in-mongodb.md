@@ -7,7 +7,7 @@ Always set indexes early, especially the unique indexes.
 There are following types of index:
 
   * __single field index__: support queries that match on the specified (single) field;
-  * __compound field index__: according to the creation order, it supports queries that match on the field {f1}, {f1, f2}, ..., {f1, f2, ..., fN} (with f1 the first field in the compound index, f2 the second, so far so forth);
+  * __compound fields index__: according to the creation order, it supports queries that match on compound fields or any prefix of the compound fields set;
   * __text index__: support query operations that perform a text search of string content;
   * __hashed index__: support equality queries, but does not support range queries (create a single field index for the same field will overcome this disadvantage).
 
