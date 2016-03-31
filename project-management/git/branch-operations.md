@@ -14,3 +14,13 @@ This is equivalent to:
 $ git branch <new_branch_name>
 $ git checkout <new_branch_name>
   ```
+
+### List Branches
+
+To get a list of all branches in the repo, just do this:
+
+  ```console
+$ git branch
+  ```
+
+The current branch is marked by a `*` symbol.
