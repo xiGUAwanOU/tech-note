@@ -30,7 +30,7 @@ $ sudo apt-get install linux-headers-`uname -r`
 
 Install VirtualBox Extensions and setup the shared folder...
 
-Setup backports: add following line to `/etc/apt/source.list`
+Setup backports: add following line to `/etc/apt/sources.list`
 
   ```text
 deb http://ftp.debian.org/debian jessie-backports main
