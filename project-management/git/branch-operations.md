@@ -24,3 +24,19 @@ $ git branch
   ```
 
 The current branch is marked by a `*` symbol.
+
+### Switch Branch
+
+To switch to another branch, use:
+
+  ```console
+$ git checkout <another_branch_name>
+  ```
+
+### Push Branch to Remote Server
+
+Replace `master` with the branch name we want to push:
+
+  ```console
+$ git push origin <branch_name>
+  ```
