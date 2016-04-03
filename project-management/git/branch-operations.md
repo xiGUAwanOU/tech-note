@@ -40,3 +40,9 @@ Replace `master` with the branch name we want to push:
   ```console
 $ git push origin <branch_name>
   ```
+
+If we want to push all branches together:
+
+  ```console
+$ git push --all
+  ```
