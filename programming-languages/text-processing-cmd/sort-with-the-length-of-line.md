@@ -1,4 +1,4 @@
-# awk: Sort with the Length of Line
+# Sort with the Length of Line
 
 The idea is append line length as the first column, and sort with line length:
 
