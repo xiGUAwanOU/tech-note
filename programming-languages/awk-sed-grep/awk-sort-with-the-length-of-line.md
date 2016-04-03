@@ -2,6 +2,6 @@
 
 The idea is append line length as the first column, and sort with line length:
 
-  ```console
-awk '{print length, $0}' test.txt | sort -k1nr | cut -f2- -d' '
+  ```awk
+awk '{print length, $0}' <filename> | sort -k1nr | cut -f2- -d' '
   ```
