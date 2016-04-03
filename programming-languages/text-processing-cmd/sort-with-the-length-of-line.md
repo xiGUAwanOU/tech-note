@@ -7,5 +7,5 @@ awk '{print length, $0}' input.txt > output.tmp
   ```
 
   ```console
-$ sort -k1nr output.tmp | cut -f2- -d' '
+$ sort -k1n output.tmp | cut -f2- -d' '
   ```
