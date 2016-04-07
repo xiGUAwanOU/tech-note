@@ -16,7 +16,7 @@ deb-src http://llvm.org/apt/trusty/ llvm-toolchain-trusty-3.8 main
 And then run following commands:
 
   ```console
-$ wget -O - http://llvm.org/apt/llvm-snapshot.gpg.key|sudo apt-key add -
+$ wget -O - http://llvm.org/apt/llvm-snapshot.gpg.key | sudo apt-key add -
 $ sudo apt-get update
 $ sudo apt-get install clang-3.8 lldb-3.8
   ```
