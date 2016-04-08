@@ -46,6 +46,12 @@ setup(
     ],
     
     keywords='build dependency task',
-    packages=find_packages(exclude=['docs', 'test*'])
+    packages=find_packages(exclude=['docs', 'test*']),
+    entry_points={
+        'console_scripts': [
+            'example=example:main',
+        ],
+    }
 )
   ```
+
