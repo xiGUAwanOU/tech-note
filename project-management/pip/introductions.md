@@ -18,7 +18,17 @@ To test the installation (or run `pip` program), type following command:
 $ pip3 --version
   ```
 
-## 2. Basic Usages
+## 2. Update
+
+To update `pip` itself, use following command:
+
+  ```console
+$ sudo pip3 install -U pip setuptools
+  ```
+
+On Ubuntu, after that we will able to run `pip` with `pip` command instead of `pip3`.
+
+## 3. Basic Usages
 
 The survival guide of `pip` should be its help document. To show its help document, type following command:
 
