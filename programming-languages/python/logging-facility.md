@@ -1,4 +1,4 @@
-# Logging Facility for Python
+# Logging Facility
 
 There is already a module called `logging` in Python standard library for logging in Python. This article is a start guide of using this module.
 
