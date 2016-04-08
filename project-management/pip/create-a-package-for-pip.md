@@ -4,9 +4,9 @@
 
 There are several files required:
 
-  * `setup.py`: configurations of the project and the command line interface of the packaging related tasks;
+  * __`setup.py`__: configurations of the project and the command line interface of the packaging related tasks;
   * `setup.cfg`: default options of the `setup.py`;
-  * `README.rst`: covers the goal of the project, it is not required to be an `rst` file;
+  * __`README.rst`__: covers the goal of the project, it is not required to be an `rst` file;
   * `MANIFEST.in`: defines additional files that don't automatically packaged by `python setup.py sdist (or bdist_wheel)`;
   * `<package>`: although it is not required, the most common practice is to include the python modules and packages under a single top-level package that has the same name as your project.
 
@@ -55,3 +55,12 @@ setup(
 )
   ```
 
+## 3. Install Package
+
+Use following command will install package locally:
+
+  ```console
+$ sudo pip install /path/to/package
+  ```
+
+Don't use `-e` option here. If we did that, we have to delete the package manually (`pip uninstall` won't work).
