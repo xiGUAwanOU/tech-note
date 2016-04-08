@@ -53,7 +53,7 @@ $ pip3 install <package_name>
 Package could be installed from VCS:
 
   ```console
-$ pip install -e git+https://<git_repo_hostname>/<path_to_git_repo>.git#egg=<project_name>
+$ pip3 install -e git+https://<git_repo_hostname>/<path_to_git_repo>.git#egg=<project_name>
   ```
 
 ### 2.3. Remove a Package
