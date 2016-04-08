@@ -13,3 +13,39 @@ There are several files required:
 ## 2. `setup.py` File
 
 The sample `setup.py` file can be found [here](https://github.com/pypa/sampleproject/blob/master/setup.py). The code bellow is a simplified example:
+
+  ```python
+from setuptools import setup, find_packages
+from codecs import open
+from os import path
+
+here = path.abspath(path.dirname(__file__))
+
+# Get the long description from the README file
+with open(path.join(here, 'README.rst'), encoding='utf-8') as f:
+    long_description = f.read()
+
+setup(
+    name='example',
+    version='0.0.1',
+    description='A dummy Python project.',
+    long_description=long_description,
+    url='http://example.host.net/path/to/project',
+    author='xiGUAwanOU',
+    author_email='xiguawanou@gmail.com',
+    license='BSD 2',
+
+    # See https://pypi.python.org/pypi?%3Aaction=list_classifiers
+    classifiers=[
+        'Topic :: Software Development :: Build Tools',
+        'Programming Language :: Python :: 3 :: Only',
+        'License :: OSI Approved :: BSD License',
+        'Intended Audience :: Developers',
+        'Environment :: Console',
+        'Development Status :: 2 - Pre-Alpha'
+    ],
+    
+    keywords='build dependency task',
+    packages=find_packages(exclude=['docs', 'test*'])
+)
+  ```
