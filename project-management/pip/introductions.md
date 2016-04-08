@@ -66,6 +66,12 @@ Package could be installed from VCS:
 $ pip install -e git+https://<git_repo_hostname>/<path_to_git_repo>.git#egg=<project_name>
   ```
 
+Or even from local path:
+
+  ```console
+$ pip install /path/to/package
+  ```
+
 ### 2.3. Remove a Package
 
 Use `uninstall` instead of `install`:
