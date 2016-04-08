@@ -2,7 +2,7 @@
 
 This document describes the installation and basic usages of `pip`.
 
-## Installation
+## 1. Installation
 
 The default version of Ubuntu is Python 2.7.x, so if install package `python-pip`, a `pip` for Python 2.7.x will be installed.
 
@@ -18,7 +18,7 @@ To test the installation (or run `pip` program), type following command:
 $ pip3 --version
   ```
 
-## Basic Usages
+## 2. Basic Usages
 
 The survival guide of `pip` should be its help document. To show its help document, type following command:
 
@@ -34,7 +34,7 @@ $ pip3 help install
 
 The command above will show the help document of `install` command.
 
-### List all installed packages
+### 2.1. List all installed packages
 
 Use the following command:
 
@@ -42,7 +42,7 @@ Use the following command:
 $ pip3 list
   ```
 
-### Install a Package
+### 2.2. Install a Package
 
 Simply use the following command:
 
@@ -50,7 +50,7 @@ Simply use the following command:
 $ pip3 install <package_name>
   ```
 
-### Remove a Package
+### 2.3. Remove a Package
 
 Use `uninstall` instead of `install`:
 
@@ -58,7 +58,7 @@ Use `uninstall` instead of `install`:
 $ pip3 uninstall <package_name>
   ```
 
-### Show the Details of a Package
+### 2.4. Show the Details of a Package
 
   ```console
 $ pip3 show <package_name>
