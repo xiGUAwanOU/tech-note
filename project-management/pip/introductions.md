@@ -26,7 +26,7 @@ To update `pip` itself, use following command:
 $ sudo pip3 install -U pip setuptools
   ```
 
-On Ubuntu, after that we will able to run `pip` with `pip` command instead of `pip3`.
+On Ubuntu, after that we will be able to run `pip` with `pip` command instead of `pip3`.
 
 ## 3. Basic Usages
 
