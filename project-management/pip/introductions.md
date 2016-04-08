@@ -33,13 +33,13 @@ On Ubuntu, after that we will be able to run `pip` with `pip` command instead of
 The survival guide of `pip` should be its help document. To show its help document, type following command:
 
   ```console
-$ pip3 help
+$ pip help
   ```
 
 Or if we want to read the help document for a specific `pip` command:
 
   ```console
-$ pip3 help install
+$ pip help install
   ```
 
 The command above will show the help document of `install` command.
@@ -49,7 +49,7 @@ The command above will show the help document of `install` command.
 Use the following command:
 
   ```console
-$ pip3 list
+$ pip list
   ```
 
 ### 2.2. Install a Package
@@ -57,13 +57,13 @@ $ pip3 list
 Simply use the following command:
 
   ```console
-$ pip3 install <package_name>
+$ pip install <package_name>
   ```
 
 Package could be installed from VCS:
 
   ```console
-$ pip3 install -e git+https://<git_repo_hostname>/<path_to_git_repo>.git#egg=<project_name>
+$ pip install -e git+https://<git_repo_hostname>/<path_to_git_repo>.git#egg=<project_name>
   ```
 
 ### 2.3. Remove a Package
@@ -71,11 +71,11 @@ $ pip3 install -e git+https://<git_repo_hostname>/<path_to_git_repo>.git#egg=<pr
 Use `uninstall` instead of `install`:
 
   ```console
-$ pip3 uninstall <package_name>
+$ pip uninstall <package_name>
   ```
 
 ### 2.4. Show the Details of a Package
 
   ```console
-$ pip3 show <package_name>
+$ pip show <package_name>
   ```
