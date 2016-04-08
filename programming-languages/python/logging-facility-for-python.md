@@ -12,9 +12,9 @@ There are 3 important concepts in `logging` module, they are:
 
 ## 2. Configure the Logger
 
-There are 3 ways to configure a logger, namely in-code configurations, configuraion files and dictionary configurations. However, despite the primary goals of this article, we will still introduce dictionary configurations here. Because the schema of dictionary configurations is well defined in [PEP 391](https://www.python.org/dev/peps/pep-0391/).
+There are 3 ways to configure a logger, namely in-code configurations, configuraion files and dictionary configurations. We will introduce dictionary configurations here. Because the schema of dictionary configurations is well defined in [PEP 391](https://www.python.org/dev/peps/pep-0391/).
 
-To achieve the primary goals of this article, we could read the configuration file (in any format) and convert it to a dictionary and then use it.
+Using dictionary configurations still allows us to configure loggers with a file. We could read the configuration from a file (in any format, e.g. JSON or YAML), convert it to a dictionary and then use it.
 
 An example of configuration dictionary:
 
@@ -51,7 +51,7 @@ logConf = {
 
 In [PEP 282](https://www.python.org/dev/peps/pep-0282/) there is a list of format components.
 
-## 3. Use the Loggers
+## 3. Use the Logger
 
 To use the configured loggers:
 
