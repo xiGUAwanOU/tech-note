@@ -13,6 +13,7 @@ def aPlusPlus():
   ```python
 # In test2.py
 from test1 import *
+# from test1 import a, aPlusplus    is the same
 print(a)
 aPlusPlus()
 print(a)
