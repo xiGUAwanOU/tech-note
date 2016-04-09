@@ -56,3 +56,5 @@ Ran 1 test in 0.000s
 
 OK
   ```
+
+Notice that `unittest` will discover the test source code path __recursively__ only if there are `__init__.py` files all along the path.
