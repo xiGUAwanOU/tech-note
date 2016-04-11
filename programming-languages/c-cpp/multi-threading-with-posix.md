@@ -36,7 +36,7 @@ int main(int argc, char * argv[]) {
 To compile this example use clang in LLVM, just type the following command:
 
   ```console
-$ clang example.c -o example -lpthread
+$ clang example.c -o example -pthread
   ```
 
 The code is no hard to understand. However there are still some details to be clarified.
