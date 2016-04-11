@@ -33,6 +33,12 @@ int main(int argc, char * argv[]) {
 }
   ```
 
+To compile this example use clang in LLVM, just type the following command:
+
+  ```console
+$ clang example.c -o example -lpthread
+  ```
+
 The code is no hard to understand. However there are still some details to be clarified.
 
 3 things related to POSIX thread are `pthread_t` structure, `pthread_create` function and `pthread_exit` function:
