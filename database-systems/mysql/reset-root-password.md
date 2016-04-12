@@ -21,10 +21,10 @@ And then login without password:
 At last use following SQL queries to reset the password:
 
   ```console
-use mysql;
+USE mysql;
 UPDATE user SET password=PASSWORD("newpassword") WHERE user='root';
-flush privileges;
-exit;
+FLUSH privileges;
+EXIT;
   ```
 
 And restart MariaDB service again. Done!
