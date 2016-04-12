@@ -20,7 +20,7 @@ And then login without password:
 
 At last use following SQL queries to reset the password:
 
-  ```console
+  ```sql
 USE mysql;
 UPDATE user SET password=PASSWORD("newpassword") WHERE user='root';
 FLUSH privileges;
