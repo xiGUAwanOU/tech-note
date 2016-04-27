@@ -2,7 +2,7 @@
 
 Be careful, there is DST!
 
-In a PHP project, I'm implementing a RESTful interface providing date time information with its timezone offset (GMT+1 or GMT+2). The problem with the database is, I can't store the date time information as `TIMESTAMP` or `DATETIME`, only as `VARCHAR`. So I only parsed the local date time to strings, and stored it into the database, and then calculated timezone offset according to the current time.
+In a PHP project, I'm implementing a RESTful interface providing date time information with its timezone offset (GMT+1 or GMT+2). The problem with the database is, I can't store the date time information as `TIMESTAMP` or `DATETIME`, only as `VARCHAR`. So I've just parsed the local date time to strings, and stored it into the database, and then calculated timezone offset according to the current time.
 
 At first, everything are Ok. However, the season changed and there is no DST anymore. If the time is in the past, at that time there __WAS__ DST, then the timezone offset will be wrong for the time in the past.
 
