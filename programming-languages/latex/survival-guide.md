@@ -1,5 +1,7 @@
 # Survival Guide
 
+### Basic Usage
+
 A basic LaTeX code could be like this:
 
   ```latex
@@ -48,6 +50,7 @@ Now we add structure to the document:
 \end{document}
   ```
 
-`\tableofcontents` after `\begin{document}` will add a TOC to the document.
+### MISC.
 
-`\\` will break the current line.
+  * `\tableofcontents` after `\begin{document}` will add a TOC to the document.
+  * `\\` will break the current line.
