@@ -25,6 +25,12 @@ $ git branch
 
 The current branch is marked by a `*` symbol.
 
+We may also want to know which version the branch is currently pointing to. If so, try the following command:
+
+  ```console
+$ git log --decorate --graph
+  ```
+
 ### Switch Branch
 
 To switch to another branch, use:
