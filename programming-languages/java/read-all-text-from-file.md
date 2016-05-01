@@ -1,4 +1,4 @@
-# Read All Text in File
+# Read All Text from File
 
 There is a one-line solution:
 
