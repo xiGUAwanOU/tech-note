@@ -1,4 +1,4 @@
-# Make Existing Task Depend on New Task
+# Make Existing Task Depend on a New Task
 
 Just like this:
 
