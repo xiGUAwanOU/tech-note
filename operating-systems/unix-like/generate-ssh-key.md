@@ -1,6 +1,6 @@
 # Generate SSH Key
 
-Always forget this:
+To generate the key:
 
   ```console
 $ ssh-keygen
