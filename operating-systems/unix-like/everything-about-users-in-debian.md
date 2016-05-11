@@ -12,13 +12,21 @@
 
 ### Files:
 
+Fields are seperated by colons (`:`).
+
 #### `/etc/passwd`
 
-Fields are separated by colons (`:`):
-    * username
-    * encrypted password (or `x` if shadow passwords are in use)
-    * UID
-    * default GID
-    * real name (also known as the GECOS field)
-    * home directory
-    * default shell (use `/usr/sbin/nologin` or `/bin/false` to prevent login)
+  * username
+  * encrypted password (or `x` if shadow passwords are in use)
+  * UID
+  * default GID
+  * real name (also known as the GECOS field)
+  * home directory
+  * default shell (use `/usr/sbin/nologin` or `/bin/false` to prevent login)
+
+#### `/etc/groups`
+
+  * group name
+  * encrypted group password (or `x` if shadow passwords are in use)
+  * GID
+  * group members' usernames, comma-separated
