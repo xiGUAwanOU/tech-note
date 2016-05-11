@@ -12,7 +12,7 @@
 
 ### Files:
 
-Fields are seperated by colons (`:`).
+Fields are seperated by colons (`:`) in following files.
 
 #### `/etc/passwd`
 
