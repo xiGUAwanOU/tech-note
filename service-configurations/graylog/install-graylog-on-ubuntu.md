@@ -49,4 +49,18 @@ And then, we should set a root password:
 $ echo -n newpassword | shasum -a 256
   ```
 
-Copy and paste the 
+Copy and paste the result to the file `/etc/graylog/server/server.conf`, after the line starting with `root_password_sha2 =`:
+
+  ```text
+# You MUST specify a hash password for the root user (which you only need to initially set up the
+# system and in case you lose connectivity to your authentication backend)
+# This password cannot be changed using the API or via the web interface. If you need to change it,
+# modify it in this file.
+# Create one by using for example: echo -n yourpassword | shasum -a 256
+# and put the resulting hash value into the following line
+root_password_sha2 = 5912d5590ceedd61724ee20d37b515427916c915081bccad29e0c684476014c4
+  ```
+
+Notice that there shouldn't be a `-` after the sha2 code.
+
+
