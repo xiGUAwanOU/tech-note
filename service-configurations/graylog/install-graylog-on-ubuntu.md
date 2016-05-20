@@ -63,9 +63,13 @@ root_password_sha2 = 5912d5590ceedd61724ee20d37b515427916c915081bccad29e0c684476
 
 Notice that there shouldn't be a `-` after the sha2 code.
 
-Next step is to change the Elasticsearch shards number to 1:
+Next step, in the same configuration file, change the Elasticsearch shards number to 1:
 
   ```text
 # How many Elasticsearch shards and replicas should be used per index? Note that this only applies to newly created indices.
 elasticsearch_shards = 1
   ```
+
+Now save this file and start graylog. Keep an eye on the log file, check if there is any errors.
+
+Go to the web browser, type `localhost:9000` into the address box and there will be a login interface. Input the root username (default `admin`) and the root password, then we will log in into the Graylog web interface.
