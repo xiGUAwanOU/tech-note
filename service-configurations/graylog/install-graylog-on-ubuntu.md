@@ -63,4 +63,9 @@ root_password_sha2 = 5912d5590ceedd61724ee20d37b515427916c915081bccad29e0c684476
 
 Notice that there shouldn't be a `-` after the sha2 code.
 
+Next step is to change the Elasticsearch shards number to 1:
 
+  ```text
+# How many Elasticsearch shards and replicas should be used per index? Note that this only applies to newly created indices.
+elasticsearch_shards = 1
+  ```
