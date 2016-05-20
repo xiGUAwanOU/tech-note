@@ -10,6 +10,8 @@ Graylog is not easy to install. To install it on Ubuntu, the system should meet 
 
 The installation of prerequisites will not be covered in this article.
 
+### Install Graylog Server
+
 After that, run the following commands:
 
   ```console
@@ -25,6 +27,8 @@ After installation AND CONFIGURATION, we could use following command to start Gr
   ```console
 $ sudo start graylog-server
   ```
+
+### Configure Graylog to Bring the Web Interface Up
 
 However, we should firstly do some configurations.
 
