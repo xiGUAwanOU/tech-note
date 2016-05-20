@@ -77,3 +77,44 @@ elasticsearch_shards = 1
 Now save this file and start graylog. Keep an eye on the log file, check if there is any errors.
 
 Go to the web browser, type `localhost:9000` into the address box and there will be a login interface. Input the root username (default `admin`) and the root password, then we will log in into the Graylog web interface.
+
+### Setup the Connection to Elasticsearch
+
+After read the notifications, we know that the Elasticsearch cluster is unavailable. So next step is to configure the Graylog so that it works with Elasticsearch.
+
+There are several lines in the file `/etc/graylog/server/server.conf` related to the Elasticsearch connection:
+
+  ```text
+# settings to be passed to elasticsearch's client (overriding those in the provided elasticsearch_config_file)
+# all these
+# this must be the same as for your Elasticsearch cluster
+elasticsearch_cluster_name = elasticsearch
+
+...
+
+# A comma-separated list of Elasticsearch nodes which Graylog is using to connect to the Elasticsearch cluster,
+# see https://www.elastic.co/guide/en/elasticsearch/reference/2.3/modules-discovery-zen.html for details.
+# Default: 127.0.0.1
+elasticsearch_discovery_zen_ping_unicast_hosts = 127.0.0.1:9300
+
+...
+
+# Enable Elasticsearch multicast discovery. This requires the installation of an Elasticsearch plugin,
+# see https://www.elastic.co/guide/en/elasticsearch/plugins/2.3/discovery-multicast.html for details.
+# Default: false
+elasticsearch_discovery_zen_ping_multicast_enabled = false
+  ```
+
+The first section is to set the cluster name to be used.
+
+The second one specifies the nodes in the cluster (I guess). Notice that, here the port should be 9300 because the port 9200 is only for REST API, and if Java API is used, 9300 is required.
+
+The third part disables the multicast node searching.
+
+Then restart the Graylog with:
+
+  ```console
+$ sudo restart graylog-server
+  ```
+
+The notification about Elasticsearch will disappear now.
