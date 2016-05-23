@@ -118,3 +118,13 @@ $ sudo restart graylog-server
   ```
 
 The notification about Elasticsearch will disappear now.
+
+### Set Node Inputs
+
+There is still a notification telling us, that there is a node without any running inputs. To fix this, follow the steps below:
+
+  1. go to Graylog Web Interface, click `System --> Inputs`;
+  2. select `Raw/Plaintext UDP` in the drop list and click `Launch new input`;
+  3. configure the new input like this:
+  4. click `Save`.
+
