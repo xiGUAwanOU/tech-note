@@ -127,5 +127,7 @@ There is still a notification telling us, that there is a node without any runni
   2. select `Raw/Plaintext UDP` in the drop list and click `Launch new input`;
   3. configure the new input like this:<br/>
     ![configurations for launching inputs](graylog-launch-input.png)
-  4. click `Save`.
+  4. click `Save` button.
+
+Now the Graylog is supposed to listen to port 5555 for the input. So let's try to log something.
 
