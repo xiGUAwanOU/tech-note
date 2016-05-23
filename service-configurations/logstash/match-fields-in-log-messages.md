@@ -1,4 +1,4 @@
-# Define Custom Grok Patterns
+# Match Fields in Log Messages
 
 A first look of a complete grok pattern could be like this:
 
