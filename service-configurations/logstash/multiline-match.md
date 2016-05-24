@@ -13,7 +13,23 @@ input {
 }
   ```
 
-This configuration basically means, if a line is begin with a `!`, it should be treated as a part of the previous message. After that, we could apply a `grok` filter on it:
+This configuration basically means, if a line is begin with a `!`, it should be treated as a part of the previous message. If we need a `codec` for `file` input instead of `stdin`, just put the whole `codec` section into the `file` section:
+
+  ```ruby
+input {
+    file {
+        path => "/path/to/the/log/file"
+        start_position => "beginning"
+
+        codec => multiline {
+            pattern => "^!"
+            what => "previous"
+        }
+    }
+}
+  ```
+
+After that, we could apply a `grok` filter on it:
 
   ```ruby
 filter {
