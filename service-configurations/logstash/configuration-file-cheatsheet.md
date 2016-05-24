@@ -24,10 +24,10 @@ And if we want to read log messages from a log file:
 
   ```ruby
 input {
-  file {
-    path => "/path/to/log/file"
-    start_position => "beginning"
-  }
+    file {
+        path => "/path/to/log/file"
+        start_position => "beginning"
+    }
 }
   ```
 
