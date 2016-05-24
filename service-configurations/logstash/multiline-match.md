@@ -1,4 +1,4 @@
-# Grok Multiline Match
+# Multiline Match
 
 According to the offical document, the usage of `multiline` filter is deprecated. Instead, we should use the `multiline codec`. To apply `multiline codec` on the log pipeline, just extend the configuration file below:
 
