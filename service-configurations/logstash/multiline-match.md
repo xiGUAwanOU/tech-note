@@ -57,4 +57,4 @@ line0
 ! line2
   ```
 
-After that, we could even apply a `mutate` filter to get rid of `!`s in the beginning of new lines.
+After that, we could even apply a `mutate` filter to get rid of those "`!`"-s at the beginning of new lines.
