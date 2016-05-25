@@ -131,3 +131,4 @@ There is still a notification telling us, that there is a node without any runni
 
 Now the Graylog is supposed to listen to port 5555 for the input. So let's try to log something.
 
+With `Raw/Plaintext UDP` as the input type, it is very easy to log things. Just write anything to the specified IP address and port, the message will show on the web interface.
