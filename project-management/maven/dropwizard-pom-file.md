@@ -25,6 +25,12 @@ This could be a basic `pom.xml` file for Dropwizard project, use it as a templat
             <artifactId>dropwizard-core</artifactId>
             <version>${dropwizard.version}</version>
         </dependency>
+
+        <dependency>
+            <groupId>com.hubspot.dropwizard</groupId>
+            <artifactId>dropwizard-guice</artifactId>
+            <version>0.8.4.0</version>
+        </dependency>
     </dependencies>
 
     <build>
@@ -43,3 +49,5 @@ This could be a basic `pom.xml` file for Dropwizard project, use it as a templat
     </build>
 </project>
   ```
+
+Notice, this template also added dropwizard-guice as the dependency inject library. If we don't want it, remove the dependency.
