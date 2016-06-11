@@ -121,3 +121,11 @@ Now, the creation of the data should be like this:
         System.out.println("Added message with ID: " + messageId);
     }
   ```
+
+Finally, don't forget to close the sessionFactory, otherwise the program will not stop:
+
+  ```java
+    public void cleanUp() {
+        sessionFactory.close();
+    }
+  ```
