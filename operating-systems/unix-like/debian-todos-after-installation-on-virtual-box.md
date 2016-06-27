@@ -47,5 +47,8 @@ $ sudo apt-get -t jessie-backports install openjdk-8-jdk openjdk-8-jre
 Update alternatives for `java` command:
 
   ```console
+$ sudo update-alternatives --install /usr/bin/java java /opt/jdk/jdk1.8.0_66/bin/java 100
+$ sudo update-alternatives --install /usr/bin/javac javac /opt/jdk/jdk1.8.0_66/bin/javac 100
 $ sudo update-alternatives --config java
+$ sudo update-alternatives --config javac
   ```
