@@ -15,7 +15,7 @@ Unzip it, and edit the `conf/tomcat-user.xml` file add following two lines:
 
 To allow the remote access, modify the `webapps/manager/META-INF/context.xml` file, change the IP address to `.*`.
 
-Don't forget to restart Tomcat after modified the configuration files.
+Don't forget to restart Tomcat after modifying the configuration files.
 
 Access Tomcat manager GUI using following URL:
 
