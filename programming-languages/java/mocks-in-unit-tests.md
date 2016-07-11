@@ -43,7 +43,7 @@ public class UpdateTicketServiceTest {
     ...
     @Test
     public void processTicket_WithValidTicket() throws IOException {
-        GameIdMapper gameIdMapper = new GameIdMapperMock(GameName.of("rr2"), GameId.of("royalrevoltonline"));
+        GameIdMapper gameIdMapper = new GameIdMapperMock(GameName.of("hw"), GameId.of("hello world"));
         UpdateTicketService updateTicketService = new UpdateTicketService(gameIdMapper);
 
         updateTicketService.processTicket(ticket);
