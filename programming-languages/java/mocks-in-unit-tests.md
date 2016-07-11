@@ -43,14 +43,16 @@ public class UpdateTicketServiceTest {
     ...
     @Test
     public void processTicket_WithValidTicket() throws IOException {
-        GameIdMapper gameIdMapper = new GameIdMapperMock(GameName.of("hw"), GameId.of("hello world"));
-        UpdateTicketService updateTicketService = new UpdateTicketService(gameIdMapper);
+        GameIdMapperMock gameIdMapperMock = new GameIdMapperMock(GameName.of("hw"), GameId.of("hello world"));
+        UpdateTicketService updateTicketService = new UpdateTicketService(gameIdMapperMock);
 
         updateTicketService.processTicket(ticket);
 
-        assertThat ...
+        assertThat(gameIdMapperMock.get...
     }
 
     ...
 }
   ```
+
+Notice that we defined a `GameIdMapper` with the `GameIdMapperMock` type, because we have to invoke the specific methods in the mock class.
