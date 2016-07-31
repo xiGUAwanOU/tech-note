@@ -88,7 +88,7 @@
   </build>
 </project>
   ```
+Notice:
 
-This `pom.xml` file is based on the maven archetype `net.alchim31.maven:scala-archetype-simple`, version 1.6 I think.
-
-All the scala source files should be in `src/main/scala` and test files should be in `src/test/scala`.
+  * This `pom.xml` file is based on the maven archetype `net.alchim31.maven:scala-archetype-simple`, version 1.6 I think.
+  * All the scala source files should be in `src/main/scala` and test files should be in `src/test/scala`.
