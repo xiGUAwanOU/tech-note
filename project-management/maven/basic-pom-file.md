@@ -9,8 +9,8 @@ Following is a basic `pom.xml` file which could be used as the template or refer
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>xigua</groupId>
-    <artifactId>red-squirrel-research</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <artifactId>java-project</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -18,6 +18,18 @@ Following is a basic `pom.xml` file which could be used as the template or refer
     </properties>
 
     <dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>${junit.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.assertj</groupId>
+            <artifactId>assertj-core</artifactId>
+            <version>${assertj.version}</version>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
 
     <build>
