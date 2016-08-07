@@ -1,4 +1,4 @@
-# Create New Project From Template
+# Create New Project From Archetype
 
 Using the following command:
 
