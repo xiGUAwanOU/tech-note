@@ -1,4 +1,6 @@
-# Parse JSON File
+# Parse JSON File Using org.json
+
+_Deprecated: use libraries like Gson or Jackson instead._
 
 Using `org.json` library will do the trick. The newest version of `org.json` is not compatible with OpenJDK 1.7. The latest version being supported by OpenJDK 1.7 is `20140107`.
 
