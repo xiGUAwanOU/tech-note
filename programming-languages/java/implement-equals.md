@@ -1,5 +1,11 @@
 # Implement Equals
 
+_Update: a short version of the implementation of the `equals`._
+
+  ```java
+return obj != null && this.getClass() == obj.getClass() ? this.value == ((MyType) obj).value : false;
+  ```
+
 To implement the euqals method, following conditions must be meet:
 
   * Reflexive: For any non-null reference value `x`, `x.equals(x)` must return true.
