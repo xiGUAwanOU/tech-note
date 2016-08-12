@@ -3,7 +3,7 @@
 _Update: a short version of the implementation of the `equals`._
 
   ```java
-return obj != null && this.getClass() == obj.getClass() ? this.value == ((MyType) obj).value : false;
+return (obj != null && this.getClass() == obj.getClass()) && this.value == ((MyType) obj).value;
   ```
 
 To implement the euqals method, following conditions must be meet:
