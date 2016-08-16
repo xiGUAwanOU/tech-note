@@ -1,3 +1,7 @@
 # grep: Show Line Number
 
-Very easy, just use `grep -n`.
+Very simple, just use:
+
+  ```console
+$ grep -n
+  ```
