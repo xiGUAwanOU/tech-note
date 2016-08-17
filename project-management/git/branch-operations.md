@@ -52,3 +52,11 @@ If we want to push all branches together:
   ```console
 $ git push --all
   ```
+### Merge Two Branches
+
+Merge another branch to the `master` branch:
+
+  ```console
+$ git checkout master
+$ git merge <another_branch_name>
+  ```
