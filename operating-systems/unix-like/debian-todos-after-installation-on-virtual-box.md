@@ -44,6 +44,14 @@ Install OpenJdk 8:
 $ sudo apt-get -t jessie-backports install openjdk-8-jdk openjdk-8-jre
   ```
 
+Or install OracleJdk 8:
+
+  ```console
+$ wget --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u66-b17/jdk-8u66-linux-x64.tar.gz
+  ```
+
+And install it.
+
 Update alternatives for `java` command:
 
   ```console
