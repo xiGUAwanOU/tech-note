@@ -1,4 +1,4 @@
-# Spring Boot Application Properties
+# Application Properties
 
   ```text
 server.port=${PORT_NUMBER}
