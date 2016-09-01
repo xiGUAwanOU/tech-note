@@ -26,7 +26,7 @@ describe file('/etc/update-motd.d/98-server-info') do
 end
   ```
 
-For this is the test of our `default.rb` recipe, accordingly, it should be stored as `/path/to/cookbooks/cookbook_name/test/recipes/default_test.rb`.
+For this is the test of our `recipes/default.rb` recipe, accordingly, it should be stored as `/path/to/cookbooks/cookbook_name/test/recipes/default_test.rb`.
 
 ## 2. Run the Test
 
