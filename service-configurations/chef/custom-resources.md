@@ -36,7 +36,7 @@ action :write do
 end
   ```
 
-Then write something to the `default.rb`:
+Then write something to the `recipes/default.rb`:
 
   ```ruby
 file_writer 'whatever' do
