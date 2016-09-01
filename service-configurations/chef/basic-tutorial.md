@@ -75,6 +75,8 @@ Create a cookbook to hold recipes:
 $ chef generate cookbook /path/to/cookbooks/cookbooks_name
   ```
 
+_Notice: the folder which holds the cookbooks should be named `cookbooks`, because some commands search cookbooks in this folder._
+
 To split up different kind of source codes other than the ruby code, we could use template:
 
   ```console
