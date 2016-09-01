@@ -40,6 +40,14 @@ Then write something to the `default.rb`:
 
   ```ruby
 file_writer 'whatever' do
-  user_name 'Flaregames'
+  user_name 'xiGUAwanOU'
 end
   ```
+
+Done! Let's run the recipe, use the command:
+
+  ```console
+$ chef-client --local-mode --runlist 'recipe[custom_resource]'
+  ```
+
+There will be a file `/tmp/output.txt` created with content `Hello, xiGUAwanOU!`
