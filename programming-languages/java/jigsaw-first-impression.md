@@ -63,11 +63,12 @@ To make a modularized project, follow the steps below:
   
     ```console
   $ javac -d mods/xigua.java9.module1 \
-    src/xigua.java9.module1/module-info.java \
-    src/xigua.java9.module1/xigua/java9/module1/HelloPrinter.java
+  src/xigua.java9.module1/module-info.java \
+  src/xigua.java9.module1/xigua/java9/module1/HelloPrinter.java
+  
   $ javac --module-path mods -d mods/xigua.java9.module2 \
-    src/xigua.java9.module2/module-info.java \
-    src/xigua.java9.module2/xigua/java9/module2/Main.java
+  src/xigua.java9.module2/module-info.java \
+  src/xigua.java9.module2/xigua/java9/module2/Main.java
     ```
   
   5. run the program with following command:
