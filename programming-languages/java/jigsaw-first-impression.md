@@ -80,4 +80,4 @@ To make a modularized project, follow the steps below:
   hello world
     ```
 
-## What About JAR?
+## How About JAR?
