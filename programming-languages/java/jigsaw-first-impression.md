@@ -2,6 +2,8 @@
 
 The main purpose of Jigsaw is to bring the modularity to the Java world.
 
+## Simplest Example
+
 To make a modularized project, follow the steps below:
 
   1. let's make the first module, create following two files:
@@ -77,3 +79,5 @@ To make a modularized project, follow the steps below:
   $ java --module-path mods -m xigua.module2/xigua.java9.module2.Main
   hello world
     ```
+
+## What About JAR?
