@@ -8,4 +8,4 @@ for dir in `ls -d */`; do
 done
   ```
 
-The first line `set -e` tells intepreter that exit immediately if any of the command runs into errors.
+The first line `set -e` tells intepreter to exit immediately if any of the sub-commands runs into error.
