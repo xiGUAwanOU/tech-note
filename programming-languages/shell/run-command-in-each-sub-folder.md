@@ -1,5 +1,7 @@
 # Run Command in Each Sub-Folder
 
+For example, if we need to print the content of `file.txt` in each sub-folder:
+
   ```shell
 set -e
 
