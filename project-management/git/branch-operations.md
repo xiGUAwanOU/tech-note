@@ -60,3 +60,12 @@ Merge another branch to the `master` branch:
 $ git checkout master
 $ git merge <another_branch_name>
   ```
+
+### Delete a Branch
+
+To delete a branch locally and remotely:
+
+   ```console
+git branch -d <branch_name>
+git push origin --delete <branch_name>
+   ```
