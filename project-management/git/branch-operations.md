@@ -66,6 +66,6 @@ $ git merge <another_branch_name>
 To delete a branch locally and remotely:
 
    ```console
-git branch -d <branch_name>
-git push origin --delete <branch_name>
+$ git branch -d <branch_name>
+$ git push origin --delete <branch_name>
    ```
