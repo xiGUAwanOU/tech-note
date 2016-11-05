@@ -26,3 +26,9 @@ irb(main):006:0> A.new.instance_variables
   ```
   
   Similar as it with method, use `instance_variables_defined?` to check whether the instance variables is defined in an object.
+
+## Understanding
+
+* In Ruby, a class itself is also an object.
+* "Redefine" a class will add new methods into an existing class.
+* Instance variables are stored in objects, while methods are stored in class.
