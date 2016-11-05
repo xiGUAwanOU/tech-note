@@ -33,7 +33,7 @@ Object
 
 Module `A` is written as `A*` because it is actually not `A`, but another anonymous (singleton) class.
 
-This also happends when we are defining method for an object:
+This also happens when we are defining method for an object:
 
   ```console
 irb(main):001:0> class A
