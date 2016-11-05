@@ -32,3 +32,19 @@ Object
   ```
 
 Module `A` is written as `A*` because it is actually not `A`, but another anonymous (singleton) class.
+
+This also happends when we are defining method for an object:
+
+  ```console
+irb(main):001:0> class A
+irb(main):002:1> end
+=> nil
+irb(main):003:0> a = A.new
+=> #<A:0x000000019f22b0>
+irb(main):004:0> def a.name
+irb(main):005:1>   return 'foo'
+irb(main):006:1> end
+=> :name
+irb(main):007:0> a.singleton_class.superclass
+=> A
+  ```
