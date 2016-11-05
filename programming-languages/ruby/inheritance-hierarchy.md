@@ -31,4 +31,4 @@ Object
     └── B
   ```
 
-`A` has a prefix `*` because it is not called `A`, but anonymous, just a singleton class.
+Module `A` is written as `A*` because it is actually not `A`, but another anonymous (singleton) class.
