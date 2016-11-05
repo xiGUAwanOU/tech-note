@@ -1,5 +1,7 @@
 # C Extensions
 
+## Basics
+
 To call C functions in ruby, following the steps below:
 
 1. make sure the `ruby.h` exists;
@@ -48,3 +50,9 @@ irb(main):003:0> puts the_number
 42
 => nil
   ```
+
+## Types
+
+We could notice that most of the things in ruby world are typed `VALUE`, it is the ruby generic data type. Actually, each `VALUE` typed data has its own underlying type. Which are listed [here](http://ruby-doc.org/core-2.3.1/doc/extension_rdoc.html#label-Data+Types).
+
+In addition, we have to convert ruby types to C types with the methods listed [here](http://ruby-doc.org/core-2.3.1/doc/extension_rdoc.html#label-Convert+VALUE+into+C+Data), and convert C types back to ruby types with the methods listed [here](http://ruby-doc.org/core-2.3.1/doc/extension_rdoc.html#label-Convert+C+Data+into+VALUE).
