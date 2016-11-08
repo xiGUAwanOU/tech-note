@@ -1,6 +1,6 @@
 # Not Null or Throw Exception
 
-Do not use if and throw statement any more! Use the following code instead:
+Do not use if and throw statements any more! Use the following code instead:
 
   ```java
 Objects.requireNotNull(...);
