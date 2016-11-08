@@ -1,5 +1,13 @@
 # Install Arch Linux on ASUS m81c Pad
 
+## References
+
+I guess the hardware structure of ASUS m81c and x205ta may be similar, so [this article](https://wiki.archlinux.org/index.php/Asus_x205ta) helps me a lot! Great thanks to the author!
+
+Although I have no success installing Ubuntu on my pad (it freezes while installing the system), [this article](https://github.com/lopaka/instructions/blob/master/ubuntu-16.04-install-asus-x205ta.md) helped me to figure out how to create a Arch Linux USB stick.
+
+While installing the Arch Linux, I've basically followed the instructions in the [Installation Guide](https://wiki.archlinux.org/index.php/Installation_guide) on Arch Linux Wiki.
+
 ## Prepare the Installation Media
 
 (The instructions to create Arch Linux USB drive is missing...)
