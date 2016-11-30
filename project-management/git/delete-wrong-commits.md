@@ -17,7 +17,9 @@ $ git push origin master --force
 If the repo refuses to accept `--force` push, we could make the reverse as a new commit:
 
   ```console
-$ git revert HEAD~6
+$ git revert HEAD
   ```
+
+Notice that, unlike `git reset`, `git revert` will revert a specific commit (revert the changes), but not set the `HEAD` pointer!
 
 And then push them as usual.
