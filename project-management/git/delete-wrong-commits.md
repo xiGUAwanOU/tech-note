@@ -14,7 +14,7 @@ And push the local content to remote server forcely:
 $ git push origin master --force
   ```
 
-If the repo refuses to accept `--force` push, we could make the reverse as a new commit:
+If the repo refuses to accept `--force` push, we could make the reverse as a new commit (**actually it is usually done like this**, since `--force` push will overwrite the history):
 
   ```console
 $ git revert HEAD
