@@ -4,7 +4,8 @@ The basic usage of `git stash` could be:
 
   ```console
 $ git stash
-Do something others here ...
+
+Do some other things here ...
 
 $ git apply
   ```
