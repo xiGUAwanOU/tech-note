@@ -4,19 +4,19 @@ About the configuration, the only thing to set is the replica name. We could spe
 
 Next, we need to setup the replica set using the primary instance. Just type the following commands:
 
-  ```shell
+  ```console
 > rs.initiate()
   ```
 
 This will initialize the replica set. Then we need to add instances into the replica set:
 
-  ```shell
+  ```console
 > rs.add("hostname:port")
   ```
 
 The added instances will be treated as secondaries in the replica set. We could also add an arbiter into the replica set:
 
-  ```shell
+  ```console
 > rs.addArb("hostname:port")
   ```
 
