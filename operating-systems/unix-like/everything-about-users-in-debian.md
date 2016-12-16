@@ -1,5 +1,7 @@
 # Everything About Users in Debian
 
+Some command mentioned in this article is also true for other distributions of Linux, but don't forget to read the man documentation first.
+
 ### Commands
 
   * Create user: `adduser` (a script using `useradd`), `useradd`;
