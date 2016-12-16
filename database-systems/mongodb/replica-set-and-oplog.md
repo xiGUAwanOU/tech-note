@@ -20,4 +20,6 @@ The added instances will be treated as secondaries in the replica set. We could 
 > rs.addArb("hostname:port")
   ```
 
-Notice that, the oplog size is very important when adding a new instance to the replica set. Oplog is a log of operations that applied on the primary. The secondaries will copy the oplog from primary and repeat the operations on the primary. If the data copying time (from primary to newly added secondary), is longer than the oplog time, some of the new operations would not be able to be repeated on the newly added secondary any more, which will cause some problem.
+Oplog is a log of operations that applied on the primary. The secondaries will copy the oplog from primary and repeat the operations on the primary.
+
+Notice that, the oplog size is very important when adding a new instance after a long run of the replica set. If the data copying time (from primary to newly added secondary) is longer than the oplog time, some of the new operations would not be able to be repeated on the newly added secondary any more, which will cause some problem.
