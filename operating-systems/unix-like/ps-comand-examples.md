@@ -25,7 +25,7 @@ Some of the popular option sets could be:
 $ ps -aux
   ```
 
-and
+and:
 
   ```
 $ ps -elf
