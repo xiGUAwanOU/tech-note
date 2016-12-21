@@ -10,3 +10,10 @@ For a source code highlighting language list, see [linguist project](https://git
    ```markdown
 ![alt text](https://hostname.net/path/to/image.png)
    ```
+
+### TODOs List
+
+  ```markdown
+- [ ] not finished
+- [x] finished
+  ```
