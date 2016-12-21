@@ -1,5 +1,7 @@
 # Unit Test in Unity
 
+__Only for Unity 5.x__
+
 Super strange, they refuse to create a simple and clear text tutorial to explain how to do basic unit test for unity. I hope this document will save an experienced programmer from spending nearly one hour to go through the tutorial video.
 
 ## 1. All Unit Tests Should Be Under the `Editor` Folder
@@ -27,7 +29,7 @@ class UnitTests
     }
 }
   ```
-  
+
 ## 3. Run Unit Tests.
 
 Open the Unity window from the menu item: `Window -> Editor Tests Runner`, and then click `Run All` button on it. Done!
