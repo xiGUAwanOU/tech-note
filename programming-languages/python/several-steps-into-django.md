@@ -104,3 +104,37 @@ INSTALLED_APPS = [
 
 ...
   ```
+
+This will add our `hello_world` application into the site (the name `hello_world.apps.HelloWorldConfig` comes from the method name in the `apps.py` file in the application level).
+
+Now, we create the file `templates/hello_world/index.html` in the application folder, and then edit it:
+
+  ```html
+<html>
+<head>
+    <title>Hello</title>
+</head>
+
+<body>
+<h1>{{ custom_title }}</h1>
+<p>{{ custom_string }}</p>
+</body>
+</html>
+  ```
+
+Then, we rewrite the `views.py` file to fill the variables in template:
+
+  ```python
+from django.shortcuts import render
+
+
+def index(request):
+    context = {
+        'custom_title': 'Hello, world',
+        'custom_string': 'This is rendered from template.'
+    }
+
+    return render(request, 'hello_world/index.html', context)
+  ```
+
+Now, run the server, and see the results.
