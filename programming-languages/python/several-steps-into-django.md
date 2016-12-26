@@ -37,6 +37,53 @@ A project is a collection of apps in Django, and an app can also exist in differ
 To create an app for a project, go to the directory containing `manage.py` and type following command:
 
   ```console
-$ python manage.py startapp cool_app_name
+$ python manage.py startapp hello_world
   ```
 
+And then, we try to add some view into the application. Edit the `views.py` file in application level:
+
+  ```python
+from django.http import HttpResponse
+
+
+def index(request):
+    return HttpResponse("Hello, world.")
+  ```
+
+Now we already have a view returning the `Hello, world.` text. Now we are going to add an entry for the view (URL).
+
+Firstly, create and edit the `urls.py` in application level (not site level!):
+
+  ```python
+from django.conf.urls import url
+
+from . import views
+
+urlpatterns = [
+    url(r'^$', views.index, name='index'),
+]
+  ```
+
+This means, if we don't have anything in the URL path, then will call the `index` method defined in the `views` module. Currently I have no idea about the 3rd parameter.
+
+And the last step is to add our URLs in the application level to the site level. Edit the `urls.py` file in site level:
+
+  ```python
+from django.conf.urls import include, url
+from django.contrib import admin
+
+urlpatterns = [
+    url(r'^hello_world/', include('hello_world.urls')),
+    url(r'^admin/', admin.site.urls),
+]
+  ```
+
+## Run the Server to See the Changes
+
+Run django test server with following script:
+
+  ```console
+$ python manage.py runserver
+  ```
+
+Go to URL `http://localhost:8000/hello_world/` there will be the text `Hello, world.` shown on the screen.
