@@ -87,3 +87,20 @@ $ python manage.py runserver
   ```
 
 Go to URL `http://localhost:8000/hello_world/` there will be the text `Hello, world.` shown on the screen.
+
+## Apply a Template
+
+Now we could see that we are returning the `HttpResponse` directly. If we want it to be the HTML code, we'd better use the templating of Django.
+
+To apply a template, we have to firstly properly add our application to the site. So in the `settings.py` file in the site level, we edit like this:
+
+  ```python
+...
+
+INSTALLED_APPS = [
+    'hello_world.apps.HelloWorldConfig',
+    'django.contrib.admin',
+    'django.contrib.auth',
+
+...
+  ```
