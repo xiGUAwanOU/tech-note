@@ -1,6 +1,6 @@
 # Several Steps into Django
 
-## Install
+## 1. Install
 
 Just use the `pip` tool:
 
@@ -14,7 +14,7 @@ And check the version number like this:
 $ python -m django --version
   ```
 
-## Create a New Project
+## 2. Create a New Project
 
 One commnad:
 
@@ -30,7 +30,7 @@ $ python manage.py runserver
 
 This will start a test server locally. Use the URL shown in the stdout of this command, django will tell you that the local test server is running.
 
-## Add Some Content into the Project
+## 3. Add Some Content into the Project
 
 A project is a collection of apps in Django, and an app can also exist in different projects, which means project is modularized by apps.
 
@@ -78,7 +78,7 @@ urlpatterns = [
 ]
   ```
 
-## Run the Server to See the Changes
+## 4. Run the Server to See the Changes
 
 Run django test server with following script:
 
@@ -88,7 +88,7 @@ $ python manage.py runserver
 
 Go to URL `http://localhost:8000/hello_world/` there will be the text `Hello, world.` shown on the screen.
 
-## Apply a Template
+## 5. Apply a Template
 
 Now we could see that we are returning the `HttpResponse` directly. If we want it to be the HTML code, we'd better use the templating of Django.
 
