@@ -4,14 +4,14 @@ This article contains basically the content in the official video tutorial. The 
 
 There are 2 possibilities could be used for persist data across scenes and 1 for persist data across the different game run (save & load):
 
-## 1.1 Player Preferences
+## 1.1. Player Preferences
 
   ```csharp
 PlayerPrefs.SetInt("x", 100);
 int x = PlayerPrefs.GetInt("x");
   ```
 
-## 1.2 Singleton
+## 1.2. Singleton
 
   ```csharp
 public static SomeClass instance;
