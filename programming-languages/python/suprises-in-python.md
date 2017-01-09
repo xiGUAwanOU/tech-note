@@ -100,7 +100,7 @@ print(a)
 And run the scripts in console:
 
   ```console
-$ python3 test2.py
+$ python test2.py
 1
 1
   ```
@@ -108,7 +108,7 @@ $ python3 test2.py
 However, if we write `import test1`, `test1.a` and `test1.aPlusPlus()`, the result is:
 
   ```console
-$ python3 test2.py
+$ python test2.py
 1
 2
   ```
