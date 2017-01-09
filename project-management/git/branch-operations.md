@@ -25,6 +25,12 @@ $ git branch
 
 The current branch is marked by a `*` symbol.
 
+Sometimes you want to get a list of remote branches:
+
+  ```console
+$ git branch -r
+  ```
+
 We may also want to know which version the branch is currently pointing to. If so, try the following command:
 
   ```console
@@ -38,6 +44,8 @@ To switch to another branch, use:
   ```console
 $ git checkout <another_branch_name>
   ```
+
+This also works for the remote branches.
 
 ### Push Branch to Remote Server
 
