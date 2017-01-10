@@ -10,7 +10,7 @@ with open(input_file_path, 'r') as input_file:
 
 To read the whole file:
 
-  ```
+  ```python
 with open(input_file_path, 'r') as input_file:
     content = input_file.read()
   ```
