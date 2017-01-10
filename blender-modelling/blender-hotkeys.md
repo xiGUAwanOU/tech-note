@@ -19,3 +19,5 @@ All the hotkeys are default in MacOS systems, may be a little bit different in o
 * `E`: extrude;
 * `F`: fill line/face;
 * `X`: delete;
+* `CTRL` + `R`: loop cut;
+* `SHIFT` + `D`: duplicate;
