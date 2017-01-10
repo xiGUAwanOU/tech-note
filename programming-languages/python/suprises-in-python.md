@@ -116,3 +116,52 @@ $ python test2.py
 The reason of the different behaviour is `from ... import ...` will __copy the global variables by values__ (not by references), which means the `a` in `test1.py` and `test2.py` are actually different objects (immutable types). However, although `aPlusPlus` in `test1.py` and `test2.py` are different variables, they still refer to the same function (mutable types) (I guess so... I've not read the source code of python interpreter yet). As a result, the call to `aPlusPlus()` will only update the `a` object in `test1.py`, while `print(a)` will print the value of `a` object in `test2.py`, so the second result printed is `1`.
 
 With `import ...`, things are different. It just __make the references__ to `a` and `aPlusPlus` __availabe__ in `test2.py`, but will not copy them. Thus, the object updated by `test1.aPlusPlus()` and printed by `print(test1.a)` are actually identical, so the second result printed is `2`.
+
+## 5. About Lambda Expressions and List Comprehension
+
+Read the code below:
+
+  ```python
+def create_multipliers():
+    return [lambda x : i * x for i in range(5)]
+for multiplier in create_multipliers():
+    print(multiplier(2))
+  ```
+
+Instead of：
+
+  ```text
+0
+2
+4
+6
+8
+  ```
+
+The result is actually:
+
+  ```text
+8
+8
+8
+8
+8
+  ```
+
+This is because the closures in Python are __late binding__, which means that the values of variables used in closures are looked up at the time the inner function is called.
+
+The following code could help us to understand this:
+
+  ```python
+def create_multipliers():
+    multipliers = []
+
+    for i in range(5):
+        def multiplier(x):
+            return i * x
+        multipliers.append(multiplier)
+
+    return multipliers
+  ```
+
+At the time that the inner `multiplier` function is called, the `for` statement has already finished its running, so the `i` should be `4`. This is why all the functions are returning 8.
