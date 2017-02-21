@@ -18,13 +18,14 @@ Following code is an example:
 
   ```java
 public boolean equals(Object o) {
-  if (this == o) {
+	if (this == o) {
 		return true;
 	}
 
 	if (!(o instanceof MyType)) {
 		return false;
 	}
+	
 	MyType mt = (MyType) o;
 
 	return name.equals(mt.name);
