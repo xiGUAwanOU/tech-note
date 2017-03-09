@@ -16,4 +16,8 @@ There are 3 commends used in the example:
   3. `$project`: filters specified fields out of the results.
 
 Besides the 3 commands mentioned above:
-  * `$match`: filters the documents to pass only the documents that match the specified condition(s), e.g.: `{ $match : { author : "dave" } }`;
+  * `$match`: filters the documents to pass only the documents that match the specified condition(s)
+  
+  ```javascript
+{ $match : { author : "dave" } }
+  ```
