@@ -10,7 +10,10 @@ db.segments.aggregate([
 ]);
   ```
 
-The `$unwind` command is used to flat a document containing an array to different documents containing one item of the array. The `$group` command is used to group the results according to the conditions defined. The `$project` command is used for filtering specified fields out of the results.
+There are 3 commends used in the example:
+  1. the `$unwind` command is used to flat a document containing an array to different documents containing one item of the array;
+  2. the `$group` command is used to group the results according to the conditions defined;
+  3. the `$project` command is used for filtering specified fields out of the results.
 
 Besides the 3 commands mentioned above:
   * `$match`: filters the documents to pass only the documents that match the specified condition(s), e.g.: `{ $match : { author : "dave" } }`;
