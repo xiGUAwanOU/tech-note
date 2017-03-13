@@ -1,7 +1,5 @@
 # After Broken Things in Live
 
-TL;DR. RUN AWAY AS FAST AS YOU CAN!
-
 After have broken an important service in the live environment, I've reviewed the whole developing process carefully, and finally summarized several points, that could prevent this kind of problems. So basically the problem is, in the live environment, there are always more possibilities than you expected.
 
 So:
