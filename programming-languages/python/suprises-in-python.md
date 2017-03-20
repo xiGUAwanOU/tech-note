@@ -8,12 +8,12 @@ See the source code below:
 
   ```python
 class SimpleClass:
-  def __init__(self):
-    self.i = 42
+    def __init__(self):
+        self.i = 42
 
 def func(a = SimpleClass()):
-  print(a.i)
-  a.i = 43
+    print(a.i)
+        a.i = 43
 
 func()
 func()
@@ -27,13 +27,13 @@ See the example below:
 
   ```python
 class A:
-  x = 1
+    x = 1
 
 class B(A):
-  pass
+    pass
 
 class C(A):
-  pass
+    pass
   ```
 
 Now, let's try:
@@ -84,8 +84,8 @@ Say, there are two python source code files:
 # In test1.py
 a = 1
 def aPlusPlus():
-  global a
-  a += 1
+    global a
+    a += 1
   ```
 
   ```python
