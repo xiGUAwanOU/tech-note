@@ -13,7 +13,7 @@ class SimpleClass:
 
 def func(a = SimpleClass()):
     print(a.i)
-        a.i = 43
+    a.i = 43
 
 func()
 func()
