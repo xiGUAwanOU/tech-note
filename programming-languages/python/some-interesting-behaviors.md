@@ -1,4 +1,4 @@
-# Some Behaviors
+# Some Interesting Behaviors
 
 The function `get_array` will only be called once:
 
