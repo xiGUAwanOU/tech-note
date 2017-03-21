@@ -18,7 +18,7 @@ Using dictionary configurations still allows us to configure loggers with a file
 
 An example of configuration dictionary:
 
-  ```python
+```python
 logConf = {
   'version': 1,
   'disable_existing_loggers': True,
@@ -47,7 +47,7 @@ logConf = {
     'handlers' : ['fileHandler']
   }
 }
-  ```
+```
 
 In [PEP 282](https://www.python.org/dev/peps/pep-0282/) there is a list of format components.
 
@@ -55,7 +55,7 @@ In [PEP 282](https://www.python.org/dev/peps/pep-0282/) there is a list of forma
 
 To use the configured loggers:
 
-  ```python
+```python
 logging.config.dictConfig(logConf)
 logger = logging.getLogger('testLogger')
 logger.debug('Debug message.')
@@ -63,4 +63,10 @@ logger.info('Info message.')
 logger.warn('Warn message.')
 logger.error('Error message.')
 logger.critical('Critical message.')
-  ```
+```
+
+We could also log something without create a logger:
+
+```python
+logging.debug('Debug message.')
+```
