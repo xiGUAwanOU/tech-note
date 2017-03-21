@@ -1,4 +1,4 @@
-# Select Lines
+# Select Lines from Text File
 
 Just use following command:
 
