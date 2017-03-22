@@ -2,13 +2,13 @@
 
 Forgot to note the usage of aggregations in the MongoDB queries. Here I'll only show some examples:
 
-  ```javascript
+```javascript
 db.segments.aggregate([
   { $unwind: "$items" },
   { $group: { _id: { gameId: "$gameId", items_property: "$items.property" } } },
   { $project: { _id: 0, gameId: "$_id.gameId", "property": "$_id.items_property" } }
 ]);
-  ```
+```
 
 There are 3 commends used in the example:
   1. `$unwind`: flats a document containing an array to different documents containing one item of the array;
@@ -18,6 +18,6 @@ There are 3 commends used in the example:
 Besides the 3 commands mentioned above:
   * `$match`: filters the documents to pass only the documents that match the specified condition(s)
   
-  ```javascript
+```javascript
 { $match : { author : "dave" } }
-  ```
+```
