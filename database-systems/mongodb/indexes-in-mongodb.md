@@ -48,6 +48,16 @@ If the unique field is optional, then use sparse option to avoid errors while in
 db.collection.createIndex( { a: 1 }, { unique: true, sparse: true } );
 ```
 
+### Multikey Index
+
+In MongoDB, we could create an index for each sub-documents in an array. Simply use following call to do that:
+
+```javascript
+db.collection.createIndex( { "qualifiers.name": 1 } );
+```
+
+Notice that, there can be only one multikey index in a collection.
+
 ### List Indexes for Collection
 
 ```javascript
