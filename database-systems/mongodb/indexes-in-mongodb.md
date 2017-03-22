@@ -47,3 +47,11 @@ If the unique field is optional, then use sparse option to avoid errors while in
 ```javascript
 db.collection.createIndex( { a: 1 }, { unique: true, sparse: true } );
 ```
+
+### List Indexes for Collection
+
+```javascript
+db.collection.getIndices()
+```
+
+This call will display a list of all the indices that a collection has.
