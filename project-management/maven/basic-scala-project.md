@@ -1,6 +1,6 @@
 # Basic Scala Project
 
-  ```xml
+```xml
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>xigua</groupId>
@@ -86,7 +86,7 @@
     </plugins>
   </build>
 </project>
-  ```
+```
 Notice:
 
   * This `pom.xml` file is based on the maven archetype `net.alchim31.maven:scala-archetype-simple`;

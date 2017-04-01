@@ -2,10 +2,10 @@
 
 Just like this:
 
-  ```gradle
+```gradle
 compileJava {
   dependsOn anotherTask
 }
-  ```
+```
 
 Here, `compileJava` task is from `java` plugin.

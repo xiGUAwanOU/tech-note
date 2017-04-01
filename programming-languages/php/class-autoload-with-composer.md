@@ -16,7 +16,7 @@ And the source codes should be like this:
 
 The `composer.json` file:
 
-  ```json
+```json
 {
   "autoload" : {
     "psr-4" : {
@@ -24,17 +24,17 @@ The `composer.json` file:
     }
   }
 }
-  ```
+```
 
 After editing the `composer.json` file, we must run following command to dump the autoload information:
 
-  ```console
+```console
 $ composer dumpautoload
-  ```
+```
 
 The `pkg1/Class1.php` file:
 
-  ```php
+```php
 <?php
 namespace ns1\pkg1;
 
@@ -46,11 +46,11 @@ class Class1 {
     return $ac2->go() . PHP_EOL . 'Class1';
   }
 }
-  ```
+```
 
 The `pkg2/AnotherClass2.php` file:
 
-  ```php
+```php
 <?php
 namespace ns1\pkg2;
 
@@ -59,11 +59,11 @@ class AnotherClass2 {
     return 'AnotherClass2';
   }
 }
-  ```
+```
 
 The `Main.php` file:
 
-  ```php
+```php
 <?php
 require_once ('vendor/autoload.php');
 
@@ -71,4 +71,4 @@ use \ns1\pkg1\Class1;
 
 $c1 = new Class1();
 echo $c1->go();
-  ```
+```

@@ -2,6 +2,6 @@
 
 The best (maybe) practise would be use `File.join` method:
 
-  ```ruby
+```ruby
 full_path = File.join(base_dir, filename)
-  ```
+```

@@ -6,19 +6,19 @@ Here is a brief tutorial about Chef 12. I've done it with the tutorial provided 
 
 The first recipe could be like this:
 
-  ```ruby
+```ruby
 file '/tmp/motd' do
   content 'hello world'
 end
-  ```
+```
 
 This recipe describes the desired state of the MOTD file (being created, containing the specified text, etc.). Then run the `chef-client` command, the Chef code then will be read to fulfill the desired state.
 
 For example, go with:
 
-  ```console
+```console
 $ chef-client --local-mode hello.rb
-  ```
+```
 
 The desired state will be reached automatically:
 * if we run the command for the first time, a file in `/tmp/motd` containing `hello world` will be created;
@@ -28,11 +28,11 @@ The desired state will be reached automatically:
 
 If we want to clean things up, for example, like delete the file created, just write another recipe:
 
-  ```ruby
+```ruby
 file '/tmp/motd' do
   action :delete
 end
-  ```
+```
 
 And run with the command above, the MOTD file will be deleted automatically.
 
@@ -45,7 +45,7 @@ The summary provided by the official tutorial is very good:
 
 This recipe updates the `apt-get` repo, installs `apache` automatically, starts it, and creates a webpage for it:
 
-  ```ruby
+```ruby
 apt_update 'Update the apt cache daily' do
   frequency 86_400
   action :periodic
@@ -65,37 +65,37 @@ file '/var/www/html/index.html' do
   </body>
 </html>'
 end
-  ```
+```
 
 ## 3. Structure of the Recipes
 
 Create a cookbook to hold recipes:
 
-  ```console
+```console
 $ chef generate cookbook /path/to/cookbooks/cookbooks_name
-  ```
+```
 
 _Notice: the folder which holds the cookbooks should be named `cookbooks`, because some commands search cookbooks in this folder._
 
 To split up different kind of source codes other than the ruby code, we could use template:
 
-  ```console
+```console
 $ chef generate template /path/to/cookbooks/cookbooks_name index.html
-  ```
+```
 
 Then, write following HTML codes into the `index.html` file:
 
-  ```html
+```html
 <html>
   <body>
     <h1>hello world</h1>
   </body>
 </html>
-  ```
+```
 
 Write a `default.rb` into the `recipes` folder:
 
-  ```ruby
+```ruby
 package 'apache2'
 
 service 'apache2' do
@@ -105,16 +105,16 @@ end
 template '/var/www/html/index.html' do
   source 'index.html.erb'
 end
-  ```
+```
 
 Then, run the command to execute a recipe in a cookbook:
 
-  ```console
+```console
 $ sudo chef-client --local-mode --runlist 'recipe[cookbook_name]'
-  ```
+```
 
 This will execute the `default` recipes in the cookbook, which is equivalent to:
 
-  ```console
+```console
 $ sudo chef-client --local-mode --runlist 'recipe[cookbook_name::default]'
-  ```
+```

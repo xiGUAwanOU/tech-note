@@ -2,6 +2,6 @@
 
 Simply use the `-F` option:
 
-  ```awk
+```awk
 awk -F ":" '{print $2}' example.txt
-  ```
+```

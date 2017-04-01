@@ -2,9 +2,9 @@
 
 _Update: a short version of the implementation of the `equals`._
 
-  ```java
+```java
 return (obj != null && this.getClass() == obj.getClass()) && this.value == ((MyType) obj).value;
-  ```
+```
 
 To implement the euqals method, following conditions must be meet:
 
@@ -16,7 +16,7 @@ To implement the euqals method, following conditions must be meet:
 
 Following code is an example:
 
-  ```java
+```java
 public boolean equals(Object o) {
 	if (this == o) {
 		return true;
@@ -30,7 +30,7 @@ public boolean equals(Object o) {
 
 	return name.equals(mt.name);
 }
-  ```
+```
 
 And don't forget the hash code! A simple recipe from _Effective Java (2nd Edition)_:
 

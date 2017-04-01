@@ -2,7 +2,7 @@
 
 There is an example that should explain everyhing:
 
-  ```python
+```python
 import argparse
 
 parser = argparse.ArgumentParser()
@@ -18,5 +18,5 @@ print args.echo
 print args.square ** 2
 if args.verbose:
     print("I won't say nothing.")
-  ```
+```
 

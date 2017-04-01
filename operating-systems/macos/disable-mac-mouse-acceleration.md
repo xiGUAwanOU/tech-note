@@ -2,6 +2,6 @@
 
 Just type following command into the console:
 
-  ```console
+```console
 $ defaults write .GlobalPreferences com.apple.mouse.scaling -1
-  ```
+```

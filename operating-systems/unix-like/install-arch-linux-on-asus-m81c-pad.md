@@ -18,42 +18,42 @@ After the Arch Linux USB drive is prepared, connect it to the device and boot it
 
 Install the driver program for network adapter:
 
-  ```console
+```console
 # cp /sys/firmware/efi/efivars/nvram-74b00bd9-805a-4d61-b51f-43268123d113 /lib/firmware/brcm/brcmfmac43340-sdio.txt
 
 # rmmod brcmfmac
 # modprobe brcmfmac
-  ```
+```
 
 Create a wifi description file `wpa_supplicant.conf`, and write following text into it:
 
-  ```text
+```text
 network={
     ssid="whatever-it-is"
     psk="no_password"
 }
-  ```
+```
 
 And connect to Internet:
 
-  ```console
+```console
 # ip link set dev wlan0 up
 // Maybe kill running wpa_supplicant here...
 # wpa_supplicant -B -i wlan0 -c /etc/wpa_supplicant/wpa_supplicant.conf
 # dhcpcd wlan0
-  ```
+```
 
 Set the local time from network time provider:
 
-  ```console
+```console
 # timedatectl set-ntp true
-  ```
+```
 
 ## Prepare the Hard Drive
 
 To partition and format the Hard Drive, follow the instructions below:
 
-  ```console
+```console
 # fdisk -l
 # mkfs.fat -F32 /dev/mmcblk0p1
 # mkfs.ext4 /dev/mmcblk0p2
@@ -63,88 +63,88 @@ To partition and format the Hard Drive, follow the instructions below:
 # mount /dev/mmcblk0p2 /mnt
 # mkdir /mnt/boot
 # mount /dev/mmcblk0p1 /mnt/boot
-  ```
+```
 
 ## Install the Base System
 
 To install the base system:
 
-  ```console
+```console
 # pacstrap /mnt base
-  ```
+```
 
 After that, we need to generate the file system table:
 
-  ```console
+```console
 # genfstab -U /mnt >> /mnt/etc/fstab
-  ```
+```
 
 Check if the UUID is correct here! And maybe write the correct UUIDs to somewhere else, since the generated `fstab` file could be automatically modified for some unknown reason later.
 
 Change the root folder to new partition:
 
-  ```console
+```console
 # arch-chroot /mnt
-  ```
+```
 
 ## Set the Time Zone and Locale
 
 Set time zone:
 
-  ```console
+```console
 # ln -s /usr/share/zoneinfo/Europe/Berlin /etc/localtime
 # hwclock --systohc --utc
-  ```
+```
 
 Set locale:
 
-  ```console
+```console
 # nano /etc/locale.gen
 # locale-gen
 # echo LANG=en_US.UTF-8 > /etc/locale.conf
-  ```
+```
 
 ## Set Hostname and Password
 
 Set hostname (change `arch-pad` below to the real hostname):
 
-  ```console
+```console
 # echo arch-pad > /etc/hostname
-  ```
+```
 
 Set root password:
 
-  ```console
+```console
 # passwd
-  ```
+```
 
 ## Create GRUB Configuration File
 
 Firstly download the package, and make the configuration file:
 
-  ```console
+```console
 # pacman -S grub efibootmgr
 # grub-install --target=i386-efi --efi-directory=/boot --bootloader-id=GRUB
 
 # pacman -S intel-ucode
 # grub-mkconfig -o /boot/grub/grub.cfg
 # grep intel-ucode.img /boot/grub/grub.cfg
-  ```
+```
 
 ## Install Driver for Network Adapter
 
 Never forget this, this is for new system!!
 
-  ```console
+```console
 # pacman -S iw wpa_supplicant dialog linux-firmware
-  ```
+```
 
 ## Exit from New System and Reboot
 
 Installation is finished, exit, umount eveything, reboot and enjoy:
 
-  ```console
+```console
 # exit
 # umount -R /mnt
 # reboot
-  ```
+```

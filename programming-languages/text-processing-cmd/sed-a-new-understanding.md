@@ -4,20 +4,20 @@ Notice: in BSD systems, the commands mentioned in this article are only availabl
 
 Sed is definitely a tiny programming language interpreter. Say we have a test file like below:
 
-  ```text
+```text
 ...
 
 begin
 end
 
 ...
-  ```
+```
 
 And we want to add a new line between the `begin` and `end` lines. We could use the following command:
 
-  ```console
+```console
 $ sed "/begin/{N;s/end/  hello world\nend/}" test-sed.txt
-  ```
+```
 
 In this command, there are 3 kinds of commands:
 

@@ -2,7 +2,7 @@
 
 The idea is to group documents with their duplicate keys, get a list of `_id` of duplicates for each key, and then remove all documents in the list except the first one:
 
-  ```javascript
+```javascript
 db.<collection_name>.aggregate([
     {
         $group: {
@@ -21,4 +21,4 @@ db.<collection_name>.aggregate([
     doc.dups.shift();
     db.textAnnotations.remove({ _id: { $in: doc.dups } });
 });
-  ```
+```

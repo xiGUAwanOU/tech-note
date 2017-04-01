@@ -1,6 +1,6 @@
 # InputStream From GZip File
 
-  ```java
+```java
 FileInputStream fis = new FileInputStream(
         getClass().getResource("somefile.gz").getPath());
 
@@ -13,6 +13,6 @@ while ((read = in.readLine()) != null) {
 }
 		
 buffin.close();
-  ```
+```
 
 In the code above, we read a GZip file called `somefile.gz` from the resources folder, and then print the content in the file line by line.

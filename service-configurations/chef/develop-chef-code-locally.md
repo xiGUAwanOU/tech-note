@@ -17,41 +17,41 @@ To start the development with Chef, we should firstly install **Chef Development
 
 That's very simple. Firstly create a new cookbook called `motd_ubuntu`:
 
-  ```console
+```console
 $ chef generate cookbook /path/to/cookbooks/motd_ubuntu
-  ```
+```
 
 And then create a template for `server-info` file:
 
-  ```console
+```console
 $ chef generate template cookbooks/motd_ubuntu server-info
-  ```
+```
 
 With the content below:
 
-  ```bash
+```bash
 #!/bin/sh
 
 printf "\nhostname:  <%= node['hostname'] %>"
 printf "\nfqdn:      <%= node['fqdn'] %>"
 printf "\nmemory:    <%= node['memory']['total'] %>"
 printf "\ncpu count: <%= node['cpu']['total'] %>\n"
-  ```
+```
 
 And then write the `default.rb` file:
 
-  ```ruby
+```ruby
 template '/etc/update-motd.d/98-server-info' do
   source 'server-info.erb'
   mode '0755'
 end
-  ```
+```
 
 ## 3. Build the Kitchen
 
 Now comes the main part. We have to build a kitchen for Chef and his cookbooks and recipes. This can be done easily by writing some configurations into `.kitchen.yml` file:
 
-  ```yml
+```yml
 ---
 driver:
   name: vagrant
@@ -70,29 +70,29 @@ suites:
     run_list:
       - recipe[motd_ubuntu::default]
     attributes:
-  ```
+```
 
 After the configuration is done, run following command to start the instance:
 
-  ```console
+```console
 $ kitchen create
-  ```
+```
 
 This will last very very long, since it needs to download the Ubuntu virtual machine mirror from the Internet.
 
 We could run the following command to see the current status of the virtual machines:
 
-  ```console
+```console
 $ kitchen list
-  ```
+```
 
 ## 4. Do Something in the Kitchen
 
 After we have created the virtual machine, we have to apply our cookbooks on it. To do this, simply run the following command:
 
-  ```console
+```console
 $ kitchen converge
-  ```
+```
 
 Done.
 
@@ -100,9 +100,9 @@ Done.
 
 Once the cookbooks are applied on the virtual machine, we could login to the machine to check the result. Use the following command to login to the virtual machine:
 
-  ```console
+```console
 $ kitchen login
-  ```
+```
 
 This calls the SSH client to login to the virtual machine. Then the MOTD will be shown once we have logged in.
 
@@ -110,8 +110,8 @@ This calls the SSH client to login to the virtual machine. Then the MOTD will be
 
 To destroy anything after cooking and eating, just call the following command:
 
-  ```console
+```console
 $ kitchen destroy
-  ```
+```
 
 After that, if you call `kitchen list`, a `<Not Created>` will be shown at the column `Last Action`.

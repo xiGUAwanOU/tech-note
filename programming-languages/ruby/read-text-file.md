@@ -2,6 +2,6 @@
 
 Read all lines from a text file:
 
-  ```ruby
+```ruby
 lines = File.readlines('/path/to/the/file.txt')
-  ```
+```

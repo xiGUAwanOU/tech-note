@@ -2,12 +2,12 @@
 
 In short, add this to the environment variable:
 
-  ```console
+```console
 export MAVEN_OPTS="-Xmx4096m"
-  ```
+```
 
 Or run maven like this:
 
-  ```console
+```console
 $ MAVEN_OPTS="-Xmx4096m"; mvn pakcage
-  ```
+```

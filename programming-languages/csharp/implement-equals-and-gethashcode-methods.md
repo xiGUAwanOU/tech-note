@@ -2,7 +2,7 @@
 
 Following is an example. In the `Equals()` implementation, it is optional to test the condition `if (this == o)`.
 
-  ```csharp
+```csharp
 public override bool Equals(object obj) {
     Matcher o = (Matcher)obj;
     if ((object)o == null) {
@@ -26,4 +26,4 @@ public override int GetHashCode() {
     }
     return res;
 }
-  ```
+```

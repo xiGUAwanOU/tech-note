@@ -7,13 +7,13 @@ For a source code highlighting language list, see [linguist project](https://git
 
 ### Images
 
-   ```markdown
+```markdown
 ![alt text](https://hostname.net/path/to/image.png)
-   ```
+```
 
 ### TODOs List
 
-  ```markdown
+```markdown
 - [ ] not finished
 - [x] finished
-  ```
+```

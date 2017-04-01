@@ -2,24 +2,24 @@
 
 To enable sharding for a specified database, we should firstly connect to mongos with mongo shell. And then run the following commands:
 
-  ```javascript
+```javascript
 sh.enableSharding("<database>")
-  ```
+```
 
 To shard a colleciont, run the following commands:
 
-  ```javascript
+```javascript
 sh.shardCollection("<database>.<collection>", shard-key-pattern)
-  ```
+```
 
 Some example from the MongoDB official website:
 
-  ```javascript
+```javascript
 sh.shardCollection("records.people", { "zipcode": 1, "name": 1 } )
 sh.shardCollection("people.addresses", { "state": 1, "_id": 1 } )
 sh.shardCollection("assets.chairs", { "type": 1, "_id": 1 } )
 sh.shardCollection("events.alerts", { "_id": "hashed" } )
-  ```
+```
 
 `1` means the field is an indexed key and `"hashed"` means the field is a hashed key. Pattern must either be a single hashed field, or a list of ascending (indexed) fields.
 

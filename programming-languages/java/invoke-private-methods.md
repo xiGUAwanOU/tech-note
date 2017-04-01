@@ -2,7 +2,7 @@
 
 This is a helper method to invoke a private method:
 
-  ```java
+```java
 public static Object invoke(Class<?> clazz, Object object, String methodName, Class<?>[] paramTypes, Object[] args)
   		throws NoSuchMethodException, SecurityException, IllegalAccessException, IllegalArgumentException,
 		InvocationTargetException {
@@ -10,4 +10,4 @@ public static Object invoke(Class<?> clazz, Object object, String methodName, Cl
 	m.setAccessible(true);
 	return m.invoke(object, args);
 }
-  ```
+```

@@ -9,7 +9,7 @@ There are 4 things related to mutex:
 
 An example:
 
-  ```c
+```c
 #include <pthread.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -64,6 +64,6 @@ int main(int argc, char * argv[]) {
 
     pthread_exit(NULL);
 }
-  ```
+```
 
 There are a producer and a consumer in this program. Producer adds 1 to the counter for 10 times and consumer minus 1 from the counter for 10 times. The mutex is used to keep the counter from being operated from producer and consumer at the same time, so that there is no consistency problem between the real values and the printed values.

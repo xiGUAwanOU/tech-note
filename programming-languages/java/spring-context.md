@@ -4,7 +4,7 @@ This is the Spring way to do the code injection.
 
 Dependency of Spring Framework:
 
-  ```xml
+```xml
   <dependencies>
     <dependency>
         <groupId>org.springframework</groupId>
@@ -12,19 +12,19 @@ Dependency of Spring Framework:
         <version>4.3.1.RELEASE</version>
     </dependency>
   </dependencies>
-  ```
+```
   
 Firstly, create an interface with `getMessage()` method:
 
-  ```java
+```java
 public interface MessageService {
     String getMessage();
 }
-  ```
+```
   
 Then, create a class which uses the `MessageService` interface:
 
-  ```java
+```java
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -42,13 +42,13 @@ public class MessagePrinter {
         System.out.println(service.getMessage());
     }
 }
-  ```
+```
 
 Notice that the class is annotated with `@Component`, which means it should be one of the candidates for auto-detection. The annotation `@Autowired` could also be applied on the private fields, which means the fields should be resolved as dependencies.
 
 Finally, we wire everything together:
 
-  ```java
+```java
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.*;
 
@@ -72,7 +72,7 @@ public class Application {
         printer.printMessage();
     }
 }
-  ```
+```
 
 The annotation `@Configuration` indicates that this class contains definitions of Beans. The annotation `@ComponentScan` indicates the components are automatically scanned. And the annotation `@Bean` means the annotated method is a definition of Bean.
 

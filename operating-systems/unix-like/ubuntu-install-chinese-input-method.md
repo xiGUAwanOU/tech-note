@@ -2,9 +2,9 @@
 
 The most popular input method framework for Chinese input methods currently on Ubuntu should be `fcitx` (instead of `ibus`). To install it:
 
-  ```console
+```console
 $ sudo apt-get install fcitx fcitx-googlepinyin
-  ```
+```
 
 After installation, we may need to set default input method from `ibus` to `fcitx`. To do this:
 

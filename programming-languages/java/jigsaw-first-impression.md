@@ -8,14 +8,14 @@ To make a modularized project, follow the steps below:
 
   1. let's make the first module, create following two files:
   
-    ```text
+ ```text
   src/xigua.java9.module1/xigua/java9/module1/HelloPrinter.java
   src/xigua.java9.module1/module-info.java
-    ```
+ ```
   
     With the contents:
     
-    ```console
+ ```console
   $ cat src/xigua.java9.module1/module-info.java
   module xigua.java9.module1 {
       exports xigua.java9.module1;
@@ -28,18 +28,18 @@ To make a modularized project, follow the steps below:
           System.out.println("hello world");
       }
   }
-    ```
+ ```
   
   2. and then the next module:
   
-    ```text
+ ```text
   src/xigua.java9.module2/xigua/java9/module2/Main.java
   src/xigua.java9.module2/module-info.java
-    ```
+ ```
   
     With the contents:
   
-    ```console
+ ```console
   $ cat src/module2/module-info.java
   module xigua.java9.module2 {
       requires module1;
@@ -53,17 +53,17 @@ To make a modularized project, follow the steps below:
           new HelloPrinter().sayHello();
       }
   }
-    ```
+ ```
   
   3. before compiling, create a directory to hold the compiling results:
   
-    ```console
+ ```console
   $ mkdir -p mods/xigua.java9.module1 mods/xigua.java9.module2
-    ```
+ ```
   
   4. then, let's compile the source codes:
   
-    ```console
+ ```console
   $ javac -d mods/xigua.java9.module1 \
     src/xigua.java9.module1/module-info.java \
     src/xigua.java9.module1/xigua/java9/module1/HelloPrinter.java
@@ -71,13 +71,13 @@ To make a modularized project, follow the steps below:
   $ javac --module-path mods -d mods/xigua.java9.module2 \
     src/xigua.java9.module2/module-info.java \
     src/xigua.java9.module2/xigua/java9/module2/Main.java
-    ```
+ ```
   
   5. run the program with following command:
   
-    ```console
+ ```console
   $ java --module-path mods -m xigua.module2/xigua.java9.module2.Main
   hello world
-    ```
+ ```
 
 ## How About JAR?

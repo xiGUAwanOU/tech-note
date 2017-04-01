@@ -4,7 +4,7 @@ In Linux, MongoDB will copy a default configuration file in `/etc/mongod.conf` o
 
 The content of a default configuration file should be like this:
 
-  ```yaml
+```yaml
 storage:
     dbPath: D:\tools\MongoDB3.2\db
     journal:
@@ -21,4 +21,4 @@ net:
 
 #security:
 #    authorization: enabled
-  ```
+```

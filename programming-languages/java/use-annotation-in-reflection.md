@@ -2,16 +2,16 @@
 
 To define an annotation for methods:
 
-  ```java
+```java
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.METHOD)
 public @interface Feature {
 }
-  ```
+```
 
 To get those annotated methods:
 
-  ```java
+```java
 private Set<Method> getMethodsAnnotatedWithFeature(Class<?> type) {
 	Set<Method> methods = new HashSet<Method>();
 
@@ -31,4 +31,4 @@ private Set<Method> getMethodsAnnotatedWithFeature(Class<?> type) {
 
 	return methods;
 }
-  ```
+```

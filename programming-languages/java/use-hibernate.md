@@ -6,7 +6,7 @@ The goal of this document is to implement the creation of record with the help o
 
 Firstly, the dependency of Hibernate and JDBC driver:
 
-  ```xml
+```xml
 <dependency>
     <groupId>org.hibernate</groupId>
     <artifactId>hibernate-core</artifactId>
@@ -18,11 +18,11 @@ Firstly, the dependency of Hibernate and JDBC driver:
     <artifactId>mysql-connector-java</artifactId>
     <version>6.0.2</version>
 </dependency>
-  ```
+```
 
 And then, our data model looks like this:
 
-  ```java
+```java
 @Entity(name = "Messages")
 public class Message {
     @Id
@@ -35,7 +35,7 @@ public class Message {
 
     
     ...
-  ```
+```
 
 Notice:
 
@@ -44,7 +44,7 @@ Notice:
 
 The corresponding MySQL table should be like this:
 
-  ```sql
+```sql
 create table Messages (
     id integer not null auto_increment,
     fromName varchar(255),
@@ -53,7 +53,7 @@ create table Messages (
     message varchar(255),
     primary key (id)
 ) engine=InnoDB default charset=utf8;
-  ```
+```
 
 Ok, in the next step we should configure the Hibernate. As it is said in the offical document, the configuration follows the 3 steps below:
 
@@ -63,7 +63,7 @@ Ok, in the next step we should configure the Hibernate. As it is said in the off
 
 The configurations are like below:
 
-  ```java
+```java
     public void bootstrap() {
         ServiceRegistry serviceRegistry = configureServiceRegistry();
         Metadata metadata = configureMetadata(serviceRegistry);
@@ -97,13 +97,13 @@ The configurations are like below:
 
         return result;
     }
-  ```
+```
 
 Here we have explictly specified the mapper class. There is no way to scan mapper classes in a package with Hibernate alone. If we want to do this, use a framework (for example Spring) instead.
 
 Now, the creation of the data should be like this:
 
-  ```java
+```java
     public void create() {
         Session session = sessionFactory.openSession();
         Transaction tx = session.beginTransaction();
@@ -120,12 +120,12 @@ Now, the creation of the data should be like this:
 
         System.out.println("Added message with ID: " + messageId);
     }
-  ```
+```
 
 Finally, don't forget to close the sessionFactory, otherwise the program will not stop:
 
-  ```java
+```java
     public void cleanUp() {
         sessionFactory.close();
     }
-  ```
+```

@@ -4,7 +4,7 @@ To use Monolog, firstly we need to add a dependency in `composer.json`. Dependen
 
 The code below is an example of the Monolog configurations:
 
-  ```php
+```php
 use Monolog\Logger;
 use Monolog\Handler\StreamHandler;
 
@@ -20,7 +20,7 @@ $logger->pushHandler($stream);
 
 // Start logging with following method calls:
 $logger->addInfo('Hello world!');
-  ```
+```
 
 First two lines used required class names.
 

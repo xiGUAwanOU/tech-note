@@ -4,7 +4,7 @@ The multi-threading is actually implemented by operating systems. I have chosen 
 
 The code below is a simple example:
 
-  ```c
+```c
 #include <pthread.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -31,13 +31,13 @@ int main(int argc, char * argv[]) {
 
     pthread_exit(NULL);
 }
-  ```
+```
 
 To compile this example use clang in LLVM, just type the following command:
 
-  ```console
+```console
 $ clang example.c -o example -pthread
-  ```
+```
 
 The code is no hard to understand. However there are still some details to be clarified.
 
@@ -51,7 +51,7 @@ The code is no hard to understand. However there are still some details to be cl
 
 `pthread_create` is used to create a new thread, the prototype of the function is:
 
-  ```c
+```c
 #include <pthread.h>
 
 int pthread_create(
@@ -59,7 +59,7 @@ int pthread_create(
     const pthread_attr_t *attr,
     void *(*start_routine) (void *),
     void *arg);
-  ```
+```
 
   * `thread`: an output parameter used to hold the ID of the thread created by this function call.
   * `attr`: defines some attributes of the newly created thread.

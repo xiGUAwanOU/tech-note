@@ -4,23 +4,23 @@
 
 A basic LaTeX code could be like this:
 
-  ```latex
+```latex
 \documentclass{article}
 
 \begin{document}
 Hello world! 
 \end{document}
-  ```
+```
 
 We could build it with command:
 
-  ```console
+```console
 $ pdflatex document.tex
-  ```
+```
 
 Add more information to the document:
 
-  ```latex
+```latex
 \documentclass{article}
 \author{My Name}
 \title{The Title}
@@ -28,13 +28,13 @@ Add more information to the document:
 \maketitle
 hello, world % This is comment
 \end{document}
-  ```
+```
 
 Compile again, now there will be a title part at the beginning of the document.
 
 Now we add structure to the document:
 
-  ```latex
+```latex
 \documentclass{article}
 \title{The Title}
 \author{My Name}
@@ -48,7 +48,7 @@ Now we add structure to the document:
 \subsection{Goodbye World} This is another sub-section.
 \paragraph{Hum} There is another paragraph.
 \end{document}
-  ```
+```
 
 ### MISC.
 

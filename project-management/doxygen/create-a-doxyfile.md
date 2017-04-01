@@ -2,9 +2,9 @@
 
 To create a `Doxyfile` for a project, goto the root directory of the project, and then run:
 
-  ```console
+```console
 $ doxygen -g
-  ```
+```
 
 The Doxygen will generate a default `Doxyfile` in the working directory.
 

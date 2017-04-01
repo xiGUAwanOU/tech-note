@@ -8,7 +8,7 @@ This article only covers part 1 of the original article. For more detailed infor
 
 Use embedding documents:
 
-  ```javascript
+```javascript
 {
   name: 'Kate Monster',
   ssn: '123-456-7890',
@@ -17,7 +17,7 @@ Use embedding documents:
     { street: '123 Avenue Q', city: 'New York', cc: 'USA' }
   ]
 }
-  ```
+```
 
 ## 1-to-Many
 
@@ -25,7 +25,7 @@ Use "child" references.
 
 The "child" document should be like this:
 
-  ```javascript
+```javascript
 {
   _id : ObjectID('AAAA'),
   partno : '123-aff-456',
@@ -34,11 +34,11 @@ The "child" document should be like this:
   cost: 0.94,
   price: 3.99
 }
-  ```
+```
 
 And the "parent" document:
 
-  ```javascript
+```javascript
 {
   name : 'left-handed smoke shifter',
   manufacturer : 'Acme Corp',
@@ -51,16 +51,16 @@ And the "parent" document:
   ]
   ...
 }
-  ```
+```
 
 Notice that in "parent" document, `ObjectID('AAAA')` is the reference to the "child" document listed above.
 
 Querying could be something like this:
 
-  ```javascript
+```javascript
 product = db.products.findOne({catalog_number: 1234});
 product_parts = db.parts.find({_id: { $in : product.parts }}).toArray();
-  ```
+```
 
 ## 1-to-Squillions
 
@@ -68,30 +68,30 @@ Like SQL, we use "parent" reference in this case.
 
 This is a "parent" document:
 
-  ```javascript
+```javascript
 {
   _id : ObjectID('AAAB'),
   name : 'goofy.example.com',
   ipaddr : '127.66.66.66'
 }
-  ```
+```
 
 And this is a "child" document:
 
-  ```javascript
+```javascript
 {
   time : ISODate("2014-03-28T09:42:41.382Z"),
   message : 'cpu is on fire!',
   host: ObjectID('AAAB')
 }
-  ```
+```
 
 Querying could be like this:
 
-  ```javascript
+```javascript
 host = db.hosts.findOne({ipaddr : '127.66.66.66'});  // assumes unique index
 last_5k_msg = db.logmsg.find({host: host._id}).sort({time : -1}).limit(5000).toArray()
-  ```
+```
 
 ## `$lookup` Aggregation
 

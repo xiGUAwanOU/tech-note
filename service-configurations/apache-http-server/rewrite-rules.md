@@ -6,7 +6,7 @@ Rewrite rules are essential if we want to enable something like permalinks in Wo
 
 This is an example for WordPress permalinks:
 
-  ```apache
+```apache
 <IfModule mod_rewrite.c>
 RewriteEngine On
 RewriteBase /wordpress/
@@ -15,7 +15,7 @@ RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule . /wordpress/index.php [L]
 </IfModule>
-  ```
+```
 
 ## RewriteEngine
 
@@ -29,9 +29,9 @@ RewriteRule . /wordpress/index.php [L]
 
 `RewriteRule` defines how an URL will be mapped to another. A rule should follow the syntax below:
 
-  ```apache
+```apache
 RewriteRule Pattern Substitution [Flags]
-  ```
+```
 
   * The `Pattern` is a perl compatible regex of the URL (not including host name and prefix defined by `RewriteBase`) to be substituted.
   * The `Substitution` "is the string that replaces the original URL-path that was matched by `Pattern`."

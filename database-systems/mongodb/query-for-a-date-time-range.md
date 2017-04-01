@@ -4,22 +4,22 @@ On inserting of the record, we should save an `ISODate` typed (in MongoDB shell)
 
 In MongoDB shell, we could use:
 
-  ```javascript
+```javascript
 db.articles.find( {
     "publishDate" : {
         $gte: ISODate("2015-08-07T00:00:00Z"),
         $lt: ISODate("2015-08-08T00:00:00Z") 
     }
 } );
-  ```
+```
 
 And in Java, we could do this (in OpenJDK 1.7, Joda DateTime library used):
 
-  ```java
+```java
 Document doc = mdbc.db.getCollection("articles").find(new Document()
 		.append("publishDate", new Document()
 				.append("$gte", ISODateTimeFormat.dateTimeNoMillis().parseDateTime("2015-08-07T00:00:00Z")
 						.withZone(DateTimeZone.UTC).toDate())
 				.append("$lt", ISODateTimeFormat.dateTimeNoMillis().parseDateTime("2015-08-08T00:00:00Z")
 						.withZone(DateTimeZone.UTC).toDate())));
-  ```
+```

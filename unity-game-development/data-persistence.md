@@ -6,14 +6,14 @@ There are 2 possibilities could be used for persist data across scenes and 1 for
 
 ## 1.1. Player Preferences
 
-  ```csharp
+```csharp
 PlayerPrefs.SetInt("x", 100);
 int x = PlayerPrefs.GetInt("x");
-  ```
+```
 
 ## 1.2. Singleton
 
-  ```csharp
+```csharp
 public static SomeClass instance;
 
 void Awake() {
@@ -24,11 +24,11 @@ void Awake() {
         Destory(gameObject);
     }
 }
-  ```
+```
 
 ## 2. (De)Serialise
 
-  ```csharp
+```csharp
 [Serializable]
 class SomeData {
     public float x;
@@ -55,4 +55,4 @@ fs.Close();
 
 float x = data.x;
 float y = data.y;
-  ```
+```

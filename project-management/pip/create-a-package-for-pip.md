@@ -14,7 +14,7 @@ There are several files required:
 
 The sample `setup.py` file can be found [here](https://github.com/pypa/sampleproject/blob/master/setup.py). The code bellow is a simplified example:
 
-  ```python
+```python
 from setuptools import setup, find_packages
 from codecs import open
 from os import path
@@ -53,14 +53,14 @@ setup(
         ],
     }
 )
-  ```
+```
 
 ## 3. Install Package
 
 Use following command will install package locally:
 
-  ```console
+```console
 $ sudo pip install /path/to/package
-  ```
+```
 
 Don't use `-e` option here. If we did that, we have to delete the package manually (`pip uninstall` won't work).

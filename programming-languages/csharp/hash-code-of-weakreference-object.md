@@ -2,7 +2,7 @@
 
 Notice that the `GetHashCode()` method call of a `WeakReference` object will NOT be the same even if they are referring the same object. So if there is a need, use the hash code of the referred object instead:
 
-  ```csharp
+```csharp
 class WeakEventHandlerReference<T> where T : IEvent {
     readonly int targetHashCode;
     readonly WeakReference weakReference;
@@ -21,6 +21,6 @@ class WeakEventHandlerReference<T> where T : IEvent {
         return res;
     }
 }
-  ```
+```
 
 Notice that in the implementation of `GetHashCode()` method, the hash code of original object is used instead of calling the `GetHashCode()` method for the `WeakReference` object.

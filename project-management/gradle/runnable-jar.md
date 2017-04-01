@@ -2,7 +2,7 @@
 
 Use this template to create a runnable JAR project:
 
-  ```gradle
+```gradle
 apply plugin: "java"
 apply plugin: "eclipse"
 
@@ -28,4 +28,4 @@ test {
   // Enable TestNG support (default is JUnit):
   useTestNG()
 }
-  ```
+```

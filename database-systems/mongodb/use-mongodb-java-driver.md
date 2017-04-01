@@ -2,17 +2,17 @@
 
 In maven, the dependencies should be:
 
-  ```xml
+```xml
 <dependency>
 	<groupId>org.mongodb</groupId>
 	<artifactId>mongo-java-driver</artifactId>
 	<version>...</version>
 </dependency>
-  ```
+```
 
 A simple source code example is here:
 
-  ```java
+```java
 import java.util.Arrays;
 import java.util.List;
 
@@ -69,6 +69,6 @@ public class Main {
 		}
 	}
 }
-  ```
+```
 
 We can find it is very similar to the MongoDB shell, expect that we use `Arrays.asList` instead of `[]` and `new Document` instead of `{}`.

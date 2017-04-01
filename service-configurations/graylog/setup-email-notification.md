@@ -2,7 +2,7 @@
 
 First of all we have to configure the Graylog system, so that it can send the notification Email. To do this, edit the `/etc/graylog/server/server.conf` file:
 
-  ```text
+```text
 # Email transport
 transport_email_enabled = true
 transport_email_hostname = 127.0.0.1
@@ -14,7 +14,7 @@ transport_email_auth_username = you_guess
 transport_email_auth_password = no_password (should be clear text here)
 transport_email_subject_prefix = [graylog]
 transport_email_from_email = email.address@host.net
-  ```
+```
 
 Restart the Graylog server and follow the steps bellow:
 

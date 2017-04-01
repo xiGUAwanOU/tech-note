@@ -2,6 +2,6 @@
 
 Very simple, just use:
 
-  ```console
+```console
 $ grep -n
-  ```
+```

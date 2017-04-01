@@ -1,6 +1,6 @@
 # Standard Directory Layout
 
-  ```text
+```text
 src/main/java        Application/Library sources
 src/main/resources   Application/Library resources
 src/main/filters     Resource filter files
@@ -14,4 +14,4 @@ src/site             Site
 LICENSE.txt          Project's license
 NOTICE.txt           Notices and attributions required by libraries that the project depends on
 README.txt           Project's readme
-  ```
+```

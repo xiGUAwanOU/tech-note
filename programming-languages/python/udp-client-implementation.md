@@ -2,7 +2,7 @@
 
 It is simple, very convenient for dirty tests, just write code like this:
 
-  ```python
+```python
 import socket
 
 
@@ -15,4 +15,4 @@ while True:
     sock.sendto(bytes(message, 'utf-8'), (udpIp, udpPort))
     if message == 'exit':
         break
-  ```
+```

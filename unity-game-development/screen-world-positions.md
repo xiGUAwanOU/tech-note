@@ -4,9 +4,9 @@ It is quite useful to transfer the screen position (2D position shown on screen)
 
 The method signatures are listed below:
 
-  ```csharp
+```csharp
 public Vector3 ScreenToWorldPoint(Vector3 position);
 public Ray ScreenPointToRay(Vector3 position);
-  ```
+```
 
 The second one is especially useful for collision detection, which could be used to implement e.g. the mouse click selection function.

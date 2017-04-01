@@ -2,7 +2,7 @@
 
 The idea is: get minutes from the `date` field, divide it by 10, and floor the result to an integer. Here only `$group` pipeline command:
 
-  ```javascript
+```javascript
 {
   $group: {
     _id: {
@@ -19,6 +19,6 @@ The idea is: get minutes from the `date` field, divide it by 10, and floor the r
     first: {$min: "$retrievedDate"}
   }
 }
-  ```
+```
 
 Notice: if there are multiple `_id` fields, each of them will be compared.

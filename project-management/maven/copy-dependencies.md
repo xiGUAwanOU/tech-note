@@ -2,7 +2,7 @@
 
 The goal is to copy all the dependencies to a folder (e.g. `libs`), and set classpath correctly.
 
-  ```xml
+```xml
 <plugin>
     <groupId>org.apache.maven.plugins</groupId>
     <artifactId>maven-dependency-plugin</artifactId>
@@ -19,4 +19,4 @@ The goal is to copy all the dependencies to a folder (e.g. `libs`), and set clas
         </execution>
     </executions>
 </plugin>
-  ```
+```

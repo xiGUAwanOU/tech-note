@@ -2,9 +2,9 @@
 
 Using the following command:
 
-  ```console
+```console
 $ mvn archetype:generate
-  ```
+```
 
 Invoke the interactive project creating program and then follow the instructions in the interactive program.
 

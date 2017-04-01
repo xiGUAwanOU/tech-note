@@ -2,12 +2,12 @@
 
 To create a tag:
 
-  ```console
+```console
 $ git tag -a 0.0.1 -m "Release the very first version of the project."
-  ```
+```
 
 To push a tag:
 
-  ```console
+```console
 $ git push origin 0.0.1
-  ```
+```

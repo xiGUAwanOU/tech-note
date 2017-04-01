@@ -8,7 +8,7 @@ For example (from the offical Java API documentation): `19 / 100 = 0.19 // integ
 
 However, if we use `BigDecimal` directly, there will be some deserialization problem with Jackson (`BigDecimal` will be initialized with its `BigDecimal(double)` constructor, which will record the little error in the `double` value). A better solution would be a wrapped `BigDecimal` type.
 
-  ```java
+```java
 public class WrappedBigDecimal {
     private final BigDecimal value;
 
@@ -52,4 +52,4 @@ public class WrappedBigDecimal {
         return (obj != null && this.getClass() == obj.getClass()) && this.value.equals(((WrappedBigDecimal) obj).value);
     }
 }
-  ```
+```

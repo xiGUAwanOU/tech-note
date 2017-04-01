@@ -2,7 +2,7 @@
 
 Run following command in mongo shell:
 
-  ```javascript
+```javascript
 use admin
 db.createUser(
   {
@@ -11,12 +11,12 @@ db.createUser(
     roles: [ { role: "root", db: "admin" } ]
   }
 )
-  ```
+```
 
 And then set `security.authorization` field in `mongod.conf` to `enabled`, and restart `mongod` service.
 
 Use following command with mongo shell to connect to server with authentication:
 
-  ```console
+```console
 $ mongo -u "admin" -p "nopassword" --authenticationDatabase "admin"
-  ```
+```

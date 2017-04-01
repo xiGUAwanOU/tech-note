@@ -2,12 +2,12 @@
 
 Git keeps a list of all the local action, so try:
 
-  ```console
+```console
 $ git reflog
-  ```
+```
 
 And then try something like:
 
-  ```console
+```console
 $ git reset 'HEAD@{17}'
-  ```
+```

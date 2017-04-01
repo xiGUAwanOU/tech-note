@@ -2,7 +2,7 @@
 
 Use the following two commands:
 
-  ```console
+```console
 $ git config --global user.name "John Doe"
 $ git config --global user.email johndoe@example.com
-  ```
+```

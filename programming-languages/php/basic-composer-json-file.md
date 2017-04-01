@@ -2,7 +2,7 @@
 
 A `composer.json` file for publishing a package on [Packagist](https://packagist.org/) should be like this:
 
-  ```json
+```json
 {
   "name": "seagull/seagull-framework",
   "type": "project",
@@ -30,7 +30,7 @@ A `composer.json` file for publishing a package on [Packagist](https://packagist
     }
   }
 }
-  ```
+```
 
 The required fields are `"name"`, `"description"` and `"require"`.
 

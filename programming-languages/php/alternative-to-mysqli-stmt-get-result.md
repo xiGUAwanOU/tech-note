@@ -2,7 +2,7 @@
 
 Without mysqlnd extension, the function `mysqli_stmt::get_result` won't work. As an alternative we could use something like this:
 
-  ```php
+```php
 function getResult($stmt) {
   $result = array();
   
@@ -23,4 +23,4 @@ function getResult($stmt) {
   
   return $result;
 }
-  ```
+```

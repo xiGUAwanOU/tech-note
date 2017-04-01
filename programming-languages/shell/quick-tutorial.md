@@ -4,26 +4,26 @@
 
 A simplest shell script:
 
-  ```sh
+```sh
 echo Hello world!
-  ```
+```
 
 There is no need to add quotes around `Hello world!`. They are simply treated as 2 arguments of the `echo` command.
 
 The double quote will make it as one argument:
 
-  ```sh
+```sh
 echo  Hello    world!   # Output: Hello world!
 echo "Hello    world!"  # Output: Hello   world!
-  ```
+```
 
 ### 2. Variables
 
 Simple, just like this:
 
-  ```sh
+```sh
 NAME=xiGUAwanOU
-  ```
+```
 
 ### 3. Some Words About Quotes
 
@@ -33,16 +33,16 @@ There are three kinds of quotes in bash shell: single quote `'`, double quote `"
 
 Everything in single quote will be treated "as-is", for example:
 
-  ```sh
+```sh
 NAME=xiGUAwanOU
 echo 'Hello $NAME!'  # Output: Hello $NAME!
-  ```
+```
 
 Simply use `'\''` to escape single quote:
 
-  ```sh
+```sh
 echo 'It'\''s Ok!'  # Output: It's Ok!
-  ```
+```
 
 Actually, the string in this example is seperated into 3 parts. The first is `'It'`, the thrid is `'s Ok!'`, and there is a `\'` in between.
 
@@ -50,10 +50,10 @@ Actually, the string in this example is seperated into 3 parts. The first is `'I
 
 The variable will be intepreted in the double quotes:
 
-  ```sh
+```sh
 NAME=xiGUAwanOU
 echo "Hello $NAME!"  # Output: Hello xiGUAwanOU!
-  ```
+```
 
 Use `\` before a character to escape it.
 
@@ -61,25 +61,25 @@ Use `\` before a character to escape it.
 
 All contents in backticks will be intepreted as a command, and it will be replaced by the standard output of the command:
 
-  ```sh
+```sh
 echo The time is `date +%H:%M:%S`  # Output: The time is 14:15:36
-  ```
+```
 
 ### 4. User Input
 
 To get the user input, we could use `read` command to read user inputs into a variable:
 
-  ```sh
+```sh
 echo -n "Please enter the password: "
 read PASSWORD
 echo "Your password is: $PASSWORD. Now I know it!"
-  ```
+```
 
 ### 5. If Statement
 
 An `if` statement in shell script could be like this:
 
-  ```sh
+```sh
 echo -n "Please enter the password: "
 read PASSWORD
 
@@ -89,7 +89,7 @@ if [ "$PASSWORD" = "nopassword" ]; then
 else
   echo "Password is wrong, your computer will explode in 5 minutes."
 fi
-  ```
+```
 
 Notice the position of the whitespace and the semicolon between `]` and `then`. We could also write `then` to the next line of `if`, in this case we don't need semicolon any more.
 
@@ -128,7 +128,7 @@ If condition (argument patterns of `[` command) list:
 
 The `for` statement in shell script is simple:
 
-  ```sh
+```sh
 for VAR in whitespace seperated string
 do
   echo $VAR
@@ -137,13 +137,13 @@ done
 # whitespace
 # seperated
 # string
-  ```
+```
 
 ### 7. While Statement
 
 The `while` statement:
 
-  ```sh
+```sh
 echo -n "Enter the password: "
 read PASSWORD
 
@@ -154,4 +154,4 @@ do
 done
 
 echo "Welcome!"
-  ```
+```

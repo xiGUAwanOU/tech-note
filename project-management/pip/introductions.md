@@ -8,23 +8,23 @@ The default version of Ubuntu is Python 2.7.x, so if install package `python-pip
 
 To avoid this, use the following command instead:
 
-  ```console
+```console
 $ sudo apt-get install python3-pip
-  ```
+```
 
 To test the installation (or run `pip` program), type following command:
 
-  ```console
+```console
 $ pip3 --version
-  ```
+```
 
 ## 2. Update
 
 To update `pip` itself, use following command:
 
-  ```console
+```console
 $ sudo pip3 install -U pip setuptools
-  ```
+```
 
 On Ubuntu, after that we will be able to run `pip` with `pip` command instead of `pip3`.
 
@@ -32,15 +32,15 @@ On Ubuntu, after that we will be able to run `pip` with `pip` command instead of
 
 The survival guide of `pip` should be its help document. To show its help document, type following command:
 
-  ```console
+```console
 $ pip help
-  ```
+```
 
 Or if we want to read the help document for a specific `pip` command:
 
-  ```console
+```console
 $ pip help install
-  ```
+```
 
 The command above will show the help document of `install` command.
 
@@ -48,40 +48,40 @@ The command above will show the help document of `install` command.
 
 Use the following command:
 
-  ```console
+```console
 $ pip list
-  ```
+```
 
 ### 2.2. Install a Package
 
 Simply use the following command:
 
-  ```console
+```console
 $ pip install <package_name>
-  ```
+```
 
 Package could be installed from VCS:
 
-  ```console
+```console
 $ pip install -e git+https://<git_repo_hostname>/<path_to_git_repo>.git#egg=<project_name>
-  ```
+```
 
 Or even from local path:
 
-  ```console
+```console
 $ pip install /path/to/package
-  ```
+```
 
 ### 2.3. Remove a Package
 
 Use `uninstall` instead of `install`:
 
-  ```console
+```console
 $ pip uninstall <package_name>
-  ```
+```
 
 ### 2.4. Show the Details of a Package
 
-  ```console
+```console
 $ pip show <package_name>
-  ```
+```

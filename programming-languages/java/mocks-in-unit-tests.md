@@ -4,7 +4,7 @@ Mocks is used to simulate the behaviours of the mocked objects, and record the i
 
 In the example, `GameIdMapper` defines an interface, which maps a `GameName` to `GameId`. `GameIdMapperDefault` is the real implementation, and `GameIdMapperMock` is the mocked implementation. Here we could already concluded that if an implementation should be mocked, then it is better to make an interface above the mocked implementation and the real implementation.
 
-  ```java
+```java
 public interface GameIdMapper {
     GameId mapToGameId(GameName gameName);
 }
@@ -34,11 +34,11 @@ public class GameIdMapperMock implements GameIdMapper {
         return gameNameReceived;
     }
 }
-  ```
+```
 
 `UpdateTicketService` is the class which uses the `GameIdMapper` interface. And the `UpdateTicketServiceTest` is the corresponding unit test.
 
-  ```java
+```java
 public class UpdateTicketServiceTest {
     ...
     @Test
@@ -53,6 +53,6 @@ public class UpdateTicketServiceTest {
 
     ...
 }
-  ```
+```
 
 Notice that we defined a `GameIdMapper` with the `GameIdMapperMock` type, because we have to invoke the specific methods in the mock class.

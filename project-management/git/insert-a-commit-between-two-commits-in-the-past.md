@@ -2,15 +2,15 @@
 
 There are three commits:
 
-  ```text
+```text
 A ---> B ---> C
-  ```
+```
 
 `A` is the newest, and now we want to add a commit `D` between `A` and `B`, to make it like:
 
-  ```text
+```text
 A ---> D ---> B ---> C
-  ```
+```
 
 Just follow the steps below:
 

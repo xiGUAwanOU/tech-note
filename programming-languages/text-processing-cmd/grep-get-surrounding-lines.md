@@ -4,7 +4,7 @@ Use `-B <NUM>` to get `<NUM>` lines before the target line, use `-A <NUM>` to ge
 
 Examples:
 
-  ```console
+```console
 $ grep -B 5 -A 3 hello README.txt
 $ grep -C 7 hello README.txt
-  ```
+```

@@ -1,6 +1,6 @@
 # Executable Jar File
 
-  ```xml
+```xml
 <plugin>
   <groupId>org.apache.maven.plugins</groupId>
   <artifactId>maven-jar-plugin</artifactId>
@@ -14,4 +14,4 @@
     </archive>
   </configuration>
 </plugin>
-  ```
+```

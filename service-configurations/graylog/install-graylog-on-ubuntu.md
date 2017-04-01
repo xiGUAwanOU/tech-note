@@ -14,19 +14,19 @@ The installation of prerequisites will not be covered in this article.
 
 After that, run the following commands:
 
-  ```console
+```console
 $ sudo apt-get install apt-transport-https
 $ wget https://packages.graylog2.org/repo/packages/graylog-2.0-repository_latest.deb
 $ sudo dpkg -i graylog-2.0-repository_latest.deb
 $ sudo apt-get update
 $ sudo apt-get install graylog-server
-  ```
+```
 
 After installation AND CONFIGURATION, we could use following command to start Graylog:
 
-  ```console
+```console
 $ sudo start graylog-server
-  ```
+```
 
 ### Configure Graylog to Bring the Web Interface Up
 
@@ -34,28 +34,28 @@ However, we should firstly do some configurations.
 
 Firstly, we should generate a secret key to secure the stored user passwords:
 
-  ```console
+```console
 $ sudo apt-get install pwgen
 $ pwgen -N 1 -s 96
-  ```
+```
 
 Copy and paste the result to the file `/etc/graylog/server/server.conf`, after the line starting with `password_secret =`:
 
-  ```text
+```text
 # You MUST set a secret to secure/pepper the stored user passwords here. Use at least 64 characters.
 # Generate one by using for example: pwgen -N 1 -s 96
 password_secret = FKGtAkgFbXAJrLBC90DvWBEn6TG0h0PyZ23qdxlq56uoS81sPvtg1HtdTAGfxJDTBAxafQcrZ1c6cvvIti1TK4UC3iI8lryL
-  ```
+```
 
 And then, we should set a root password:
 
-  ```console
+```console
 $ echo -n newpassword | shasum -a 256
-  ```
+```
 
 Copy and paste the result to the file `/etc/graylog/server/server.conf`, after the line starting with `root_password_sha2 =`:
 
-  ```text
+```text
 # You MUST specify a hash password for the root user (which you only need to initially set up the
 # system and in case you lose connectivity to your authentication backend)
 # This password cannot be changed using the API or via the web interface. If you need to change it,
@@ -63,16 +63,16 @@ Copy and paste the result to the file `/etc/graylog/server/server.conf`, after t
 # Create one by using for example: echo -n yourpassword | shasum -a 256
 # and put the resulting hash value into the following line
 root_password_sha2 = 5912d5590ceedd61724ee20d37b515427916c915081bccad29e0c684476014c4
-  ```
+```
 
 Notice that there shouldn't be a `-` after the sha2 code.
 
 Next step, in the same configuration file, change the Elasticsearch shards number to 1:
 
-  ```text
+```text
 # How many Elasticsearch shards and replicas should be used per index? Note that this only applies to newly created indices.
 elasticsearch_shards = 1
-  ```
+```
 
 Now save this file and start graylog. Keep an eye on the log file, check if there is any errors.
 
@@ -84,7 +84,7 @@ After read the notifications, we know that the Elasticsearch cluster is unavaila
 
 There are several lines in the file `/etc/graylog/server/server.conf` related to the Elasticsearch connection:
 
-  ```text
+```text
 # settings to be passed to elasticsearch's client (overriding those in the provided elasticsearch_config_file)
 # all these
 # this must be the same as for your Elasticsearch cluster
@@ -103,7 +103,7 @@ elasticsearch_discovery_zen_ping_unicast_hosts = 127.0.0.1:9300
 # see https://www.elastic.co/guide/en/elasticsearch/plugins/2.3/discovery-multicast.html for details.
 # Default: false
 elasticsearch_discovery_zen_ping_multicast_enabled = false
-  ```
+```
 
 The first section is to set the cluster name to be used.
 
@@ -113,9 +113,9 @@ The third part disables the multicast node searching.
 
 Then restart the Graylog with:
 
-  ```console
+```console
 $ sudo restart graylog-server
-  ```
+```
 
 The notification about Elasticsearch will disappear now.
 

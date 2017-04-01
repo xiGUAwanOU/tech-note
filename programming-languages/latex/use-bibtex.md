@@ -4,7 +4,7 @@ BibTeX is a tool which are used to describe and process lists of references. To 
 
 In LaTeX source file (`document.tex`), we should add `cite` as a package dependency. And then in text, we use `\cite{}` to 
 
-  ```latex
+```latex
 \documentclass{article}
 \usepackage{cite}
 
@@ -19,24 +19,24 @@ Blablabla\cite{DUMMY} embeddeed in text.
 \bibliography{document.bib}
 \bibliographystyle{plain}
 \end{document}
-  ```
+```
 
 In BibTeX file (`document.bib`), we describe the references in its syntax:
 
-  ```bibtex
+```bibtex
 @BOOK{DUMMY,
   AUTHOR="John Doe",
   TITLE="The Book without Title",
   PUBLISHER="Dummy Publisher",
   YEAR="2016",
 }
-  ```
+```
 
 To compile with BibTeX, one could use following commands:
 
-  ```console
+```console
 $ pdflatex document.tex
 $ bibtex document.bib
 $ pdflatex document.tex
 $ pdflatex document.tex
-  ```
+```

@@ -12,19 +12,19 @@ In this article, we just write some code to test the MOTD example on a Ubuntu vi
 
 To test our recipes, we define a set of specifications, once the recipes match those specifications, the test is passed. The basic format of the specification looks like this:
 
-  ```ruby
+```ruby
 describe '<entity>' do
   it { <expection> }
 end
-  ```
+```
 
 `<entity>` is the object that we want to test, it could be a resource, a file, etc.. `<exception>` is the desired state of the `<entity>`. For example, for the MOTD creation, we need our file existing:
 
-  ```ruby
+```ruby
 describe file('/etc/update-motd.d/98-server-info') do
   it { should exist }
 end
-  ```
+```
 
 For this is the test of our `recipes/default.rb` recipe, accordingly, it should be stored as `/path/to/cookbooks/cookbook_name/test/recipes/default_test.rb`.
 
@@ -32,7 +32,7 @@ For this is the test of our `recipes/default.rb` recipe, accordingly, it should 
 
 Firstly, we should add something into the `.kitchen.yml` file:
 
-  ```yml
+```yml
 driver:
   name: vagrant
 
@@ -56,14 +56,14 @@ suites:
       inspec_tests:
         - test/recipes
     attributes:
-  ```
+```
 
 Notice that the 3 lines starting with `verifier`, it specifies which folder we should look into to find the tests.
 
 To run a test is very simple, just run the following command:
 
-  ```console
+```console
 $ kitchen verify
-  ```
+```
 
 Then there will be information on the console showing whether the verification is passed or not.

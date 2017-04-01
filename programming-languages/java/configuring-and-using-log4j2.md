@@ -2,7 +2,7 @@
 
 These two dependencies should be added:
 
-  ```xml
+```xml
 <dependency>
   <groupId>org.apache.logging.log4j</groupId>
   <artifactId>log4j-api</artifactId>
@@ -13,11 +13,11 @@ These two dependencies should be added:
   <artifactId>log4j-core</artifactId>
   <version>2.5</version>
 </dependency>
-  ```
+```
 
 And this one should be placed under the `resources` folder as `log4j2.xml`:
 
-  ```xml
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <Configuration status="warn">
   <Appenders>
@@ -33,7 +33,7 @@ And this one should be placed under the `resources` folder as `log4j2.xml`:
     </Root>
   </Loggers>
 </Configuration>
-  ```
+```
 
 It's not hard to figure out what does it mean.
 
@@ -41,13 +41,13 @@ But how could we know which elements and attributes does an appender have in XML
 
 And finally, in the source code we use the code below to create a logger:
 
-  ```java
+```java
 private static final Logger logger = LogManager.getLogger(NFArticleParser.class);
-  ```
+```
 
 And log something like this:
 
-  ```java
+```java
 logger.error("Hello world!");
-  ```
+```
 

@@ -4,7 +4,7 @@ Ruby has a very interesting inheritance system, because it is using a concept ca
 
 For example:
 
-  ```console
+```console
 irb(main):001:0> module A
 irb(main):002:1>   def name
 irb(main):003:2>     return 'foo'
@@ -21,21 +21,21 @@ irb(main):010:0> B.singleton_class.method_defined? :name
 => true
 irb(main):011:0> B.singleton_class.superclass
 => #<Class:Object>
-  ```
+```
 
 We could call method `name` from the instances of `B`, not because they are defined in `B`, but `include A` will add an anonymous super class of `B` between `B` and `Object`, like it is shown below:
 
-  ```text
+```text
 Object
 └── A*
     └── B
-  ```
+```
 
 Module `A` is written as `A*` because it is actually not `A`, but another anonymous (singleton) class.
 
 This also happens when we are defining method for an object:
 
-  ```console
+```console
 irb(main):001:0> class A
 irb(main):002:1> end
 => nil
@@ -47,4 +47,4 @@ irb(main):006:1> end
 => :name
 irb(main):007:0> a.singleton_class.superclass
 => A
-  ```
+```

@@ -12,7 +12,7 @@ According to [this answer](http://answers.unity3d.com/answers/974002/view.html),
 
 Very simple, like this:
 
-  ```csharp
+```csharp
 using NUnit.Framework;
 
 class UnitTests
@@ -28,7 +28,7 @@ class UnitTests
         return 42;
     }
 }
-  ```
+```
 
 ## 3. Run Unit Tests.
 

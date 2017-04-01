@@ -2,10 +2,10 @@
 
 According to the new plugin DSL, applying plugins could also be written as:
 
-  ```gradle
+```gradle
 plugins {
   id 'java'
   id 'eclipse'
   id 'application'
 }
-  ```
+```

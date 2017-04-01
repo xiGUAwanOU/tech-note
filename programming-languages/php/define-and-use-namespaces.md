@@ -12,7 +12,7 @@ The definition and usage of namespaces should be like this:
 
 Firstly the `Class1.php`:
 
-  ```php
+```php
 <?php
 namespace ns1;
 
@@ -24,13 +24,13 @@ class Class1 {
     return $ac1->go() . PHP_EOL . 'Class1';
   }
 }
-  ```
+```
 
 Notice that the namespace definition has to be the very first line of the source code. So we have to put the `require_once` methode call after the namespace definition.
 
 And then `Class2.php`:
 
-  ```php
+```php
 <?php
 namespace ns2;
 
@@ -39,11 +39,11 @@ class Class2 {
     return 'Class2';
   }
 }
-  ```
+```
 
 And then `AnotherClass1.php`:
 
-  ```php
+```php
 <?php
 namespace ns1;
 
@@ -52,11 +52,11 @@ class AnotherClass1 {
     return 'AnotherClass1';
   }
 }
-  ```
+```
 
 At last the `Main.php`:
 
-  ```php
+```php
 <?php
 
 require_once(__DIR__ . '/Class1.php');
@@ -70,13 +70,13 @@ $c2 = new Class2();
 
 echo $c1->go() . PHP_EOL;
 echo $c2->go() . PHP_EOL;
-  ```
+```
 
 Run following command, and the output will be:
 
-  ```console
+```console
 $ php Main.php
 AnotherClass1
 Class1
 Class2
-  ```
+```
