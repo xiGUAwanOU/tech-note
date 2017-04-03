@@ -13,4 +13,4 @@ e = Example()
 print(e._Example__message)
 ```
 
-The string `'Hello world!'` is printed. So it's easy to figure out that Python has changed the variable name `__message` to `_Example__message`.
+The string `'Hello world!'` is printed. So it's easy to figure out that Python has changed the variable name `__message` to `_Example__message` outside of the class scope.
