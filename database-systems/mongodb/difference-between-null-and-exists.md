@@ -1,4 +1,4 @@
-# About Null and Exists
+# Difference Between Null and Exists
 
 Even if a field exists, it could still have `null` value:
 
