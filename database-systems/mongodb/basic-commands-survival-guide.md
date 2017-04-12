@@ -60,20 +60,3 @@ db.<collection_name>.find({
     }
 }).count();
 ```
-
-### `aggregate`-Related
-
-Left outter join:
-
-```javascript
-db.<collection_name>.aggregate([
-    {
-        $lookup: {
-            from: <collection1_name>,
-            localField: <field_name_in_collection>,
-            foreignField: <field_name_in_collection1>,
-            as: <new_field_name>
-        }
-    }
-])
-```
