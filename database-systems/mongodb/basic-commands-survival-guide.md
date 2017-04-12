@@ -1,4 +1,4 @@
-# Shell Script Cheatsheet
+# Basic Commands Survival Guide
 
 ### Survival Commands
 
@@ -17,7 +17,7 @@ use <db_name>;
 List all collections in currently used database:
 
 ```javascript
-show collections;
+show tables;
 ```
 
 ### `find`-Related
