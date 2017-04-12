@@ -6,3 +6,5 @@ Use following two lines:
 $ sudo add-apt-repository ppa:webupd8team/java
 $ sudo apt update; sudo apt install oracle-java8-installer
 ```
+
+There are several agreements that need to be accepted manually.
