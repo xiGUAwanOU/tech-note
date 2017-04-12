@@ -95,4 +95,4 @@ last_5k_msg = db.logmsg.find({host: host._id}).sort({time : -1}).limit(5000).toA
 
 ## `$lookup` Aggregation
 
-In MongoDB 3.2 a new aggregation operator `$lookup` has been introduced. It performs left outer join, which is perfect for the latter two cases. For detailed information, read [this article](https://github.com/xiGUAwanOU/tech-note/blob/master/database-systems/mongodb/aggregation-and-lookup.md).
+In MongoDB 3.2 a new aggregation operator `$lookup` has been introduced. It performs left outer join, which is perfect for the latter two cases. For detailed information, read [this article](aggregation-in-queries.md).
