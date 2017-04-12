@@ -21,3 +21,16 @@ Besides the 3 commands mentioned above, there are other useful commands:
 ```javascript
 { $match : { author : "dave" } }
 ```
+
+  * `$lookup`: left outter join
+
+```javascript
+{
+  $lookup: {
+    from: <collection1_name>,
+    localField: <field_name_in_collection>,
+    foreignField: <field_name_in_collection1>,
+    as: <new_field_name>
+  }
+}
+```
