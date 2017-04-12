@@ -18,9 +18,9 @@ There are 3 commends used in the example:
 Besides the 3 commands mentioned above, there are other useful commands:
   * `$match`: filters the documents to pass only the documents that match the specified condition(s)
   
-```javascript
-{ $match : { author : "dave" } }
-```
+    ```javascript
+    { $match : { author : "dave" } }
+    ```
 
   * `$lookup`: left outter join
 
