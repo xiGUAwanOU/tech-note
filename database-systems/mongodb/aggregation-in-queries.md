@@ -15,7 +15,7 @@ There are 3 commends used in the example:
   2. `$group`: groups the results according to the conditions defined;
   3. `$project`: filters specified fields out of the results.
 
-Besides the 3 commands mentioned above:
+Besides the 3 commands mentioned above, there are other useful commands:
   * `$match`: filters the documents to pass only the documents that match the specified condition(s)
   
 ```javascript
