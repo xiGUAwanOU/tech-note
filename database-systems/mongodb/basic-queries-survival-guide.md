@@ -1,4 +1,4 @@
-# Basic Commands Survival Guide
+# Basic Queries Survival Guide
 
 ### Survival Commands
 
