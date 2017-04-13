@@ -1,5 +1,4 @@
-# Quick Tutorial
-
+# Basic Survival Guide
 ### 1. Hello World!
 
 A simplest shell script:
