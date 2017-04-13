@@ -1,6 +1,6 @@
 # Special Variables
 
-Following table 
+Following table shows several useful special variables:
 
 | Varialbe | Usage |
 |----------|-------|
