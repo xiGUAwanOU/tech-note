@@ -82,8 +82,8 @@ An `if` statement in shell script could be like this:
 echo -n "Please enter the password: "
 read PASSWORD
 
-if [ "$PASSWORD" = "nopassword" ]; then
-# Or write "then" here...
+if [ "$PASSWORD" = "nopassword" ]
+then
   echo "Hey! How do you know the password?!"
 else
   echo "Password is wrong, your computer will explode in 5 minutes."
