@@ -1,4 +1,4 @@
-# Find Something
+# Find Files
 
 ### Find Files by Name
 
@@ -9,16 +9,10 @@ $ find /somewhere/over/the/rainbow -name "filename"
 ```
 
 
-### Find String in File
+### Find Files Containing a Certain String
 
 In *nix like system, use `fgrep` or `grep -f` command:
 
 ```console
 $ fgrep -r "string to search" /path/to/search/folder
-```
-
-In Windows, use `findstr` command:
-
-```console
-> findstr /s "string to search" P:\ath\to\search\folder
 ```
