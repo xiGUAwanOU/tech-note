@@ -8,7 +8,7 @@ The 3 basic CPU states are:
 
 These three meta states can be further subdivided.
 
-Usually, we see 7 CPU stats using the `top` command:
+Usually, we see 7 CPU stats using the `top` command on a Linux system:
 
 * `us`: User, see above.
 * `sy`: System, see above.
