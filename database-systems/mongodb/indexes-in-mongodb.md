@@ -8,8 +8,19 @@ There are following types of index:
 
   * __single field index__: support queries that match on the specified (single) field;
   * __compound fields index__: according to the creation order, it supports queries that match on compound fields or any prefix of the compound fields set;
+  * __multikey indexes__: create indexes for each sub-documents in an array;
   * __text index__: support query operations that perform a text search of string content;
-  * __hashed index__: support equality queries, but does not support range queries (create a single field index for the same field will overcome this disadvantage).
+  * __hashed index__: support equality queries, but does not support range queries (create a single field index for the same field will overcome this disadvantage);
+  * and more ...
+
+### Index Creating Constraints
+
+There are several common index creating constraints, try to avoid them:
+
+  1. There can be only one multikey indexes.
+  2. Hashed index cannot be applied to multikey indexes.
+  3. Hashed index cannot be applied to compound indexes.
+  4. The order of the fields listed in a compound index is important. It is not only related to the sort order, but also related to prefix search.
 
 ### Create an Index
 
