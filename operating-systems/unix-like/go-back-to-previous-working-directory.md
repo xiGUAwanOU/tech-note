@@ -1,3 +1,7 @@
 # Go Back to Previous Working Directory
 
-Simply use `cd -`.
+Simply use:
+
+```console
+$ cd -
+```
