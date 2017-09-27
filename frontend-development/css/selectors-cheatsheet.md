@@ -14,7 +14,7 @@
 |`[attr]`|Select all elements with specified attribute|
 |`[attr=value]`|Select all elements with specified attribute and value|
 |`[attr~=value]`|Select all elements with specified attribute containing the value|
-|`[attr|=value]`|Select all elements with specified attribute starting with the value followed by `-` character|
+|`[attr\|=value]`|Select all elements with specified attribute starting with the value followed by `-` character|
 |`[attr^=value]`|Select all elements with specified attribute starting with the value|
 |`[attr$=value]`|Select all elements with specified attribute ending with the value|
 |`[attr*=value]`|Select all elements with specified attribute containing the value|
