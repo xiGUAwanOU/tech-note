@@ -1,4 +1,4 @@
-# Merge One Commit from Another Branch to the Current One
+# Cherry Pick
 
 The sub-command `cherry-pick` will do the thing. For example:
 
