@@ -29,7 +29,7 @@ Sometimes you want to get a list of remote branches and then fetch them:
 
 ```console
 $ git branch -r
-$ git fetch origin <remote_branch_name>
+$ git fetch --all
 ```
 
 We may also want to know which version the branch is currently pointing to. If so, try the following command:
