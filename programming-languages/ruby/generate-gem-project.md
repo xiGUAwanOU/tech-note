@@ -21,7 +21,7 @@ $ tree
 ```ruby
 source 'https://rubygems.org'
 
-gem 'rspec', '~> 3.0'
+gem 'rspec'
 ```
 
 After that, run following command to install dependencies:
