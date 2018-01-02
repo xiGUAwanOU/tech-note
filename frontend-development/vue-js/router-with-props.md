@@ -36,4 +36,4 @@ const router = new VueRouter({
 
 In this case, if there is an URL like `/search?q=vue`, then `{ query: "vue" }` will be passed as property of the component.
 
-For further references see the [offical document](https://router.vuejs.org/en/essentials/passing-props.html) of Vue.js.
+For further references see the [official document](https://router.vuejs.org/en/essentials/passing-props.html) of Vue.js.
