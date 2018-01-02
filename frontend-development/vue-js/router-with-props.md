@@ -4,7 +4,7 @@ There are several different ways to pass parameters as properties into a compone
 
 The simplest way of doing it is like following:
 
-```json
+```javascript
 const router = new VueRouter({
   routes: [
     { path: '/user/:id', component: User, props: true }
@@ -16,7 +16,7 @@ And the parameters in the path will be passed to the component as properties.
 
 If the properties are static, we could do something like this:
 
-```json
+```javascript
 const router = new VueRouter({
   routes: [
     { path: '/promotion/from-newsletter', component: Promotion, props: { newsletterPopup: false } }
@@ -26,7 +26,7 @@ const router = new VueRouter({
 
 If there is queries in the URL that we want to pass to components as properties, we could:
 
-```json
+```javascript
 const router = new VueRouter({
   routes: [
     { path: '/search', component: SearchUser, props: (route) => ({ query: route.query.q }) }
