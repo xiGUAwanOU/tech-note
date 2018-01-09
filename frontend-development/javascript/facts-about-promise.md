@@ -15,3 +15,5 @@ new Promise((resolve, reject) => {
 // bar
 // Resolved: foo
 ```
+
+To prevent this behaviour, use `return resolve('foo')` instead.
