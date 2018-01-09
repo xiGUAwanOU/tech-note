@@ -1,6 +1,7 @@
 # Facts About `Promise`
 
-## 1. `resolve` / `reject` Won't Terminate The Controle Flow
+## 1. Remember to Return from the Promise Callback
+Notice that `resolve` / `reject` won't terminate the control flow
 
 ```javascript
 new Promise((resolve, reject) => {
