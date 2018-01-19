@@ -2,6 +2,14 @@
 
 Personally I think BEM is a good start point. However the real situations are always more complex than the convention. Here I'm trying to figure out a naming convention for myself.
 
+## BEM (Block, Element, Modifier)
+
+Following definitions are extracted from the official BEM introduction:
+
+* __Block__: Standalone entity that is meaningful on its own.
+* __Element__: A part of a block that has no standalone meaning and is semantically tied to its block.
+* __Modifier__: A flag on a block or element. Use them to change appearance or behavior.
+
 ## Further Reading
 
 * [Official BEM Introduction](http://getbem.com/introduction/)
