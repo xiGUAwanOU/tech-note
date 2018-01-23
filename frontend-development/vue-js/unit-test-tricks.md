@@ -24,4 +24,6 @@ const FILE = new File([''], FILE_NAME)
 
 let dataTransfer = new DataTransfer()
 dataTransfer.items.add(FILE)
+
+fileInput.files = dataTransfer.files
 ```
