@@ -27,3 +27,16 @@ dataTransfer.items.add(FILE)
 
 fileInput.files = dataTransfer.files
 ```
+
+## Toggle checkbox status
+
+```javascript
+let checkbox = vm.$el.querySelector('input')
+
+checkbox.click()
+
+Vue.nextTick(() => {
+  console.log(vm.$data.toggledField)
+  done()
+})
+```
