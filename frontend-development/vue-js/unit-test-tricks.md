@@ -1,5 +1,7 @@
 # Unit Test Tricks
 
+These tricks can be applied without `vue-test-utils`. If using `vue-test-utils`, they could be simplified.
+
 ## Test custom events
 
 ```js
