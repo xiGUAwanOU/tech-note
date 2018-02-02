@@ -1,4 +1,4 @@
-# Some Interesting Post-ES6 Features
+# Some Interesting ES2015+ Features
 
 ## ECMAScript 2015
 
