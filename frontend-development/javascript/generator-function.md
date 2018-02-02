@@ -27,6 +27,7 @@ class Clz {
 
 let Obj = {
   * foo () {
+    ...
   }
 }
 ```
