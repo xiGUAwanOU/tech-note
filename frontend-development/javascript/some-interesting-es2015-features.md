@@ -1,7 +1,5 @@
 # Some Interesting ES2015+ Features
 
-_Currently all of the features below are from ES2015 Specification_
-
 1. Support for computed names in object property definitions:
 
     ```javascript
