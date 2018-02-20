@@ -40,3 +40,17 @@ Vue.nextTick(() => {
   done()
 })
 ```
+
+## Test text input field
+
+```javascript
+let inputElement = vm.$el.querySelector('input')
+
+inputElement.value = value
+inputElement.dispatchEvent(new Event('input'))
+
+Vue.nextTick(() => {
+  console.log(vm.$data.textInputField)
+  done()
+})
+```
