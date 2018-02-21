@@ -32,11 +32,20 @@ Add a `tsconfig.json` file to the root path of the project, the content is based
 }
 ```
 
+Modify the `build/vue-loader.conf.js` file:
+
+```diff
+ module.exports = {
+   loaders: utils.cssLoaders({
+     sourceMap: sourceMapEnabled,
+     extract: isProduction
+   }),
++  esModule: true,
+```
+
 Modify the `build/webpack.base.conf.js` file:
 
 ```diff
-... ...
-
    entry: {
 -    app: './src/main.js'
 +    app: './src/main.ts'
@@ -75,12 +84,12 @@ Modify the `build/webpack.base.conf.js` file:
 +          appendTsSuffixTo: [/\.vue$/]
 +        }
        },
- 
- ... ...
- ```
+```
 
 Change the extension of `src/main.js` and `src/router/index.js` from "js" to "ts". And add `lang="ts"` attribute to all the `<script></script>` tags in component definitions.
 
 **TODO: check if it is OK to remove the babel-loader, since we are not using it anymore.**
 
-## 2. Eslint with TypeScript Plugin
+## 2. Tslint Configuration
+
+It is said that the developer team of Vue.js prefers eslint with TypeScript plugin as the linter solution. However I didn't manage to achieve that. In the future, there will be TypeScript support in `vue-cli`. However, now we have to stick on `tslint`.
