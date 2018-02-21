@@ -83,4 +83,4 @@ Change the extension of `src/main.js` and `src/router/index.js` from "js" to "ts
 
 **TODO: check if it is OK to remove the babel-loader, since we are not using it anymore.**
 
-## 2. Eslint with TypeScript plugin
+## 2. Eslint with TypeScript Plugin
