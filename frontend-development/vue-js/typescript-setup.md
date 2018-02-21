@@ -10,8 +10,6 @@ First of all, create a Vue.js project:
 $ vue init webpack
 ```
 
-I haven't added any eslint support, unit tests or e2e tests.
-
 Then, add TypeScript support:
 
 ```console
