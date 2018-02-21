@@ -81,3 +81,6 @@ Modify the `build/webpack.base.conf.js` file:
 
 Change the extension of `src/main.js` and `src/router/index.js` from "js" to "ts". And add `lang="ts"` attribute to all the `<script></script>` tags in component definitions.
 
+**TODO: check if it is OK to remove the babel-loader, since we are not using it anymore.**
+
+## 2. Eslint with TypeScript plugin
