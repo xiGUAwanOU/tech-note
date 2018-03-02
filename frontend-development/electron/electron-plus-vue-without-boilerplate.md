@@ -8,13 +8,13 @@ Start from creating a Vue.js project:
 $ vue init webpack <PROJECT_NAME>
 ```
 
-And then add electron dependency:
+And then add `electron` dependency:
 
 ```shell
 $ yarn add -D electron
 ```
 
-After that, we should firstly make sure that the development application runs smoothly. Add a file called `main.js` as the entry for electron:
+After that, we should firstly make sure that the development application runs smoothly. Add a file called `main.js` as the entry for Electron:
 
 ```javascript
 const {app, BrowserWindow} = require('electron')
@@ -53,4 +53,25 @@ $ yarn dev
 $ yarn electron  # wait for the test server being fully started, and run this in another terminal
 ```
 
-__WIP__: will add the distribution of the application.
+To distribute the application, firstly we should make sure the generated Vue.js app supports the `file://` URLs. Modify the `config/index.js` file:
+
+```diff
+   build: {
+     // Template for index.html
+     index: path.resolve(__dirname, '../dist/index.html'),
+
+     // Paths
+     assetsRoot: path.resolve(__dirname, '../dist'),
+     assetsSubDirectory: 'static',
+-    assetsPublicPath: '/',
++    assetsPublicPath: '',
+```
+
+
+Add `electron-packager` dependency:
+
+```console
+$ yarn add -D electron-packager
+```
+
+
