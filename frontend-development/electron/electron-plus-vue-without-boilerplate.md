@@ -126,5 +126,5 @@ $ yarn packager
 Finally, open the final application with following command:
 
 ```console
-$ open release/random-music-darwin-x64/random-music.app
+$ open release/<PROJECT_NAME>-darwin-x64/<PROJECT_NAME>.app
 ```
