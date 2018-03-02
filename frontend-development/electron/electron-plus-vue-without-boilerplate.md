@@ -37,7 +37,7 @@ Edit the `package.json` file like this:
    "scripts": {
      "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
 -    "start": "npm run dev",
-+    "electron": "electron .",
++    "electron": "electron . dev",
      "unit": "cross-env BABEL_ENV=test karma start test/unit/karma.conf.js --single-run",
      "e2e": "node test/e2e/runner.js",
      "test": "npm run unit && npm run e2e",
@@ -67,6 +67,39 @@ To distribute the application, firstly we should make sure the generated Vue.js 
 +    assetsPublicPath: '',
 ```
 
+Also edit the `main.js` file to support the distributed Vue.js app correctly:
+
+```javascript
+const {app, BrowserWindow} = require('electron')
+const url = require('url')
+const path = require('path')
+
+function createWindow () {
+  mainWindow = new BrowserWindow({width: 800, height: 600})
+
+  if (process.argv[2] === 'dev') {
+    mainWindow.loadURL('http://localhost:8080')
+    mainWindow.webContents.openDevTools()
+  } else {
+    mainWindow.loadURL(url.format({
+      pathname: path.join(__dirname, 'dist', 'index.html'),
+      protocol: 'file:',
+      slashes: true
+    }))
+  }
+}
+
+app.on('ready', createWindow)
+```
+
+If now we try:
+
+```console
+$ yarn build
+$ node node_modules/electron/cli.js .
+```
+
+There should be an electron application window showing up without debug console.
 
 Add `electron-packager` dependency:
 
@@ -74,4 +107,24 @@ Add `electron-packager` dependency:
 $ yarn add -D electron-packager
 ```
 
+Edit the `package.json` file so that it could build the executable automatically.
 
+```diff
+     "build": "node build/build.js",
++    "packager": "npm run build; electron-packager . --overwrite --platform=darwin --arch=x64 --prune=true --out=release"
+   },
+```
+
+Note that, change the `platform` and `arch` options accordingly.
+
+Now, we could run following command to build the release version of the application:
+
+```console
+$ yarn packager
+```
+
+Finally, open the final application with following command:
+
+```console
+$ open release/random-music-darwin-x64/random-music.app
+```
