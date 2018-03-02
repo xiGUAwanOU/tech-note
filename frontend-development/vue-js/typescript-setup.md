@@ -9,6 +9,8 @@ $ vue create project-name
 
 And then follow the wizard.
 
+Note that, in this way, the created project will NOT use webpack.
+
 It is better to install the `@vue/cli-init` package afterwards:
 
 ```console
