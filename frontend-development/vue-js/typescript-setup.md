@@ -8,3 +8,9 @@ $ vue create project-name
 ```
 
 And then follow the wizard.
+
+It is better to installed the `@vue/cli-init` package afterwards:
+
+```console
+$ npm install -g @vue/cli-init
+```
