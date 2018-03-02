@@ -52,3 +52,5 @@ Now we could start the development mode like this:
 $ yarn dev
 $ yarn electron  # wait for the test server being fully started, and run this in another terminal
 ```
+
+__WIP__: will add the distribution of the application.
