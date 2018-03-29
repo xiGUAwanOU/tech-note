@@ -1,100 +1,148 @@
 # Naming Convention
 
-## What?
+This is a simplified and modified version of a document that I've written for my company.
 
-Main problems to be solved by the naming convention:
-1. prevent the naming collision;
-2. prevent the duplicated code.
+## Introduction
+The main goal of this convention is to make CSS code (or preprocessor language code) (ordered by importance):
+1. to have no naming confliction;
+2. to be more reusable;
+3. to be more readable.
 
-## Why?
+To achieve this, we will introduce a BEM-like naming convention into our frontend projects.
 
-The reason of preventing the naming collision should be clear. Imagine there are two totally different UI element, but having same "upload" CSS class. Once we put this two elements into one page, the style will be messed up.
+## Conventions
 
-For the second point, if we generate duplicated code, we will not only have a bad time to unify the look of UI elements across the whole website, but also generate huge CSS files and slow down the loading of the page.
-
-## How?
-
-I think BEM is a good start point. However, the official definition of BEM is somehow vague, it needs to be clarified, at least for myself.
-
-* __Block__: just like a namespace. For example:
-  1. reusable UI elements, e.g. button, text input, table, search box (with a text input, a button doing search and a table showing results), etc.
-  2. a certain page or a page area.
-* __Element__: classes that we don't want them to leak into the global naming spaces. They could be divided into two groups:
-  1. layout: controlls where to put UI elements.
-  2. style: controlls how the UI elements look like.
-* __Modifier__: small changes to block or element.
-
-More details:
-* I think it is a good practise to distinguish between layout and style (but not 100% sure). So I think it is better to infix the layout element with `layout` after the splitter between block and element. E.g. `block__layout-right-column`.
-* Layout shouldn't be reused, so I treat it as an element-leveled thing, even if there would be many duplicated code. Because once reused, it will be hard to change it without causing any problem.
-* If button, text input, etc. could be blocks, it definitely makes sense to apply modifiers on blocks, just as it is shown in the BEM official website.
-* If there is a modifier for a child block (`child-block`) only used in one parent block(`parent-block`), it might still make sense to make the modifier global `child-block child-block__modifier` for further reusing possibilities. If we are 100% sure that this will not happen outside the parent block, we could apply following classes `child-block parent-block__child_block--modifier`.
-
-All-in-one example:
+### 1. Vue.js Related Rules
+#### 1.1. Style Tag
+In Vue.js single-file-component definitions, we should scope CSS when it's possible, and use SASS style sheet language. For example:
 
 ```html
-<div class="search-page">
+<style lang="sass" scoped></style>
+```
 
-  <div class="search-page__layout-head">
-    <h1>Whatever</h1>
-  </div>
+#### 1.2. Common Styles
+Highly reusable style definitions, e.g. styles for buttons, tables, etc., should be put into the `src/assets` folder.
 
-  <div class="search-page__layout-body">
-    <div class="search-box">
-      <div class="search-box__layout-upper-row">
-        <input class="text-input"></input>
-        <button class="submit-button search-box__submit-button--color-yellow">Go!</button>
-      </div>
-      <div class="search-box__layout-lower-row">
-        <table class="table table--hover">...</table>
-      </div>
+### 2. SASS Related Rules
+#### 2.1. Using Bootstrap Styles
+If we need to use bootstrap styles, we should extend the bootstrap classes. For example:
+
+```sass
+.xg-comment-form
+  &__text-field
+    @extend .form-control
+    resize: none
+    height: 120px !important
+```
+
+Here we have used the `form-control` class from bootstrap.
+
+#### 2.2. D.R.Y.
+Using the [power of SASS](https://sass-lang.com/guide) to D.R.Y. up the style codes.
+
+### 3. BEM-like Naming Conventions
+We use a modified version of [BEM naming](http://getbem.com/naming/). BEM convention suggests that the class names are made from 3 parts: __Block__, __Element__ and __Modifier__. In our modified version, the definitions of these 3 parts might be different from the official BEM.
+
+#### 3.1. Definitions
+The 3 parts are defined as below:
+* Block: it could be either a view (e.g. a user profile editing form) or a reusable component (e.g. a button). One block may contain another block, e.g. in the user profile editing form, there could be one or more buttons. It acts as a namespace, so that the detailed namings within the namespace has no effect in the global scope.
+* Element: it could be either the block specific layout (e.g. the style of the `div` tag containing the user credential inputs), or the styles of a component which only makes sense within a bigger scope (e.g. the credential editing toggle button in the user profile credential form, without the context of user profile editing, this button makes no sense).
+* Modifier: some changes to the existing style definitions (e.g. the credential editing toggle button could look slightly different if the credential editing part is expanded or collapsed).
+
+#### 3.2. Basic Naming Convention
+All of these 3 parts should be named using `kebap-case`, and follows the layout `xg-<BLOCK_NAME>[__<ELEMENT_NAME>][--<MODIFIER_NAME>]`. The classes are prefixed with `xg-` because in this way they won't clash with the existing names from the 3rd-party libraries (`xg` stands for "xi gua", watermelon in Chinese).
+
+#### 3.3. Applying to HTML
+While applying these styles to HTML tags, we should follow the rules below:
+* only blocks and elements could be applied to tags alone. Like
+
+    ```html
+    <button class="xg-button">Done</button>
+    ```
+    ```html
+    <div class="xg-user-profile-form__credential-input-container">...</div>
+    ```
+* modifiers must be applied with the original style class that it modifies. Like
+    ```html
+    <button class="xg-button xg-button--disabled">Done</button>
+    ```
+* if a modifier to a reusable style only makes sense within a scope, then it should be prefixed with the specific block name. For example, imagine that we have an activated button which is only used in a test view. The code could be
+    ```html
+    <button class="xg-button xg-test-view__button--activated">Click me!</button>
+    ```
+
+#### 3.4. An All-in-One Example
+The following example shows a view which allows user to edit their user profile:
+```html
+<div class="xg-user-profile-form">
+    <div class="xg-user-profile-form__labeled-form-input">
+        <label for="user-name-input">User name</label>
+        <input type="text" class="xg-user-profile-form__user-name-input" id="user-name-input" />
     </div>
-  </div>
-
-  <div class="search-page__layout-footer">
-    Some copyright information ...
-  </div>
-
+  
+    <div class="xg-user-profile-form__labeled-form-input">
+        <label for="user-role-select">Role</label>
+        <select class="xg-user-profile-form__user-role-select" id="user-roll-select">
+            <option value="admin">Admin</option>
+            <option value="user">User</option>
+        </select> 
+    </div>
+    
+    <button v-if="!isEditingCredentials" class="xg-button xg-game-server-form__button--expanding-credentials-inputs">
+        Edit credentials
+    </button>
+    <button v-else class="xg-button xg-game-server-form__button--collapsing-credential-inputs">
+        Cancel editing credentials
+    </button>
+    
+    <div v-if="isEditingCredentials"
+            class="xg-user-profile-form__credential-inputs xg-user-profile-form__credential-inputs--expanded">
+        <div class="xg-user-profile-form__labeled-form-input">
+            <label for="old-password-input">Old password</label>
+            <input type="password" class="xg-user-profile-form__old-password-input" id="old-password-input" />
+        </div>
+        <div class="xg-user-profile-form__labeled-form-input">
+            <label for="new-password-input">New password</label>
+            <input type="password" class="xg-user-profile-form__new-password-input" id="new-password-input" />
+        </div>
+    </div>
+    <div v-else class="xg-user-profile-form__credential-inputs xg-user-profile-form__credential-inputs--collapsed">
+    </div>
+    
+    <button class="xg-button xg-button-submit">Save</button>
+    <button class="xg-button">Cancel</button>
 </div>
 ```
 
-## Brainstorming Log
+Note that in the example above:
+* The block `xg-user-profile-form` is applied to the top-level `div` tag;
+* Within the top-level block, there are several elements like `xg-user-profile-form__labeled-form-input` and `xg-user-profile-form__user-role-select`;
+* The block name and element names could be applied to tags alone;
+* There are block specific modifiers applied to an element, e.g. `xg-user-profile-form__credential-inputs--expanded`. Although it will make the class attribute very long, they should be applied to the tag together with the element class, like `class="xg-user-profile-form__credential-inputs xg-user-profile-form__credential-inputs--collapsed"`;
+* There are block specific modifiers applied to global blocks, e.g. `xg-user-profile-form__button--collapsing-credential-inputs`. They should also be applied with the global block class, like `xg-button xg-user-profile-form__button--collapsing-credential-inputs`;
+* There are global modifiers applited to global blocks, e.g. `xg-button xg-button--submit`.
 
-The part below might only make sense to myself:
+As the style sheet definitions we could write SASS codes like this:
 
-<details>
-  
-```text
-以控件为单位。
-控件是可复用的页面元素。
-如果控件里面包含了其他控件怎么办？例如一个搜索框加结果的控件就是由文本框、按钮和列表组成的。
-直接拿其它的控件class来用嘛？
-肯定是要直接拿其它的控件来用的。不然的话，万一改了某一个控件的风格，岂不是所有包含了这个控件里面的class都要改？
-那如果父控件需要对它包含的子控件进行一些小修改怎么办？
-这种小修改应该属于这个父控件，还是属于它包含的子控件呢？
-如果让它属于它包含的子控件的话，似乎是一个更好的选择。因为如果把这种修改限制在父控件的范围内，一旦有另外的父控件也要对其进行相同的更改的话，就需要提出这部分相同的更改了。
+```sass
+.xg-user-profile-form
+    // top-level block style definitions goes here ...
+    
+    &__labeled-form-input
+        // element style definitions goes here ...
+        @extend .col-sm-10 // for extending bootstrap styles
 
-分离布局与风格，这点似乎不错。
-要有不同的class来处理一个控件放在哪里，以及看上去是什么样子。这确实是两件完全不同的事情。
-布局与风格有不同的尺度。例如，一个最小的控件基本上只会有风格，很难有布局；一个由若干子控件组成的父控件，就需要对其子控件进行布局，而它也有可能有自己的风格；一个页面由不同的控件组成，它就需要对其中的控件进行布局，而它自己就很难有自己的风格了。
+    &__user-role-select
+        // element style definitions goes here ...
 
-所以该怎么设计这个convention？
-采纳BEM的话，Block就应该起到类似于namespace的作用了。定义Block的动机是要不让其中的名称流进全局范围内。而且Block应该是可以复用的最小单位。 
-Element不能复用，因为Element出了Block就失去了它的意义。
-Modifier就没什么好说的了。
-Layout与Element应该处于不同的维度上，但是Layout确实与Block有密切的联系。因为Layout出了Block之后往往就变得“非常没有意义”。
+    &__credentials-inputs
+        // element style definitions goes here ...
+        
+        &--expanded
+            // element modifier style definitions goes here ...
 
-鉴于以上这些思考，可以考虑搞这样一个convention。
-有四个要点：Block、Layout、Element、Modifier。
-Block必须是可以复用的UI元素，可以由子Block组成。
-Layout必须被限制在Block内，并且无法被复用（感觉复用Layout很危险，没有意义，想象一下更改bootstrap里面col-xs-6的实现的后果），出了Block之外就没有意义了。
-Element与Layout类似，不过Element应该只与样式有关，而不应该与布局有关。
-最后Modifier没什么好说的。
-
-但是实际到了应用中，Layout和Element又有什么区别呢？都要被Block所限制其作用范围，所以就都放在__后面好了。
-一定要区分Layout和Element的话，就在__后面加layout，比如说block__layout-right-column之类的。
-或者简单点，只加l？
+    &__button--expanding-credentials-inputs
+        // global block modifier style definitions goes here ...
+    
+    // all other style definitions ...
 ```
-
-</details>
-
