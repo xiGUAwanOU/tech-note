@@ -1,5 +1,5 @@
 # Tech Note
-A private tech note to record eveything about IT I've learnt.
+A private tech note to record eveything I've learnt about IT.
 
 For a source code highlighting language list, see [linguist project](https://github.com/github/linguist/blob/master/lib/linguist/languages.yml).
 
