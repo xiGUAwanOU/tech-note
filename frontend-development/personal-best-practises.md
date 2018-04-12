@@ -8,6 +8,10 @@ Intuitively speaking, a component should be a small and highly reusable piece of
 
 __WIP__
 
-## 2. Take Bad Network Conditions Into Account
+## 2. Distinguish Between Logic and Style
+
+It is very easy to write a reusable component with heavy logic in it (a good example would be the container of a form with data validation logic in it). This seems to be very convenient if we will always reuse the exactly the same stuff everywhere in the project. However this actually makes the component less reusable. Think of the situation that we need the common validation logic but not the border or colors or other style stuffs from the common form. 
+
+## 3. Take Bad Network Conditions Into Account
 
 Since there are more and more mobile devices browsering the website. It is very important to have an idea about how will the website look like if the network is slow. There is a network throttling function in the development tools in most of the browsers. Using that, we can get an roughly idea about how the webpage will be look like while the network is slow.
