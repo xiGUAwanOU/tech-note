@@ -14,11 +14,13 @@ To achieve this, we will introduce a BEM-like naming convention into our fronten
 
 ### 1. Vue.js Related Rules
 #### 1.1. Style Tag
-In Vue.js single-file-component definitions, we should scope CSS when it's possible, and use SASS style sheet language. For example:
+Use SASS as the style sheet language in the Vue.js `<style>` tag. For example:
 
 ```html
-<style lang="sass" scoped></style>
+<style lang="sass"></style>
 ```
+
+Do NOT make style `scoped`. If there is a global style definition file and should be imported in multiple components, `scoped` will generate duplicated style classes. However, it is said that the global style definition shouldn't contain any concrete style classes and should only contain stuffs like mixins or variables.
 
 #### 1.2. Common Styles
 Highly reusable style definitions, e.g. styles for buttons, tables, etc., should be put into the `src/assets` folder.
