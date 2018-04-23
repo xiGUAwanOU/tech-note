@@ -9,5 +9,7 @@ Make a webpage responsive. Put the following meta definition into the `<head>...
 
 This will overwrite the initial webpage width with the actual device width.
 
-## Units
-Currently trying to use `rem`, hope people with different default font size settings will see everything displayed correctly.
+## Units Explained
+* `em`: relative to the `font-size` set in the current element;
+* `rem`: relative to the `font-size` set in the root element;
+* `px`: according to some information, 1 CSS px = 1/96 CSS in.
