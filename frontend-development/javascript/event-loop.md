@@ -2,7 +2,7 @@
 
 # 1. Event Loop Itself
 
-This is the key to open the door to the real JavaScript world. It can be roughly discribed as:
+It can be roughly discribed as:
 
 ```javascript
 while (messageQueue.waitForMessage()) {
