@@ -45,3 +45,9 @@ done
 foo
 bar
 ```
+
+4. Non-blocking I/O
+
+They are non-blocking because they are not handled by JavaScript. It is handled by the browser implementation.
+
+E.g. if we have an XHR call. JavaScript will only tell the browser to handle that, mean while JavaScript can process other messages. Once the browser has finished the XHR call, the response of the XHR call will be added to the message queue as a message. After all the other messages before it get processed, the response of the XHR will also be processed.
