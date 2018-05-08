@@ -1,4 +1,4 @@
-# Memory Leak
+# Memory Leak Patterns
 
 Start from 2012, all of the main-stream web browsers have implemented "mark-and-sweep" algorithm for collecting garbages.
 
@@ -6,7 +6,7 @@ So, it is said that:
 
 > The main cause for leaks in garbage collected languages are unwanted references.
 
-There are 3 patterns of memory leak mentioned in [this article](https://auth0.com/blog/four-types-of-leaks-in-your-javascript-code-and-how-to-get-rid-of-them/) (the 4th pattern metioned in the original article is actually an implementation issue, which will be probably improved in the future).
+There are 3 patterns of memory leak mentioned in [this article](https://auth0.com/blog/four-types-of-leaks-in-your-javascript-code-and-how-to-get-rid-of-them/) (the 4th pattern metioned there is actually an implementation issue, which will be probably improved in the future).
 
 ## 1. Accidental global variables
 
