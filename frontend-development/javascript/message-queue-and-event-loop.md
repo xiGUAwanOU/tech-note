@@ -1,6 +1,6 @@
-# Event Loop
+# Message Queue and Event Loop
 
-## 1. Event Loop Itself
+## 1. Event Loop
 
 It can be roughly discribed as:
 
