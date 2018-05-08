@@ -51,3 +51,7 @@ bar
 They are non-blocking because they are not handled by JavaScript. It is handled by the browser implementation.
 
 E.g. if we have an XHR call. JavaScript will only tell the browser to handle that, mean while JavaScript can process other messages. Once the browser has finished the XHR call, the response of the XHR call will be added to the message queue as a message. After all the other messages before it get processed, the response of the XHR will also be processed.
+
+## 5. Web Workers
+
+Note that, each web worker has its own message queue and event loop. And in this case, they are really running on different threads. They can use `postMessage` to add messages to each other's message queue, thus communicate to each other.
