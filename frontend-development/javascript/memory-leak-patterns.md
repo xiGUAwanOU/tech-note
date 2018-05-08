@@ -73,3 +73,24 @@ function removeButton() {
 ```
 
 The button element won't be released, since it is deleted from the DOM tree, but not from the `elements` object.
+
+## 4. Closures
+
+This is the modified version of the 4th pattern in the original article.
+
+```javascript
+var theThing = null
+var replaceThing = () => {
+  var originalThing = theThing
+
+  theThing = {
+    longStr: new Array(1000000).join('*'),
+    someMethod: () => {
+      console.log(originalThing)
+    }
+  }
+}
+setInterval(replaceThing, 1000)
+```
+
+Each second, `originalThing` will have the reference of `theThing` from last run (`theThing'1`). After that, `theThing` will get a new value (`theThing'2`), where `someMethod` holds a reference to `originalThing`. Repeating this, `theThing'N+1` will hold a reference to `theThing'N`, and the memory usage will increase infinitively.
