@@ -15,6 +15,10 @@ applicationDefaultJvmArgs = ["-Dfile.encoding=UTF-8"]
 // Define the version of application:
 version = '1.0.0'
 
+// Specify the source and target compatability
+sourceCompatibility = 1.10
+targetCompatibility = 1.10
+
 repositories {
   mavenCentral()
 }
