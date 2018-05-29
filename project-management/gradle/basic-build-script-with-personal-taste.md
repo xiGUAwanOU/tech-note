@@ -7,7 +7,7 @@ apply plugin: "java"
 
 // Only if we need to distribute the package as an executable (like Gradle):
 apply plugin: "application"
-mainClassName = "net.xiguawanou.application.Main"
+mainClassName = "xigua.application.Main"
 
 // For the compatibility between Linux and Windows:
 applicationDefaultJvmArgs = ["-Dfile.encoding=UTF-8"]
