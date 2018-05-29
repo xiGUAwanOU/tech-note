@@ -1,30 +1,36 @@
 # Basic Build Script with Personal Taste
-
-Use this template to create a runnable JAR project:
-
+For Java projects:
 ```gradle
 apply plugin: "java"
 
-// Only if we need to distribute the package as an executable (like Gradle):
-apply plugin: "application"
-mainClassName = "xigua.application.Main"
-
-// For the compatibility between Linux and Windows:
-applicationDefaultJvmArgs = ["-Dfile.encoding=UTF-8"]
-
-// Define the version of application:
-version = "1.0.0"
-
 // Specify the source and target compatability
 compileJava   {
-  sourceCompatibility = "1.10"
-  targetCompatibility = "1.10"
+    sourceCompatibility = "$newest_jdk_version"
+    targetCompatibility = "$newest_jdk_version"
 }
 
 repositories {
-  mavenCentral()
+    mavenCentral()
 }
 
 dependencies {
+}
+```
+
+For Groovy projects:
+```gradle
+apply plugin: "groovy"
+
+compileJava   {
+    sourceCompatibility = "$newest_jdk_version"
+    targetCompatibility = "$newest_jdk_version"
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile "org.codehaus.groovy:groovy-all:2.4.15"
 }
 ```
