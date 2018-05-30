@@ -35,7 +35,7 @@ This will overwrite the initial webpage width with the actual device width.
 ## Apply Breakpoints
 
 ```sass
-global-container
+.global-container
   display: flex
   flex-direction: column
   @include page-width("medium-and-up")
