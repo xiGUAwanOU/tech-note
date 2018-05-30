@@ -28,3 +28,9 @@ But if part of the style definition in the classes is shared in many places, it 
 
 ## Vue.js Scoped Style Tag
 In theory it should always be there. All the reusable styles should be extracted as a new block, or written as a mixin. As a result, all the remaining style definitions are actually component specific.
+
+## To Sum It Up
+1. Don't import a file containing concrete style classes everywhere;
+2. To extend an existing class, simply append new class after the existing class;
+3. Avoid using BEM everywhere to keep the class name short, only use it for global classes;
+4. Use Vue.js `scoped` attribute wisely, so that the class name in the component won't polute the global naming sapce.
