@@ -1,25 +1,31 @@
 # Working with Tags
 
-To create a tag:
+Create:
 
 ```console
-$ git tag -a 0.0.1 -m "Release the very first version of the project."
+$ git tag -a <TAG_NAME> -m "<TAG_MESSAGE>"
 ```
 
-To push a tag:
+Push:
 
 ```console
 $ git push origin 0.0.1
 ```
 
-To checkout a tagged version:
+Checkout tagged version:
 
 ```console
 $ git checkout tags/<TAG_NAME>
 ```
 
-To go back to master branch:
+Go back to master:
 
 ```console
 $ git checkout master
+```
+
+Remove:
+
+```console
+$ git tag -d <TAG_NAME>
 ```
