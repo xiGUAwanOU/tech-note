@@ -1,9 +1,9 @@
 # NPM Cheatsheet
 
-Local install path in macOS:
+Local install path:
 
 ```text
-/usr/local/lib/node_modules
+/usr/local/lib/node_modules   # macOS
 ```
 
 List top level packages:
