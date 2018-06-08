@@ -9,3 +9,11 @@ For example:
 .a >>> .b { /* ... */ }
 </style>
 ```
+
+Which will be compiled to:
+
+```css
+.a[data-v-f3f3eg9] .b { /* ... */ }
+```
+
+Source: https://vue-loader.vuejs.org/guide/scoped-css.html#deep-selectors
