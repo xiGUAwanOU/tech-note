@@ -16,4 +16,4 @@ Which will be compiled to:
 .a[data-v-f3f3eg9] .b { /* ... */ }
 ```
 
-Source: https://vue-loader.vuejs.org/guide/scoped-css.html#deep-selectors
+_Source: https://vue-loader.vuejs.org/guide/scoped-css.html#deep-selectors_
