@@ -1,5 +1,4 @@
 # Depth Ordering
-
 Currently never had any problem with this, but maybe will have problem in this area later.
 
 ## Positioned and Non-positioned Elements
@@ -28,7 +27,12 @@ By default, the z-index order is:
 2. non-positioned elements in the order they are defined
 3. positioned elements in the order they are defined
 
-In the example above, the depth order (from bottom to top) is `.green`, `.pink`, `.orange`, `.purple`, `.blue`.
+In the example above, the depth order (from bottom to top) is:
+1. `.green`
+2. `.pink`
+3. `.orange`
+4. `.purple`
+5. `.blue`
 
 ## Z-index
 Z-index only have effect on positioned elements.
@@ -51,7 +55,12 @@ Z-index only have effect on positioned elements.
 }
 ```
 
-With the CSS shown above, the depth order (from bottom to top) is `.green`, `.pink`, `.blue`, `.orange`, `.purple`.
+With the CSS shown above, the depth order (from bottom to top) is:
+1. `.green`
+2. `.pink`
+3. `.blue`
+4. `.orange`
+5. `.purple`
 
 ## Stack Context
 The effect of z-index is affected by the parent element of an element. If there is a z-index defined in the parent element, a stack context is formed, the z-index attribute of the children elements only have affect within the stack context.
@@ -77,7 +86,12 @@ The effect of z-index is affected by the parent element of an element. If there 
 }
 ```
 
-With the CSS shown above, the depth order (from bottom to top) is `.green`(z-index: 100), `.pink`(z-index: 1), `.orange`(z-index: 3 within stack context 1), `.purple`(z-index: 4 within stack context 1), `.blue`(z-index: 2).
+With the CSS shown above, the depth order (from bottom to top) is:
+1. `.green` (z-index: 100)
+2. `.pink` (z-index: 1)
+3. `.orange` (z-index: 3 within stack context 1)
+4. `.purple` (z-index: 4 within stack context 1)
+5. `.blue` (z-index: 2)
 
 Sometimes, the stack context will be formed implicitly by applying [some CSS properties](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Positioning/Understanding_z_index/The_stacking_context). And it seems that it is applying the default `z-index` value (0) if not specified.
 
@@ -102,4 +116,9 @@ Sometimes, the stack context will be formed implicitly by applying [some CSS pro
 }
 ```
 
-With the CSS shown above, the depth order (from bottom to top) is `.green`(z-index: 100), `.pink`(z-index: 1), `.orange`(z-index: 3 within stack context 0), `.purple`(z-index: 4 within stack context 0), `.blue`(z-index: 2).
+With the CSS shown above, the depth order (from bottom to top) is:
+1. `.green` (z-index: 100)
+2. `.pink` (z-index: 1)
+3. `.orange` (z-index: 3 within stack context 0)
+4. `.purple` (z-index: 4 within stack context 0)
+5. `.blue` (z-index: 2)
