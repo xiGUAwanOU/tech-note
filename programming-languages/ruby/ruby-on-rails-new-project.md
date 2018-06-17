@@ -36,10 +36,10 @@ $ rails g mongoid:config
 
 ### JSON Parse Error Handler
 
-Create middleware `app/middleware/json_parse_errors_handler.rb`
+Create middleware `app/middleware/json_parse_error_handler.rb`
 
 ```ruby
-class JsonParseErrorsHandler
+class JsonParseErrorHandler
   def initialize(app)
     @app = app
   end
