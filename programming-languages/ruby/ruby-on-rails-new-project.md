@@ -4,29 +4,51 @@
 
 ```bash
 # Install Ruby on Rails gem:
-gem install rails
+gem install rails 
 
 # Create new rails project:
-rails new $PROJECT_NAME --api
-
-# Remove currently unnecessary folders:
-rm -rf app/channels  # Related to WebSocket
-rm -rf app/jobs      # Related to background jobs
-rm -rf app/views     # Related to static stuff, no need for a pure RESTFul API
-rm -rf app/mailers   # Related to sending Emails
-
-rm -rf db            # Datebase schema
-rm -rf vendor        # 3rd-party source codes
+rails new $PROJECT_NAME --api --skip-bundle --skip-test --skip-system-test
 ```
 
 ## Dependencies and Configurations
 
+### MongoDB
+
+Use this command create new rails project:
+
+```console
+$ rails new $PROJECT_NAME --api --skip-bundle --skip-active-record --skip-test --skip-system-test
+```
+
 Use MongoDB as the database technology, put following into `Gemfile`:
 
 ```ruby
-# Use MongoDB as the database
 gem 'mongoid', '~> 7.0.0'
-gem 'mongoid-geospatial', '~> 5.0.0'
+gem 'mongoid-geospatial', '~> 5.0.0'  # Only if geo-data needs to be treated properly
+```
+
+### JBuilder
+
+In `Gemfile`:
+```ruby
+gem('jbuilder', '~> 2.5')
+```
+
+In `app/views/hello/message.json.jbuilder`:
+
+```ruby
+json.message(@message)
+```
+
+In `app/controllers/hello_controller.rb`:
+
+```ruby
+class HelloController < ApplicationController
+  def show_message
+    @message = 'Hello world!!'
+    render(:message)
+  end
+end
 ```
 
 ## Purpose of Different Folders
