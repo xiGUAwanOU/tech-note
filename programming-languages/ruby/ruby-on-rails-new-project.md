@@ -27,6 +27,13 @@ gem 'mongoid', '~> 7.0.0'
 gem 'mongoid-geospatial', '~> 5.0.0'  # Only if geo-data needs to be treated properly
 ```
 
+Install bundles and generate configuration file:
+
+```console
+$ bundle install
+$ rails g mongoid:config
+```
+
 ### JBuilder
 
 In `Gemfile`:
