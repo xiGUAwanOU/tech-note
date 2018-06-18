@@ -35,8 +35,14 @@ $ rails g rspec:install
 Add following content to the `rails_helper.rb` file:
 
 ```ruby
-# Don't forget to require this at the beginning of the file:
 require 'database_cleaner'
+
+Shoulda::Matchers.configure do |config|
+  config.integrate do |with|
+    with.test_framework(:rspec)
+    with.library(:rails)
+  end
+end
 
 RSpec.configure do |config|
   # ...
