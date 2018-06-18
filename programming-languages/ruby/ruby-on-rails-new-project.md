@@ -12,6 +12,50 @@ rails new $PROJECT_NAME --api --skip-bundle --skip-test --skip-system-test
 
 ## Dependencies and Configurations
 
+### Unit Test
+
+Add following dependencies:
+
+```ruby
+group(:test) do
+  gem('database_cleaner')
+  gem('rspec')
+  gem('rspec-mocks')
+  gem('rspec-rails')
+  gem('shoulda-matchers', '~> 3.1')
+end
+```
+
+Use this command to initialize files needed by rspec:
+
+```console
+$ rails g rspec:install
+```
+
+Add following content to the `rails_helper.rb` file:
+
+```ruby
+# Don't forget to require this at the beginning of the file:
+require 'database_cleaner'
+
+RSpec.configure do |config|
+  # ...
+
+  # Config DatabaseCleaner:
+  config.before(:suite) do
+    DatabaseCleaner.clean_with(:truncation)
+  end
+
+  config.before(:each) do
+    DatabaseCleaner.start
+  end
+
+  config.after(:each) do
+    DatabaseCleaner.clean
+  end
+end
+```
+
 ### MongoDB
 
 Use this command create new rails project:
