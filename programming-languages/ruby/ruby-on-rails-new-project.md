@@ -32,6 +32,12 @@ Use this command to initialize files needed by rspec:
 $ rails g rspec:install
 ```
 
+Make sure that the content in `.rspec` file is:
+
+```text
+--require rails_helper
+```
+
 Add following content to the `rails_helper.rb` file:
 
 ```ruby
