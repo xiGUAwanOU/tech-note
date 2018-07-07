@@ -3,11 +3,7 @@
 ## Using MongoId
 To be honest, personally I don't think MongoId is a good way to go. Like any other ORM libraries, it just wrappered too much.
 
-Use this command to create new rails project:
-
-```console
-$ rails new $PROJECT_NAME --api --skip-bundle --skip-active-record --skip-test --skip-system-test
-```
+Use `--skip-active-record` command option to create new rails project:
 
 Use MongoDB as the database technology, put following into `Gemfile`:
 
