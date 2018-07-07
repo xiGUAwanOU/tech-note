@@ -11,7 +11,7 @@ gem install rails
 Create new project:
 
 ```console
-rails new $PROJECT_NAME --api --skip-bundle --skip-test --skip-system-test
+rails new $PROJECT_NAME --api --skip-keeps --skip-action-mailer --skip-active-record --skip-active-storage --skip-action-cable --skip-test --skip-system-test --skip-bundle
 ```
 
 Explanation of the options can be found in `rails --helps`.
