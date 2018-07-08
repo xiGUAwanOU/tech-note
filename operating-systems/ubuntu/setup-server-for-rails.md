@@ -47,7 +47,7 @@ gem install bundler --no-rdoc --no-ri
 apt-get install software-properties-common
 add-apt-repository -y ppa:certbot/certbot
 apt-get update
-apt-get install -y certbot
+apt-get install -y certbot python3-pyasn1
 
 certbot certonly --standalone --http-01-port 3000 -d example.com -d www.example.com
 
