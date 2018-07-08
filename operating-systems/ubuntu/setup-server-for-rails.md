@@ -42,4 +42,11 @@ rvm --default use ruby-2.5.1
 
 # Prepare for Ruby on Rails
 gem install bundler --no-rdoc --no-ri
+
+# Fetch SSL certificate
+apt-get install software-properties-common
+add-apt-repository -y ppa:certbot/certbot
+apt-get update
+apt-get install -y certbot
+
 ```
