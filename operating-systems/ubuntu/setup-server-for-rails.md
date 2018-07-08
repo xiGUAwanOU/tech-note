@@ -49,5 +49,8 @@ add-apt-repository -y ppa:certbot/certbot
 apt-get update
 apt-get install -y certbot
 
-certbot certonly --standalone --tls-sni-01-port 3000 --http-01-port 3000 -d example.com -d www.example.com
+certbot certonly --standalone --http-01-port 3000 -d example.com -d www.example.com
+
+### WARNING: Interactive command! Need to manually input something. ###
+
 ```
