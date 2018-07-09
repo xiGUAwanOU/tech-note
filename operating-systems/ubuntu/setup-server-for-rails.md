@@ -55,5 +55,5 @@ rvm --default use ruby-2.5.1
 gem install bundler --no-rdoc --no-ri
 
 # Fetch SSL certificate
-certbot certonly --standalone --http-01-port 3000 -d example.com -d www.example.com
+certbot certonly --standalone --http-01-port 3000 -d captain-bonbon.de -d www.captain-bonbon.de
 ```
