@@ -1,6 +1,8 @@
 # Setup Server for Rails
 Using puma, just want to start from something small.
 
+Use `bash -v` to run following scripts with verbosity.
+
 Bash script before reboot:
 
 ```bash
