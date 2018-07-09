@@ -28,6 +28,7 @@ apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 9DA31620334BD75D9DC
 echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/4.0 multiverse" | tee /etc/apt/sources.list.d/mongodb-org-4.0.list
 apt-get update
 apt-get install -y mongodb-org
+systemctl enable mongod
 
 # Install RVM
 gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
@@ -44,9 +45,6 @@ apt-get install -y certbot python3-pyasn1
 After reboot, don't put this into bash script:
 
 ```bash
-# Start MongoDB
-service mongod start
-
 # Install Ruby
 rvm install ruby-2.5.1
 rvm --default use ruby-2.5.1
