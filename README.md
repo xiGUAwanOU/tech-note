@@ -47,3 +47,10 @@ programming-languages/typescript/first-look__typescript-quick-start.md
 - [ ] not finished
 - [x] finished
 ```
+
+### Tables
+```markdown
+| Left-aligned | Center-aligned | Right-aligned |
+| :---         |     :---:      |          ---: |
+| content      | content        | content       |
+```
