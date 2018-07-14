@@ -1,3 +1,3 @@
 # Reactivity in Examples
 
-Object as property with some fields not set.
+Almost all the problems come from the untracked fields or data. E.g., the unsed field in an object or direct change of the value in an array.
