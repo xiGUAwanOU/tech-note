@@ -73,6 +73,18 @@ let mySearch: SearchFunc;
 mySearch = function(source: Array<string>, keyword: string): Array<string> {
   // ...
 }
+
+// Or using inline interface definition
+let anotherSearch1: { (source: Array<string>, keyword: string): Array<string> } =
+  function(source: Array<string>, keyword: string): Array<string> {
+    // ...
+  };
+
+// Or using the syntax sugar?
+let anotherSearch2: (source: Array<string>, keyword: string) => Array<string> =
+  function(source: Array<string>, keyword: string): Array<string> {
+    // ...
+  };
 ```
 
 ### For Indexable Types
