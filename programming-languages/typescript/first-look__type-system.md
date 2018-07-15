@@ -1,4 +1,6 @@
 # Type System
+Note that, the types defined in TypeScript will be striped while transpiling. So in the run-time, there is no type check anymore.
+
 ## Basic Types
 | Name | Code | Example Values or Explanations |
 | --- | --- | --- |
@@ -74,4 +76,53 @@ mySearch = function(source: Array<string>, keyword: string): Array<string> {
 ```
 
 ### For Indexable Types
-__TBC__
+Interface can be used to describe an indexable data structure:
+```typescript
+interface ColorArray {
+    [index: number]: string;
+}
+
+let colors: ColorArray;
+colors = ['red', 'green', 'blue'];
+
+let color: string = colors[0];
+```
+
+In the index type definition `[<index_placeholder>: <index_type>]: <element_type>`:
+* `<index_placeholder>` can be freely choosen, just like the parameter name in the function signature;
+* `<index_type>`: can only be `number` or `string` (This means that the underlying implementation of indexable types is array, not a hash-like or map-like data sturcture. So why not simply use array then?);
+* `<element_type>`: can be anything.
+
+By the way, adding `readonly` to the index type definition will make the array-like data structure readonly.
+
+### For Class Types
+Like the interfaces in Java, it can be used to describe a class:
+```typescript
+interface ClockInterface {
+    currentTime: Date;
+    setTime(d: Date);
+    // Although it is possible to define the signature of constructor like following, but this is the wrong place:
+    // new (hour: number, minute: number): ClockInterface;
+}
+
+class Clock implements ClockInterface {
+    currentTime: Date;
+    setTime(d: Date) {
+        this.currentTime = d;
+    }
+    constructor(hour: number, minute: number) { }
+}
+```
+
+In some rare cases we need the classes that have implemented this interface to have the expected signature. To do so, we need a separated interface only for their constructors:
+```typescript
+interface ExpectedConstructor {
+  new (name: string, tags: Array<string>): SomeInterface;
+}
+
+function createObject(ctor: ExpectedConstructor, name: string, tags: Array<string>): SomeInterface {
+    return new ctor(name, tags);
+}
+
+let something = createObject(ClassHasExpectedConstructor, 'Name', ['tag1', 'tag2']);
+```
