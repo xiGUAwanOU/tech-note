@@ -41,6 +41,7 @@ threads = 5.times.map do |i|
     end
   end
 end
+
 threads.each{|thread| thread.join}
 ```
 
