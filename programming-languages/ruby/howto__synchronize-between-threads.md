@@ -41,6 +41,7 @@ threads = 5.times.map do |i|
     end
   end
 end
+threads.each{|thread| thread.join}
 ```
 
 From the 2nd example, it is easy to figure out that in the first example, since the monitor object is the object of the class that inherits it, so the scope of the synchronize is at the object-level.
