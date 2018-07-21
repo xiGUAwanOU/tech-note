@@ -37,7 +37,7 @@ monitor = Monitor.new
 threads = 5.times.map do |i|
   Thread.new do
     monitor.synchronize do
-      puts'helloworld'
+      puts "helloworld"
     end
   end
 end
