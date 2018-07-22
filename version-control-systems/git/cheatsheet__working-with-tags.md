@@ -1,5 +1,12 @@
 # Working with Tags
 
+List:
+
+```console
+$ git tag -n5
+```
+Command line option `-n5` means only display first 5 lines of message.
+
 Create:
 
 ```console
