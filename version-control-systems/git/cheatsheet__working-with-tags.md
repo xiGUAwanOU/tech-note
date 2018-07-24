@@ -14,9 +14,14 @@ $ git tag -a <TAG_NAME> -m "<TAG_MESSAGE>"
 ```
 
 ### Push tag to remote
-
+Push one tag:
 ```console
 $ git push origin 0.0.1
+```
+
+Or push all tags:
+```console
+$ git push origin --tags
 ```
 
 ### Checkout tagged version
