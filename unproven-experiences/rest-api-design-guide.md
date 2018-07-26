@@ -1,5 +1,12 @@
 # REST API Design Guide
 
+## Updated on 26. Jul. 2018
+Have changed my mind. True that probably REST API is not doing well if the data is deeply related. But the question is, why we want to avoid multiple HTTP request at the first place?
+
+Probably out of the reason of response time, we don't want user to wait long time before they get the result. But actually the response time is depends on many facts. The number of HTTP requests is just one of them. If the system itself is not scalable, or it is hard to be scaled separately, even if we can reduce the HTTP request number, but user still need to wait a long time for the single HTTP request, or even time out. So why not just make more requests and make the backend server scalable?
+
+I think I'm one of the devout believers now...
+
 ## Updated on 24. Jul. 2018
 Have read an interesting article on Medium and then read the [REST API Tutorial](https://restfulapi.net/), which have brought me new understanding about REST API.
 
