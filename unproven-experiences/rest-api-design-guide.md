@@ -3,7 +3,9 @@
 ## Updated on 26. Jul. 2018
 Have changed my mind. True that probably REST API is not doing well if the data is deeply related. But the question is, why we want to avoid multiple HTTP request at the first place?
 
-Probably out of the reason of response time, we don't want user to wait long time before they get the result. But actually the response time is depends on many facts. The number of HTTP requests is just one of them. If the system itself is not scalable, or it is hard to be scaled separately, even if we can reduce the HTTP request number, but user still need to wait a long time for the single HTTP request, or even time out. So why not just make more requests and make the backend server scalable?
+Probably out of the reason of response time, we don't want user to wait long time before they get the result. But actually the response time is depends on many facts. The number of HTTP requests is just one of them. If the system itself is not scalable, or it is hard to be scaled separately, even if we can reduce the HTTP request number, but user still need to wait a long time for the single HTTP request, or even time out.
+
+So why not just make more requests, stick to the REST API, stick to the microservices and make the backend separately scalable?
 
 I think I'm one of the devout believers (for) now...
 
