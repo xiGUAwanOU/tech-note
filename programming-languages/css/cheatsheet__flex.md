@@ -1,4 +1,4 @@
-# Flex Cheat Sheet
+# Flex
 
 Enable flex display in the container:
 
