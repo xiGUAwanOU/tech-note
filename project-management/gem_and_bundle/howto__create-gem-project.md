@@ -1,4 +1,4 @@
-# Create Gem
+# Create Gem Project
 According to convention, all the source code files should be placed in the `lib` path, a top-level `<gem_name>.gemspec` file is required. E.g.:
 
 ```text
