@@ -10,7 +10,8 @@
   * `Collections.synchronizedMap(Map map)`: simply a synchronized wrapper for all methods
   * `ConcurrentHashMap`: basically the to-go choice
 * Queue:
-  * `ConcurrentLinkedQueue`: basically the to-go choice
+  * `BlockingQueue`: is able to force consumer or producer waiting for several time
+  * `ConcurrentLinkedQueue`: non-blocking version
 
 ## Atomic Mutable Types
 There are several mutable types which provides several useful atomic operations:
