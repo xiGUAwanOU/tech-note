@@ -5,7 +5,7 @@
   * `Collections.synchronizedSet(Set set)`: simply a synchronized wrapper for all methods
   * `Collections.newSetFromMap(Map map)`: one can wrap a `ConcurrentMap` as a set
 * List:
-  * `Collections.synchronizedList(Lis set)`: simply a synchronized wrapper for all methods
+  * `Collections.synchronizedList(List list)`: simply a synchronized wrapper for all methods
 * Map:
   * `Collections.synchronizedMap(Map map)`: simply a synchronized wrapper for all methods
   * `ConcurrentHashMap`: basically the to-go choice
