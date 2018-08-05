@@ -8,7 +8,9 @@
   * `Collections.synchronizedList(Lis set)`: simply a synchronized wrapper for all methods
 * Map:
   * `Collections.synchronizedMap(Map map)`: simply a synchronized wrapper for all methods
-  * `ConcurrentHashMap`: a better way to go
+  * `ConcurrentHashMap`: basically the to-go choice
+* Queue:
+  * `ConcurrentLinkedQueue`: basically the to-go choice
 
 ## Atomic Mutable Types
 There are several mutable types which provides several useful atomic operations:
