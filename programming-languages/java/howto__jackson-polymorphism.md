@@ -36,4 +36,4 @@ public class Response {
 }
 ```
 
-The annotation parameter `include = JsonTypeInfo.As.EXISTING_PROPERTY` must be required, otherwise the type field will be duplicated.
+The annotation parameter `include = JsonTypeInfo.As.EXISTING_PROPERTY` must be required, otherwise the `type` field will be duplicated in serialized JSON.
