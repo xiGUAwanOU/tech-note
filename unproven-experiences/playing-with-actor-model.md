@@ -9,6 +9,8 @@ Ideally, an actor can only communicate with other actors by sending messages. If
 
 To overcome this, simply define actions as a special message type, which could contains the logic of the action. Once received the action message, the receiver should apply the logic on itself. In this case, the action logic will not be implemented by the target of the action.
 
+But notice that, since in this case, message delivering and handling for a single actor could be performed on different physical threads, remember to add locks per actor to avoid potential conflictions.
+
 ## Ideas of Implementation
 Usually the number of actors is far more bigger than the number of calculating units (CPU cores for example). A way to map a larger number of actors to a smaller number of calculating units is letting calculating units fetch jobs from a job pool, where a job is a chuck of calculating load of one single actor.
 
