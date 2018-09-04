@@ -19,6 +19,6 @@ This can be probably applied on video games. Each job can be the frame update fo
 ## Possible Limitations
 Inconsistency is the core problem in the actor model.
 
-Another problem that I can think of is, if not designed properly, there can easily be scalability problems. Especially the "logically centralized information holder". For example, if an actor wants to know which actor can be an eligible target for its next message, it could query some centralized database for this information. However this will immediately introduce potential scalability problem on the centralized database. This pattern also applies to global messaging queue and so on.
+Another problem that I can think of is, if not designed properly, there can easily be scalability problems. Especially the "logically centralized information holder". For example, if an actor wants to know which actor can be an eligible target for its next message, it could query some centralized database for this information. However this will immediately introduce potential scalability problem on the centralized database. This pattern also applies to global messaging queue, an actor receiving a lot of events, etc..
 
 But there are a lot of different solutions for the previously mentioned problems out there. So generally speaking, I don't think scalability is the core problem of actor model.
