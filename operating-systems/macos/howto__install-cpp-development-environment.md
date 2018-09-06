@@ -6,3 +6,8 @@ $ xcode-select --install
 ```
 
 But most likely this has already been done.
+
+Install clang-format using homebrew:
+```shell
+$ brew install clang-format
+```
