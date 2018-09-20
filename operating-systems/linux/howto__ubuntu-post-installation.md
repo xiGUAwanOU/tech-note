@@ -9,3 +9,6 @@ A. Provide an empty password, otherwise it will prompt every time.
 
 Q. White screen is shown after the lid has been closed and opened.\
 A. Edit `/etc/systemd/logind.conf` file, change the line `#HandleLidSwitch=suspend` to `#HandleLidSwitch=hibernate` and run command `sudo systemctl restart systemd-logind.service` to apply the change.
+
+Q. Install Chinese input method.\
+A. `sudo apt install fcitx-googlepinyin`, go to "Language Support", change the "Keyboard input method system" to fcitx. 
