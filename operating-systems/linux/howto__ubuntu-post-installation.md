@@ -6,3 +6,6 @@ A. This is probably a problem with default graphical care driver. Install the NV
 
 Q. Chrome is asking for the password of "default" keyring.\
 A. Provide an empty password, otherwise it will prompt every time.
+
+Q. White screen is shown after the lid has been closed and opened.\
+A. Edit `/etc/systemd/logind.conf` file, change the line `#HandleLidSwitch=suspend` to `#HandleLidSwitch=hibernate` and run command `sudo systemctl restart systemd-logind.service` to apply the change.
