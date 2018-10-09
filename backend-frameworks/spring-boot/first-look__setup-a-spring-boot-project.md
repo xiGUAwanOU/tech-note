@@ -53,3 +53,15 @@ dependencies {
     testCompile("org.assertj:assertj-core:${assertjVersion}")
 }
 ```
+
+## 3. Add a Development Configuration
+Add following content to `src/main/resources/application-development.yml` file:
+```yaml
+spring:
+  profiles: development
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/travel-blog-test
+  server:
+    port: 8080
+```
