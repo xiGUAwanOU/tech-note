@@ -65,3 +65,24 @@ spring:
   server:
     port: 8080
 ```
+
+## 4. Add an Application Class
+Which is the entry point of spring boot application. Add this to the root pacakge:
+
+```java
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class Application {
+    public static void main(String[] args) {
+        SpringApplication.run(Application.class, args);
+    }
+}
+```
+
+## 5. Run the Spring Boot Application
+Run command:
+```console
+$ gradle bootRun
+```
