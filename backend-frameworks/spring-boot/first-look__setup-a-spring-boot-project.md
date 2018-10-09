@@ -82,7 +82,12 @@ public class Application {
 ```
 
 ## 5. Run the Spring Boot Application
-Run command:
+Run command (Gradle 4.9 and later):
 ```console
-$ SPRING_PROFILES_ACTIVE=development gradle bootRun
+$ ./gradlew bootRun --args='--spring.profiles.active=development'
+```
+
+Or (before Gradle 4.9):
+```console
+$ SPRING_PROFILE_ACTIVE=development ./gradlew bootRun
 ```
