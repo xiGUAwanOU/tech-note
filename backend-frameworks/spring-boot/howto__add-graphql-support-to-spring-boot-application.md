@@ -46,5 +46,5 @@ curl -X POST \
   http://localhost:9000/api/graphql \
   -H 'Cache-Control: no-cache' \
   -H 'content-type: multipart/form-data' \
-  -F 'query={message}'
+  -F 'query=query { message }'
 ```
