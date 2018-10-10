@@ -62,8 +62,9 @@ spring:
   data:
     mongodb:
       uri: mongodb://localhost:27017/travel-blog-test
-  server:
-    port: 8080
+      
+server:
+  port: 8080
 ```
 
 ## 4. Add an Application Class
