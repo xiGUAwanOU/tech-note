@@ -7,3 +7,5 @@
 |margin|Left and right margin will evenly distribute the rest width, top and bottom margin will be 0|Use 100% of the parent's width as the margin value|
 |padding|Simply 0|Use 100% of the parent's width as the margin value|
 |border|3px, don't know why though|not available|
+
+W3C has a [specification](https://www.w3.org/TR/css-box-3/) for part of the contents here, but the implementation `auto` is conventional, not guranteed.
