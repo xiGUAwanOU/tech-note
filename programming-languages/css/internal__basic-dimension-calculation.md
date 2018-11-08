@@ -1,4 +1,4 @@
-# Dimension Calculation
+# Basic Dimension Calculation
 
 ```text
 totalElementWidth =
