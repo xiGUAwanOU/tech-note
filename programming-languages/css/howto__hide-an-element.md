@@ -7,3 +7,5 @@ There are at least 3 ways to hide an element: `display: none`, `visibility: hidd
 | `opacity: 0`         |      YES       |       YES       |
 | `visibility: hidden` |      YES       |       NO        |
 | `display: none`      |      NO        |       NO        |
+
+Notice that, none of them will prevent the loading of the content.
