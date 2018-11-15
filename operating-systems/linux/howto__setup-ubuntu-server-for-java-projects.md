@@ -11,4 +11,6 @@
 # apt update
 # apt install -y mongodb-org
 # service mongod start
+
+# apt install htop
 ```
