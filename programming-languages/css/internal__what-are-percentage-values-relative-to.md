@@ -1,5 +1,5 @@
-# 100%
-It is important to know what is the percentage value relative to:
+# What are Percentage Values Relative to?
+It is important to know what are the percentage values relative to:
 
 |Attribute|Relative To|
 |------|------|
