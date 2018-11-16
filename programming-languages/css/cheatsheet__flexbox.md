@@ -1,4 +1,4 @@
-# Flex
+# Flexbox
 
 Enable flex display in the container:
 
