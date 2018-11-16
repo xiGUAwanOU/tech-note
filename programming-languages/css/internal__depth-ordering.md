@@ -14,7 +14,7 @@ Positioned elements are these with non-default position attribute (other than `s
 ```
 
 ```css
-.blue, .pink, .orange, purple {
+.blue, .pink, .orange, .purple {
   position: absolute;
 }
 ```
