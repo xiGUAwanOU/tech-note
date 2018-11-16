@@ -24,7 +24,7 @@ Wrapping of the contents (default `nowrap`):
 }
 ```
 
-Align contents along the main axis, if `flex-direction: row | row-reverse`, this will be the horizontal alignment, otherwise vertical alignment (default `flex-start`):
+Align contents along the main axis, if `flex-direction: row | row-reverse`, this will be the horizontal alignment (defining the position along the horizontal axis), otherwise vertical alignment (default `flex-start`):
 
 ```css
 .container {
@@ -32,7 +32,7 @@ Align contents along the main axis, if `flex-direction: row | row-reverse`, this
 }
 ```
 
-Align contents along the cross axis (default `flex-start`):
+Align contents along the cross axis (default `stretch`):
 
 ```css
 .container {
