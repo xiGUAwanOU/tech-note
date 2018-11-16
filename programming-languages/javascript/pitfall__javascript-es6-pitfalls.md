@@ -1,4 +1,6 @@
-# Be Careful with `Array().fill()`
+# JavaScript ES6 Pitfalls
+
+### Be Careful with `Array().fill()`
 
 Be careful if the filled value does not have a primitive type:
 
