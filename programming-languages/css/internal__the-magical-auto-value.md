@@ -5,7 +5,7 @@ One must know the effect of the value `auto`:
 |------|------|
 |width|Take up all the width of the parent and leave the place for padding, border and margin|
 |width of flexbox container|Same as above|
-|width of flexbox item|Shrink to fit the content <sup>1</sup>|
+|width of flexbox item|Minimum width to contain the contents <sup>1</sup>|
 |height|Minimum height to contain the contents|
 |margin|Left and right margin will evenly distribute the rest width, top and bottom margin will be 0|
 
