@@ -3,7 +3,9 @@ One must know the effect of the value `auto`:
 
 |Attribute|Effect|
 |------|------|
-|width (`block` and `inline-block`)|Take up all the width of the parent and leave the place for padding, border and margin|
+|width|Take up all the width of the parent and leave the place for padding, border and margin|
+|width of flexbox container|Same as above|
+|width of flexbox item|Shrink to fit the content|
 |height|Minimum height to contain the contents|
 |margin|Left and right margin will evenly distribute the rest width, top and bottom margin will be 0|
 
