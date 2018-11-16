@@ -113,6 +113,15 @@ With the CSS shown above, the depth order (from bottom to top) is:
 
 Sometimes, the stack context will be formed implicitly by applying [some CSS properties](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Positioning/Understanding_z_index/The_stacking_context). And it seems that it is applying the default `z-index` value (0) if not specified.
 
+```html
+<div class=”pink”>
+  <div class=”orange”></div>
+  <div class="purple"></div>
+</div>
+<div class=”blue”></div>
+<div class=”green”></div>
+```
+
 ```css
 .blue, .pink, .orange, .purple {
   position: absolute;
