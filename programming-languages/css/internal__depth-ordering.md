@@ -5,12 +5,12 @@ Currently never had any problem with this, but maybe will have problem in this a
 Positioned elements are these with non-default position attribute (other than `static`) in CSS class definitions.
 
 ```html
-<div class=”pink”>
-  <div class=”orange”></div>
+<div class="pink">
+  <div class="orange"></div>
   <div class="purple"></div>
 </div>
-<div class=”blue”></div>
-<div class=”green”></div>
+<div class="blue"></div>
+<div class="green"></div>
 ```
 
 ```css
@@ -38,12 +38,12 @@ In the example above, the depth order (from bottom to top) is:
 Z-index only have effect on positioned elements.
 
 ```html
-<div class=”pink”>
-  <div class=”orange”></div>
+<div class="pink">
+  <div class="orange"></div>
   <div class="purple"></div>
 </div>
-<div class=”blue”></div>
-<div class=”green”></div>
+<div class="blue"></div>
+<div class="green"></div>
 ```
 
 ```css
@@ -75,12 +75,12 @@ With the CSS shown above, the depth order (from bottom to top) is:
 The effect of z-index is affected by the parent element of an element. If there is a z-index defined in the parent element, a stack context is formed, the z-index attribute of the children elements only have affect within the stack context.
 
 ```html
-<div class=”pink”>
-  <div class=”orange”></div>
+<div class="pink">
+  <div class="orange"></div>
   <div class="purple"></div>
 </div>
-<div class=”blue”></div>
-<div class=”green”></div>
+<div class="blue"></div>
+<div class="green"></div>
 ```
 
 ```css
@@ -114,12 +114,12 @@ With the CSS shown above, the depth order (from bottom to top) is:
 Sometimes, the stack context will be formed implicitly by applying [some CSS properties](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Positioning/Understanding_z_index/The_stacking_context). And it seems that it is applying the default `z-index` value (0) if not specified.
 
 ```html
-<div class=”pink”>
-  <div class=”orange”></div>
+<div class="pink">
+  <div class="orange"></div>
   <div class="purple"></div>
 </div>
-<div class=”blue”></div>
-<div class=”green”></div>
+<div class="blue"></div>
+<div class="green"></div>
 ```
 
 ```css
