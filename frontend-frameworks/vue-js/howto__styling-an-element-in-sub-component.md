@@ -1,6 +1,6 @@
 # Styling an Element in Sub-component
 
-E.g. we have `<li></li>` in both current component and also its sub-component. We only want to styling `<li></li>` in its sub-component, and still want the style definitions be scoped. In this case we could use "Deep Selectors" provided by vue-loader.
+E.g. we an element with class `b` in the sub-component, and we want to styling it in the sub-component, and still want the `<style></style>` tag to be scoped. In this case we could use "Deep Selectors" provided by vue-loader.
 
 For example:
 
