@@ -1,7 +1,7 @@
 # Depth Ordering
 Currently never had any problem with this, but maybe will have problem in this area later.
 
-## Positioned and Non-positioned Elements
+## 0. Positioned and Non-positioned Elements
 Positioned elements are these with non-default position attribute (other than `static`) in CSS class definitions.
 
 ```html
@@ -21,7 +21,7 @@ Positioned elements are these with non-default position attribute (other than `s
 
 In the example above, `.blue`, `.pink`, `.orange` and `.purple` are positioned elements.
 
-## Default Order
+## 1. Default Order
 By default, the z-index order is:
 1. root element (the html element)
 2. non-positioned elements in the order they are defined
@@ -34,7 +34,7 @@ In the example above, the depth order (from bottom to top) is:
 4. `.purple`: positioned, depth ordered by its element order;
 5. `.blue`: positioned, depth ordered by its element order;
 
-## Z-index
+## 2. Z-index
 Z-index only have effect on positioned elements.
 
 ```html
@@ -71,7 +71,7 @@ With the CSS shown above, the depth order (from bottom to top) is:
 4. `.orange`: positioned, ordered by z-index;
 5. `.purple`: positioned, ordered by z-index;
 
-## Stack Context
+## 3. Stack Context
 The effect of z-index is affected by the parent element of an element. If there is a z-index defined in the parent element, a stack context is formed, the z-index attribute of the children elements only have affect within the stack context.
 
 ```css
