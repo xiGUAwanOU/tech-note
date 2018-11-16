@@ -28,11 +28,11 @@ By default, the z-index order is:
 3. positioned elements in the order they are defined
 
 In the example above, the depth order (from bottom to top) is:
-1. `.green`
-2. `.pink`
-3. `.orange`
-4. `.purple`
-5. `.blue`
+1. `.green`: non-positioned element;
+2. `.pink`: positioned, depth ordered by its element order;
+3. `.orange`: positioned, depth ordered by its element order;
+4. `.purple`: positioned, depth ordered by its element order;
+5. `.blue`: positioned, depth ordered by its element order;
 
 ## Z-index
 Z-index only have effect on positioned elements.
