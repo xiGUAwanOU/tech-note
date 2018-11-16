@@ -56,11 +56,11 @@ Z-index only have effect on positioned elements.
 ```
 
 With the CSS shown above, the depth order (from bottom to top) is:
-1. `.green`
-2. `.pink`
-3. `.blue`
-4. `.orange`
-5. `.purple`
+1. `.green`: non-positioned element;
+2. `.pink`: positioned, default z-index;
+3. `.blue`: positioned, ordered by z-index;
+4. `.orange`: positioned, ordered by z-index;
+5. `.purple`: positioned, ordered by z-index;
 
 ## Stack Context
 The effect of z-index is affected by the parent element of an element. If there is a z-index defined in the parent element, a stack context is formed, the z-index attribute of the children elements only have affect within the stack context.
