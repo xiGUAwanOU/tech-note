@@ -37,6 +37,15 @@ In the example above, the depth order (from bottom to top) is:
 ## Z-index
 Z-index only have effect on positioned elements.
 
+```html
+<div class=”pink”>
+  <div class=”orange”></div>
+  <div class="purple"></div>
+</div>
+<div class=”blue”></div>
+<div class=”green”></div>
+```
+
 ```css
 .blue, .pink, .orange {
   position: absolute;
