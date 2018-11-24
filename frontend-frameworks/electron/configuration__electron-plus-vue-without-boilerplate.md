@@ -5,7 +5,7 @@ It is possible and actually easy.
 Start from creating a Vue.js project:
 
 ```shell
-$ vue init webpack <PROJECT_NAME>
+$ vue create <PROJECT_NAME>
 ```
 
 And then add `electron` dependency:
@@ -17,12 +17,10 @@ $ yarn add -D electron
 After that, we should firstly make sure that the development application runs smoothly. Add a file called `main.js` as the entry for Electron:
 
 ```javascript
-const {app, BrowserWindow} = require('electron')
-const path = require('path')
-const url = require('url')
+const { app, BrowserWindow } = require('electron')
 
 function createWindow () {
-  mainWindow = new BrowserWindow({width: 800, height: 600})
+  let mainWindow = new BrowserWindow({ width: 800, height: 600 })
   mainWindow.loadURL('http://localhost:8080')
   mainWindow.webContents.openDevTools()
 }
@@ -35,39 +33,30 @@ Edit the `package.json` file like this:
 ```diff
 +  "main": "main.js",
    "scripts": {
-     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
--    "start": "npm run dev",
+     "serve": "vue-cli-service serve",
 +    "electron": "electron . dev",
-     "unit": "cross-env BABEL_ENV=test karma start test/unit/karma.conf.js --single-run",
-     "e2e": "node test/e2e/runner.js",
-     "test": "npm run unit && npm run e2e",
-     "lint": "eslint --ext .js,.vue src test/unit test/e2e/specs",
-     "build": "node build/build.js"
-   }
+     "build": "vue-cli-service build",
+     "lint": "vue-cli-service lint",
+     "test:unit": "vue-cli-service test:unit"
+   },
 ```
 
 Now we could start the development mode like this:
 
 ```console
-$ yarn dev
+$ yarn serve
 $ yarn electron  # wait for the test server being fully started, and run this in another terminal
 ```
 
-To distribute the application, firstly we should make sure the generated Vue.js app supports the `file://` URLs. Modify the `config/index.js` file:
+To distribute the application, firstly we should make sure the generated Vue.js app supports the `file://` URLs. Create the `vue.config.js` file like following:
 
-```diff
-   build: {
-     // Template for index.html
-     index: path.resolve(__dirname, '../dist/index.html'),
-
-     // Paths
-     assetsRoot: path.resolve(__dirname, '../dist'),
-     assetsSubDirectory: 'static',
--    assetsPublicPath: '/',
-+    assetsPublicPath: '',
+```javascript
+module.exports = {
+  baseUrl: ''
+}
 ```
 
-Also edit the `main.js` file to support the distributed Vue.js app correctly:
+Also extend the `main.js` file to support the distributed Vue.js app correctly:
 
 ```javascript
 const {app, BrowserWindow} = require('electron')
@@ -110,8 +99,8 @@ $ yarn add -D electron-packager
 Edit the `package.json` file so that it could build the executable automatically.
 
 ```diff
-     "build": "node build/build.js",
-+    "packager": "npm run build; electron-packager . --overwrite --platform=darwin --arch=x64 --prune=true --out=release"
+     "build": "vue-cli-service build",
++    "package": "yarn build; electron-packager . --overwrite --platform=darwin --arch=x64 --prune=true --out=release",
    },
 ```
 
@@ -120,7 +109,7 @@ Note that, change the `platform` and `arch` options accordingly.
 Now, we could run following command to build the release version of the application:
 
 ```console
-$ yarn packager
+$ yarn package
 ```
 
 Finally, open the final application with following command:
