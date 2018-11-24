@@ -36,3 +36,9 @@ Option `--open` is for opening a browser tab.
 * `*.component.css`: style sheet of the component.
 
 In one word, it simply splits the SFC in Vue.js into different files.
+
+## 5. Build Final Artifact
+
+```shell
+ng build
+```
