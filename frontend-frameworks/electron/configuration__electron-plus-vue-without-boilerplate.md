@@ -99,9 +99,8 @@ $ yarn add -D electron-packager
 Edit the `package.json` file so that it could build the executable automatically.
 
 ```diff
-     "build": "vue-cli-service build",
-+    "package": "yarn build; electron-packager . --overwrite --platform=darwin --arch=x64 --prune=true --out=release",
-   },
+   "build": "vue-cli-service build",
++  "package": "yarn build; electron-packager . --overwrite --platform=darwin --arch=x64 --prune=true --out=release",
 ```
 
 Note that, change the `platform` and `arch` options accordingly.
