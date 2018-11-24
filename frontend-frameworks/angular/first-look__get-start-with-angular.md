@@ -42,3 +42,5 @@ In one word, it simply splits the SFC in Vue.js into different files.
 ```shell
 ng build
 ```
+
+After having executed this command, a `dist` folder will be created containing the final artifact.
