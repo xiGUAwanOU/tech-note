@@ -71,7 +71,7 @@ function createWindow () {
   mainWindow = new BrowserWindow({width: 800, height: 600})
 
   if (process.argv[2] === 'dev') {
-    mainWindow.loadURL('http://localhost:8080')
+    mainWindow.loadURL('http://localhost:4200')
     mainWindow.webContents.openDevTools()
   } else {
     mainWindow.loadURL(url.format({
