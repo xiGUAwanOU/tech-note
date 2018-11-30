@@ -38,7 +38,7 @@ This configuration file is only an example, modify it according to the [official
 
 ```javascript
 // Content of "webpack.config.js" file:
-const path = require('path')
+const path = require('path');
 
 module.exports = {
   mode: 'production',
@@ -59,9 +59,9 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
     filename: 'webpack-typescript-demo.js',
     library: 'webpackTypescriptDemo',
-    libraryTarget: 'var'
+    libraryTarget: 'umd'
   }
-}
+};
 ```
 
 ## Configure build command and build
@@ -80,3 +80,7 @@ module.exports = {
 ```shell
 $ npm run build
 ```
+
+Now in the `./dist` directory, we can find the built library as `webpack-typescript-demo.js`.
+
+## Verify the build
