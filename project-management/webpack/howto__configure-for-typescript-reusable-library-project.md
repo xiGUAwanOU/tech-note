@@ -24,8 +24,12 @@ $ npm install --save-dev typescript ts-loader
   "compilerOptions": {
     "outDir": "./dist/",
     "noImplicitAny": true,
+
+    // Language specification version of the import syntax:
     "module": "es6",
+    // Language specification version of the generated code:
     "target": "es5",
+
     "alwaysStrict": true,
     "allowJs": true
   }
@@ -41,7 +45,7 @@ This configuration file is only an example, modify it according to the [official
 const path = require('path');
 
 module.exports = {
-  mode: 'production',
+  mode: 'development',
   entry: './src/main.ts',
   module: {
     rules: [
@@ -58,8 +62,12 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'webpack-typescript-demo.js',
-    library: 'webpackTypescriptDemo',
-    libraryTarget: 'umd'
+
+    // Respect defaults if it is defined as default in the source code:
+    libraryExport: 'default',
+
+    // Generated code will be like: module.exports = ...;
+    libraryTarget: 'commonjs2'
   }
 };
 ```
