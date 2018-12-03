@@ -16,6 +16,17 @@ $ npm install webpack webpack-cli --save-dev
 $ npm install --save-dev typescript ts-loader
 ```
 
+## Prepare the TypeScript code
+
+```typescript
+// Content of "src/main.ts" file:
+export default class SomeClass {
+  sayHello() {
+    console.log('Hello world!');
+  }
+}
+```
+
 ## Configure the TypeScript compiler
 
 ```javascript
@@ -92,3 +103,20 @@ $ npm run build
 Now in the `./dist` directory, we can find the built library as `webpack-typescript-demo.js`.
 
 ## Verify the build
+
+Use following code to verify if the library is correctly generated:
+
+```javascript
+// Content of the "main.js" file:
+const SomeClass = require('./dist/webpack-typescript-demo.js');
+
+let someObject = new SomeClass();
+someObject.sayHello();
+```
+
+And then use node to run it:
+
+```shell
+$ node main.js
+Hello world!
+```
