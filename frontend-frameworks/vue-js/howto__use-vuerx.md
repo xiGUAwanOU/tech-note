@@ -65,3 +65,5 @@ export default {
 }
 </script>
 ```
+
+Click the button, the content of the `<h1>` tag will be changed. Note that, this binds the data from service to the component. With rxjs, it is possible to bind other way round. But still need to consider if it is the right thing to do.
