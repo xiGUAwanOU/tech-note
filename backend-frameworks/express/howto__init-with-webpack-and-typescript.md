@@ -133,8 +133,9 @@ describe("Whatever", () => {
 $ run jest
 ```
 
-## 12. A reference of the script field
+## 12. A reference of the `script` field
 ```javascript
+// In package.json file:
 "scripts": {
   "build": "webpack",
   "start": "node dist/application.js",
