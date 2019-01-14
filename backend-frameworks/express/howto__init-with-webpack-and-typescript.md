@@ -17,7 +17,7 @@ const path = require('path');
 
 module.exports = {
   mode: 'development',
-  entry: './server/main.ts',
+  entry: './src/main.ts',
   module: {
     rules: [
       {
@@ -32,10 +32,10 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'server.js'
+    filename: 'application.js'
   },
   target: 'node'
-}
+};
 ```
 
 # 4. Config TypeScript
@@ -62,7 +62,7 @@ $ npm install --save-dev express @types/express
 
 # 6. Write code
 ```typescript
-// Content of "server/main.ts" file:
+// Content of "src/main.ts" file:
 import * as express from 'express';
 import { Request, Response } from 'express';
 
@@ -87,7 +87,7 @@ app.listen(app.get('port'), () => {
 # 7. Try to compile and run
 ```console
 $ npx webpack
-$ node dist/server.js
+$ node dist/application.js
 ```
 
 # 8. Adding unit test dependencies to the project
@@ -101,7 +101,7 @@ $ npm install --save-dev jest @types/jest ts-jest
 module.exports = {
   globals: {
     'ts-jest': {
-      tsConfigFile: 'tsconfig.json'
+      tsConfig: 'tsconfig.json'
     }
   },
   moduleFileExtensions: [ 'ts', 'js', 'json' ],
@@ -117,4 +117,18 @@ module.exports = {
   ],
   testEnvironment: 'node'
 };
+```
+
+## 10. Adding unit test files
+```javascript
+describe("Whatever", () => {
+  it("should be correct", () => {
+    expect(1).toEqual(1);
+  });
+});
+```
+
+## 11. Run unit tests
+```console
+$ run jest
 ```
