@@ -57,5 +57,5 @@ module.exports = {
 
 # 5. Install Express
 ```shell
-$ npm install --save-dev express
+$ npm install --save-dev express @types/express
 ```
