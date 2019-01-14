@@ -38,7 +38,7 @@ module.exports = {
 };
 ```
 
-# 4. Config TypeScript
+## 4. Config TypeScript
 ```javascript
 // Content of "tsconfig.json" file:
 {
@@ -55,12 +55,12 @@ module.exports = {
 }
 ```
 
-# 5. Add Express dependencies
+## 5. Add Express dependencies
 ```console
 $ npm install --save-dev express @types/express
 ```
 
-# 6. Write code
+## 6. Write code
 ```typescript
 // Content of "src/main.ts" file:
 import * as express from 'express';
@@ -84,18 +84,18 @@ app.listen(app.get('port'), () => {
 });
 ```
 
-# 7. Try to compile and run
+## 7. Try to compile and run
 ```console
 $ npx webpack
 $ node dist/application.js
 ```
 
-# 8. Adding unit test dependencies to the project
+## 8. Adding unit test dependencies to the project
 ```console
 $ npm install --save-dev jest @types/jest ts-jest
 ```
 
-# 9. Adding Jest configuration
+## 9. Adding Jest configuration
 ```javascript
 // Content of jest.config.js file:
 module.exports = {
