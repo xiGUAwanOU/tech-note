@@ -132,3 +132,13 @@ describe("Whatever", () => {
 ```console
 $ run jest
 ```
+
+## 12. A reference of the script field
+```javascript
+"scripts": {
+  "build": "webpack",
+  "start": "node dist/application.js",
+  "lint": "tslint -c tslint.json **/*.ts",
+  "test": "jest"
+},
+```
