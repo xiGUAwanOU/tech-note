@@ -7,7 +7,7 @@ $ npm init
 
 ## 2. Add dependencies
 ```shell
-$ npm install --save-dev webpack typescript tslint ts-node ts-loader
+$ npm install --save-dev webpack webpack-cli typescript tslint ts-node ts-loader
 ```
 
 ## 3. Configure Webpack
@@ -58,4 +58,34 @@ module.exports = {
 # 5. Install Express
 ```shell
 $ npm install --save-dev express @types/express
+```
+
+# 6. Write code
+```typescript
+// Content of "server/main.ts" file:
+import * as express from 'express';
+import { Request, Response } from 'express';
+
+export const app = express();
+
+app.set('port', 3000);
+
+app.use(express.json());
+
+app.get('/', (request: Request, response: Response) => {
+  response.status(200);
+  response.json({ message: 'Hello world' });
+  response.end();
+});
+
+app.listen(app.get('port'), () => {
+  console.log(('App is running at http://localhost:%d in %s mode'), app.get('port'), app.get('env'));
+  console.log('Press CTRL-C to stop\n');
+});
+```
+
+# 7. Try to compile and run
+```console
+$ npx webpack
+$ node dist/server.js
 ```
