@@ -1,12 +1,12 @@
 # Init with Webpack and TypeScript
 
 ## 1. Initialize NPM project
-```shell
+```console
 $ npm init
 ```
 
-## 2. Add dependencies
-```shell
+## 2. Add basic dependencies
+```console
 $ npm install --save-dev webpack webpack-cli typescript tslint ts-node ts-loader
 ```
 
@@ -55,8 +55,8 @@ module.exports = {
 }
 ```
 
-# 5. Install Express
-```shell
+# 5. Add Express dependencies
+```console
 $ npm install --save-dev express @types/express
 ```
 
@@ -88,4 +88,33 @@ app.listen(app.get('port'), () => {
 ```console
 $ npx webpack
 $ node dist/server.js
+```
+
+# 8. Adding unit test dependencies to the project
+```console
+$ npm install --save-dev jest @types/jest ts-jest
+```
+
+# 9. Adding Jest configuration
+```javascript
+// Content of jest.config.js file:
+module.exports = {
+  globals: {
+    'ts-jest': {
+      tsConfigFile: 'tsconfig.json'
+    }
+  },
+  moduleFileExtensions: [ 'ts', 'js', 'json' ],
+  moduleNameMapper: {
+    '^@/(.*)$': '<rootDir>/src/$1',
+    '^@test/(.*)$': '<rootDir>/test/$1'
+  },
+  transform: {
+    '^.+\\.ts$': 'ts-jest'
+  },
+  testMatch: [
+    '**/test/**/*.spec.(ts|js)'
+  ],
+  testEnvironment: 'node'
+};
 ```
