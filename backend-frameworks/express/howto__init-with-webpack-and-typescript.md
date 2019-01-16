@@ -47,7 +47,7 @@ module.exports = {
     "noImplicitAny": true,
 
     "module": "es6",
-    "target": "es5",
+    "target": "es6",
 
     "alwaysStrict": true,
     "allowJs": true
