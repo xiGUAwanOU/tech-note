@@ -55,12 +55,17 @@ module.exports = {
 }
 ```
 
-## 5. Add Express dependencies
+## 5. Configure TsLint
+```console
+$ npx tslint --init
+```
+
+## 6. Add Express dependencies
 ```console
 $ npm install --save-dev express @types/express
 ```
 
-## 6. Write code
+## 7. Write code
 ```typescript
 // Content of "src/main.ts" file:
 import * as express from 'express';
@@ -84,18 +89,18 @@ app.listen(app.get('port'), () => {
 });
 ```
 
-## 7. Try to compile and run
+## 8. Try to compile and run
 ```console
 $ npx webpack
 $ node dist/application.js
 ```
 
-## 8. Adding unit test dependencies to the project
+## 9. Adding unit test dependencies to the project
 ```console
 $ npm install --save-dev jest @types/jest ts-jest
 ```
 
-## 9. Adding Jest configuration
+## 10. Adding Jest configuration
 ```javascript
 // Content of jest.config.js file:
 module.exports = {
@@ -119,7 +124,7 @@ module.exports = {
 };
 ```
 
-## 10. Adding unit test files
+## 11. Adding unit test files
 ```javascript
 describe("Whatever", () => {
   it("should be correct", () => {
@@ -128,12 +133,12 @@ describe("Whatever", () => {
 });
 ```
 
-## 11. Run unit tests
+## 12. Run unit tests
 ```console
 $ run jest
 ```
 
-## 12. A reference of the `script` field
+## 13. A reference of the `script` field
 ```javascript
 // In package.json file:
 "scripts": {
