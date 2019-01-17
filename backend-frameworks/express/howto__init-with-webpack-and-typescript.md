@@ -44,13 +44,15 @@ module.exports = {
 {
   "compilerOptions": {
     "outDir": "dist",
-    "noImplicitAny": true,
 
-    "module": "es6",
+    "module": "commonjs",
     "target": "es6",
+    "moduleResolution": "node",
+    "esModuleInterop": true,
 
     "alwaysStrict": true,
-    "allowJs": true
+    "allowJs": true,
+    "noImplicitAny": true
   }
 }
 ```
@@ -58,6 +60,23 @@ module.exports = {
 ## 5. Configure TsLint
 ```console
 $ npx tslint --init
+```
+
+An example of the configurations:
+```javascript
+// Content of "tslint.json" file:
+{
+    "defaultSeverity": "error",
+    "extends": [
+        "tslint:recommended"
+    ],
+    "jsRules": {},
+    "rules": {
+      "interface-name": false,
+      "object-literal-sort-keys": false
+    },
+    "rulesDirectory": []
+}
 ```
 
 ## 6. Add Express dependencies
