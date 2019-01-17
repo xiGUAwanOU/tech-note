@@ -33,7 +33,7 @@ Or:
 ```javascript
 const obj = {
   message: "hello world",
-  getCallback: () => {
+  callback: () => {
     const self = this
     console.log(self.message)
   }
