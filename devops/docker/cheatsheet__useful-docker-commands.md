@@ -3,7 +3,7 @@
 ## Images
 Build a new image:
 ```console
-$ docker build --force-rm --tag <name>:<version> --build-arg <key>=<value> .
+$ docker build --force-rm --tag <tag>:<version> --build-arg <key>=<value> .
 ```
 
 List all images:
@@ -14,4 +14,45 @@ $ docker image ls -a
 List all image IDs:
 ```console
 $ docker image ls -aq
+```
+
+## Containers
+Run a container:
+```console
+$ docker run --rm -p 80:80 <tag>:<version>
+```
+
+List all containers:
+```console
+$ docker container ls -a
+```
+
+List all container IDs:
+```console
+$ docker container ls -aq
+```
+
+Login to a running container:
+```console
+$ docker exec -it <container_id> bash
+```
+
+Stop a container:
+```console
+$ docker container stop <container_id>
+```
+
+Stop all containers:
+```console
+$ docker container stop $(docker container ls -aq)
+```
+
+Remove a container:
+```console
+$ docker container rm <container_id>
+```
+
+Remove all containers:
+```console
+$ docker container rm $(docker container ls -aq)
 ```
