@@ -28,7 +28,11 @@ module.exports = {
     ]
   },
   resolve: {
-    extensions: [ '.ts', '.js' ]
+    extensions: [ '.ts', '.js' ],
+    alias: {
+      '@': path.resolve(__dirname, 'src/'),
+      '@test': path.resolve(__dirname, 'test/')
+    }
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
@@ -44,14 +48,21 @@ module.exports = {
 // Content of "tsconfig.json" file:
 {
   "compilerOptions": {
+    "baseUrl": ".",
     "outDir": "dist",
-
+    "paths": {
+      "@/*": [ "src/*" ],
+      "@test/*": [ "test/*" ]
+    },
+    
     "module": "commonjs",
     "target": "es6",
-
+    
     "moduleResolution": "node",
     "esModuleInterop": true,
 
+    "sourceMap": true,
+    
     "alwaysStrict": true,
     "allowJs": true,
     "noImplicitAny": true
@@ -133,6 +144,10 @@ module.exports = {
   },
   setupFiles: ['./test/setup.js'],
   moduleFileExtensions: [ 'ts', 'js', 'json' ],
+  moduleNameMapper: {
+    '^@/(.*)$': '<rootDir>/src/$1',
+    '^@test/(.*)$': '<rootDir>/test/$1'
+  },
   transform: {
     '^.+\\.ts$': 'ts-jest'
   },
