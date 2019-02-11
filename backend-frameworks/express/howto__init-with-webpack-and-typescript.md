@@ -16,7 +16,7 @@ $ npm install --save-dev webpack webpack-cli typescript tslint ts-node ts-loader
 const path = require('path');
 
 module.exports = {
-  mode: 'development',
+  mode: process.env.NODE_ENV || 'development',
   entry: './src/main.ts',
   module: {
     rules: [
@@ -36,6 +36,7 @@ module.exports = {
   },
   target: 'node'
 };
+
 ```
 
 ## 4. Config TypeScript
@@ -47,6 +48,7 @@ module.exports = {
 
     "module": "commonjs",
     "target": "es6",
+
     "moduleResolution": "node",
     "esModuleInterop": true,
 
@@ -55,6 +57,7 @@ module.exports = {
     "noImplicitAny": true
   }
 }
+
 ```
 
 ## 5. Configure TsLint
@@ -128,11 +131,8 @@ module.exports = {
       tsConfig: 'tsconfig.json'
     }
   },
+  setupFiles: ['./test/setup.js'],
   moduleFileExtensions: [ 'ts', 'js', 'json' ],
-  moduleNameMapper: {
-    '^@/(.*)$': '<rootDir>/src/$1',
-    '^@test/(.*)$': '<rootDir>/test/$1'
-  },
   transform: {
     '^.+\\.ts$': 'ts-jest'
   },
@@ -141,6 +141,13 @@ module.exports = {
   ],
   testEnvironment: 'node'
 };
+```
+
+```javascript
+// Content of setup.js file:
+process.on("unhandledRejection", (uncaughtRejection) => {
+  throw uncaughtRejection
+})
 ```
 
 ## 11. Adding unit test files
@@ -154,7 +161,7 @@ describe("Whatever", () => {
 
 ## 12. Run unit tests
 ```console
-$ run jest
+$ npx jest
 ```
 
 ## 13. A reference of the `script` field
