@@ -78,4 +78,4 @@ The first way lacks reactiveness. Say, a view property A is computed from the un
 
 The second way introduces unnecessary reactiveness fields. Say we listen to observe B and manually set data field B', since B' is reactive, we can compute A from B'. But this is not beautiful, since it introduces a data field B', which must be readonly. If one tries to write data in B', it will be out of sync with the underlying value of B.
 
-Despite of the unnecessary extra fields, it could be a good alternative to Vuex. Moreover, with TypeScript, it is probably type safer than Vuex.
+Despite of the unnecessary extra fields, it could be a good alternative to Vuex.
