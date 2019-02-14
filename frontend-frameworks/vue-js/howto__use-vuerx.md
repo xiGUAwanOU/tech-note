@@ -76,6 +76,6 @@ The first way lacks reactiveness. Say, a view property A is computed from the un
 
 The second way introduces unnecessary reactiveness fields. Say we listen to observe B and manually set data field B', since B' is reactive, we can compute A from B'. But this is not beautiful, since it introduces a data field B', which must be readonly. If one tries to write data in B', it will be out of sync with the underlying value of B.
 
-Regardless of the unnecessary extra fields, it could be a good alternative to Vuex.
+Despite of the unnecessary extra fields, it could be a good alternative to Vuex. Moreover, with TypeScript, it is probably type safer than Vuex.
 
 Note that, this binds the data from service to the component. With rxjs, it is possible to bind other way round. But still need to consider if it is the right thing to do. The [official readme file](https://github.com/vuejs/vue-rx) contains the instructions of how to do that.
