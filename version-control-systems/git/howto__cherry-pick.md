@@ -1,6 +1,6 @@
 # Cherry Pick
 
-The sub-command `cherry-pick` will do the thing. For example:
+The sub-command `cherry-pick` will try to apply a commit from another branch to the current branch. For example:
 
 ```console
 $ git cherry-pick b13f38ca046d36db7e5ec19569e4333ae1c65dff
