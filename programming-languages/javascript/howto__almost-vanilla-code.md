@@ -98,16 +98,7 @@ npx browserify build/main.js --outfile dist/main.js
 rm -rf build
 ```
 
-## 3. Code Structure
-The structure should be minimal and use the plain JavaScript only.
-
-There are several important concepts in the JavaScript code structure:
-* globals:
-  * doms
-  * states
-  * eventBus
-* processors
-
+## 3. Example
 Take the code below as an example:
 
 ```javascript
@@ -151,4 +142,23 @@ function onPrimaryButtonClick(globals) {
   globals.states.primaryButtonClicked = true
   globals.eventBus.dispatchEvent(new CustomEvent('primaryButtonClick'))
 }
+
+module.exports = primaryButton
 ```
+
+## 4. Explainations
+There are several important concepts in the JavaScript code structure shown above:
+* globals: keep a set of global references
+  * doms: all the **static** DOMs in the current HTML page that are manipulated by JavaScript
+  * states: all data that should be globally available
+  * eventBus: a reference where processors can send or listen to events
+* processors: frontend business logics
+
+
+The flow of the program should be like this. First of all, we should initialize a `globals` reference, since it is the basic of the whole program. On initialize, each processor will take the `globals` reference as a parameter and add listeners to DOMs or event bus or set initial values for the global states. After that, the whole UI should be working.
+
+In the example shown above, we have a button and an area displaying the text message. Once the button is clicked, a text message "hello world" should be displayed.
+
+In this case, we have two DOMs which are `primaryButton` and `message`. Although useless here, we have also added the state `primaryButtonClicked` and the event bus to the `globals`. We have only one processor module, which is `primary-button`.
+
+We can see that the primary button processor module has added an event listener to the `primaryButton` DOM on initialize. Once the listener is triggered, it will set the inner text of `message` DOM to `hello world`. Setting states and dispatching events are useless in this example, but imagine if there are more processor modules, global state and event bus will help us decouple the dependencies between different processor modules.
