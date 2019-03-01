@@ -97,3 +97,58 @@ npx babel js --out-dir build
 npx browserify build/main.js --outfile dist/main.js
 rm -rf build
 ```
+
+## 3. Code Structure
+The structure should be minimal and use the plain JavaScript only.
+
+There are several important concepts in the JavaScript code structure:
+* globals:
+  * doms
+  * states
+  * eventBus
+* processors
+
+Take the code below as an example:
+
+```javascript
+// main.js
+const primaryButton = require('./primary-button')
+
+function main () {
+  const globals = {}
+
+  globals.doms = {
+    primaryButton: document.getElementById('primary-button')
+    message: document.getElementById('message')
+  }
+
+  globals.states = {
+    primaryButtonClicked: false
+  }
+
+  globals.eventBus = new EventTarget()
+  
+  primaryButton.initialize(globals)
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', main)
+} else {
+  main()
+}
+```
+
+```javascript
+// primary-button.js
+const primaryButton = {
+  initialize (globals) {
+    globals.doms.primaryButton.addEventListener('click', () => onPrimaryButtonClick(globals))
+  }
+}
+
+function onPrimaryButtonClick(globals) {
+  globals.doms.message.innerText = 'hello world'
+  globals.states.primaryButtonClicked = true
+  globals.eventBus.dispatchEvent(new CustomEvent('primaryButtonClick'))
+}
+```
