@@ -24,3 +24,5 @@ const globalName = (function () {
   }
 })()
 ```
+
+In this case, the `local*` names won't leak into the global namespace, but be packed into the `globalName` object.
