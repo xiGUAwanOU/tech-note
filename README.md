@@ -1,56 +1,39 @@
 # Tech Note
-A private tech note to record eveything I've learnt about IT.
+The conten in this tech note is:
+1. either cheatsheet-like, which will be referenced later;
+2. interesting understandings, which are worth to be read again later.
 
 For a source code highlighting language list, see [linguist project](https://github.com/github/linguist/blob/master/lib/linguist/languages.yml).
 
-## Category and Label of the Articles
-### Category Levels
-1. Type of the technology, examples are:
-  * `programming-languages`
-  * `backend-frameworks`
-  * `database-systems`
-2. Name of the technology, for example:
-  * `java`
-  * `ruby`
-  * `vuejs`
-  * `mysql`
+## Subfolders
+There are only two first-level sub-directories:
+1. cheatsheets
+2. notes
 
-### Labels
-Labels are the types of the articles. They can be:
-* `first-look`: initialisation or setup of the system, basic tutorials;
-* `configuration`: how to tweak some values to adjust the behaviour of a system;
-* `cheatsheet` all-in-one quick references, all-in-one code snippets, etc.;
-* `howto`: how to do one single thing using a system (not through changing the configuration);
-* `internal`: how things work under the hood;
-* `best-practise`: how to do things properly;
-* `pitfall`: some errors that are easy to be made.
+Within the two first-level sub-directories, the articles are seperated by its applied domain:
+1. general
+2. frontend
+3. backend
+4. devops
+5. game
+6. compiler
+7. embedded
+8. art
+9. ...
 
-### Naming Convention
+## Keywords
+Keywords are the primary searching criteria. They should be the first line of a note. Like:
 ```text
-category-level-1/category-level-2/label-of-the-article__title-of-the-article.md
+keywords css, flexbox, flex
 ```
 
-For example:
+## Labels
+Label can be added according to the:
+1. programming language
+2. framework/library
+3. technology
 
+Labels are the secondary searching criteria. They should be the second line of a note. Like：
 ```text
-programming-languages/typescript/first-look__typescript-quick-start.md
-```
-
-## Cheatsheet
-### Images
-```markdown
-![alt text](https://hostname.net/path/to/image.png)
-```
-
-### TODOs List
-```markdown
-- [ ] not finished
-- [x] finished
-```
-
-### Tables
-```markdown
-| Left-aligned | Center-aligned | Right-aligned |
-| :---         |     :---:      |          ---: |
-| content      | content        | content       |
+labels javascript, vue.js, vue-router
 ```

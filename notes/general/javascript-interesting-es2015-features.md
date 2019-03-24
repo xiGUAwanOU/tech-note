@@ -1,5 +1,6 @@
-# Some Interesting ES2015+ Features
+labels javascript
 
+# JavaScript Interesting ES2015+ Features
 1. Support for computed names in object property definitions:
 
     ```javascript
@@ -13,7 +14,7 @@
 
     ```javascript
     var list = [ 1, 2, 3 ]
-    var [ a, , b ] = list
+    var [ a, , b ] = list // In this case a is 1, b is 3
     [ b, a ] = [ a, b ]
     ```
 
@@ -40,17 +41,22 @@
       console.log(name, val)
     }
 
-    function g({name: n, val: v}) {
+    function g([head, ...tail]) {
+      console.log(head, tail)
+    }
+
+    function h({name: n, val: v}) {
       console.log(n, v)
     }
 
-    function h({name, val}) {
+    function i({name, val}) {
       console.log(name, val)
     }
 
     f(["bar", 42])
-    g({name: "foo", val: 7})
-    h({name: "bar", val: 42})
+    g(["foo", "bar", "baz"])
+    h({name: "foo", val: 7})
+    i({name: "bar", val: 42})
     ```
 
 6. Getter/Setter also directly within classes (and not just within object initializers, as it is possible since ECMAScript 5.1):

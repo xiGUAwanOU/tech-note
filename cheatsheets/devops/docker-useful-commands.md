@@ -1,4 +1,7 @@
-# Useful Docker Commands
+keywords docker, command
+labels docker
+
+# Docker Useful Commands
 
 ## Images
 Build a new image:
@@ -50,6 +53,11 @@ $ docker container stop $(docker container ls -aq)
 Remove a container:
 ```console
 $ docker container rm <container_id>
+```
+
+Remove all stopped containers:
+```console
+$ docker container prune
 ```
 
 Remove all containers:
