@@ -1,7 +1,14 @@
-keywords shell, bash, script, basic, variable, input, if, switch, case, condition, for, while, loop
+keywords shell, bash, script, basic, shebang, quit, error, variable, input, if, switch, case, condition, for, while, loop
 labels shell
 
 # Shell Basics
+
+## 0. Shebang and Error Handling
+
+```sh
+#!/usr/bin/env bash
+set -v  # Quit if an error occurs
+```
 
 ## 1. Hello World
 
