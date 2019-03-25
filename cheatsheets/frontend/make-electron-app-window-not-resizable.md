@@ -1,5 +1,7 @@
-# Make Window not Resizable
+keywords electron, window, not resizable, non resizable
+labels javascript, electron
 
+# Make Eletron App Window not Resizable
 This only works for MacOS and Windows, doesn't work for Linux.
 
 ```javascript
