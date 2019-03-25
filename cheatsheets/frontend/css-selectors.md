@@ -1,7 +1,7 @@
 keywords css, selectors
 labels css
 
-# CSS Selectors
+# CSS: Selectors
 
 ## Bread & Butter
 * `.class`: select all elements with specified class;

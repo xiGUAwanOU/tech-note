@@ -1,7 +1,7 @@
 keywords css, vertical, center, centering, middle
 labels css
 
-# Vertical Centering `inline` or `inline-block` Elements
+# CSS: Vertical Centering `inline` or `inline-block` Elements
 `vertical-align: middle` only puts the element in the vertical center of the total line height, but the problem is, if the line height is the same as the height of the element, then it won't make any difference.
 
 The first thought one might have is to set the `line-height: 100%`, but nope, it will make the line height 100% of the height of the font, not the height of its parent.

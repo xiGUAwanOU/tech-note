@@ -1,7 +1,7 @@
 keywords css, position
 labels css
 
-# CSS Position Attribute
+# CSS: Position Attribute
 * `static`:
   * The default behaviour if other position value is not specified.
 * `relative`:

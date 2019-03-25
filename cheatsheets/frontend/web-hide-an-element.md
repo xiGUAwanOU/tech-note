@@ -1,7 +1,7 @@
 keywords hide, invisible, element, html, css, javascript, dom
-labels html, css, javascript
+labels web, html, css, javascript
 
-# Hide an Element
+# Web: Hide an Element
 ## With HTML
 Set the attribute `hidden` to `true` will hide an element. For example:
 ```html

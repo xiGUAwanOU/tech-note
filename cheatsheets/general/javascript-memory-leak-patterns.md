@@ -1,7 +1,7 @@
 keywords javascript, memory leak, garbage, collection
 labels javascript
 
-# JavaScript Memory Leak Patterns
+# JavaScript: Memory Leak Patterns
 Start from 2012, all of the main-stream web browsers have implemented "mark-and-sweep" algorithm for collecting garbages.
 
 So, it is said that:

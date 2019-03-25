@@ -1,6 +1,6 @@
 labels javascript
 
-# JavaScript Interesting ES2015+ Features
+# JavaScript: Interesting ES2015+ Features
 1. Support for computed names in object property definitions:
 
     ```javascript

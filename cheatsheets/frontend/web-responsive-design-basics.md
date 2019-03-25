@@ -1,7 +1,7 @@
 keywords responsive, head, viewport, meta, media, query, breakpoint, html, css
-labels html, css, responsive
+labels web, html, css, responsive
 
-# Responsive Design Related
+# Web: Responsive Design Basics
 
 ## Responsive HTML
 Make a webpage responsive. Put the following meta definition into the `<head>...</head>` selction:

@@ -1,7 +1,7 @@
 keywords css, flexbox
 labels css
 
-# CSS Flexbox
+# CSS: Flexbox
 Enable flex display in the container:
 ```css
 .container {

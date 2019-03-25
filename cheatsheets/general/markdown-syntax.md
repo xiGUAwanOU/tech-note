@@ -1,7 +1,7 @@
 keywords markdown
 labels markdown
 
-# Markdown Syntax
+# Markdown: Syntax
 
 ## Code Block Highlighting Languages
 ```text

@@ -1,7 +1,7 @@
 keywords shell, bash, script, basic, shebang, quit, error, variable, input, if, switch, case, condition, for, while, loop
 labels shell
 
-# Shell Basics
+# Shell: Basics
 
 ## 0. Shebang and Error Handling
 

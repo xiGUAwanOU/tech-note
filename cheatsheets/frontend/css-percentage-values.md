@@ -1,7 +1,7 @@
 keywords css, percent, percentage, value, relative to
 labels css
 
-# CSS Percentage Values
+# CSS: Percentage Values
 
 |Attribute|Relative To|
 |------|------|

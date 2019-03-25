@@ -1,7 +1,7 @@
 keywords shell, quotes, single quote, double quote, backtick
 labels shell
 
-# Shell Quotes
+# Shell: Quotes
 There are three kinds of quotes in bash shell: single quote `'`, double quote `"` and backtick `\``.
 
 ## Single Quote

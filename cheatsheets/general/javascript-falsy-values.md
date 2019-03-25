@@ -1,7 +1,7 @@
 keywords javascript, falsy, value
 labels javascript
 
-# JavaScript Falsy Values
+# JavaScript: Falsy Values
 ```javascript
 // Falsy values:
 if (false)

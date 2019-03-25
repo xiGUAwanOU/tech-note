@@ -1,7 +1,7 @@
 keywords css, display, block, inline, inline-block
 labels css
 
-# CSS Display Attribute
+# CSS: Display Attribute
 * `display: block`:
   * takes up the full width of its parent by default (expanded);
   * begins and ends with newlines;

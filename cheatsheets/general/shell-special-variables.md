@@ -1,7 +1,7 @@
 keywords shell, special, variables, command line arguments
 labels shell
 
-# Shell Special Variables
+# Shell: Special Variables
 
 | Variable | Usage |
 |----------|-------|

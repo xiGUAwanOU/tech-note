@@ -1,103 +1,132 @@
 const fs = require('fs')
 const path = require('path')
 
-const main = () => withValue(undefined)
-  .thenDo(() => forEachFileInPath(
-    'cheatsheets',
-    fileHasMarkdownExtension,
-    checkProblemsForCheatsheets
-  ))
-  .thenDo(() => forEachFileInPath(
-    'notes',
-    fileHasMarkdownExtension,
-    checkProblemsForNotes
-  ))
-  .value()
+function main() {
+  forEachFileInPath('cheatsheets', checkForProblems([
+    checkKeywordsAtLine(1),
+    checkLabelsAtLine(2),
+    checkEmptyAtLine(3),
+    checkTitleAtLine(4)
+  ]))
 
-const forEachFileInPath = (basePath, filter, callback) => 
-  listFilesInPath(basePath)
-    .filter((dirEntry) => dirEntry.isDirectory() || filter(dirEntry))
-    .map((dirEntry) =>
-      dirEntry.isDirectory()
-        ? forEachFileInPath(path.join(basePath, dirEntry.name), filter, callback)
-        : callback(path.join(basePath, dirEntry.name))
-    )
+  forEachFileInPath('notes', checkForProblems([
+    checkLabelsAtLine(1),
+    checkEmptyAtLine(2),
+    checkTitleAtLine(3)
+  ]))
+}
 
-const listFilesInPath = (basePath) => fs.readdirSync(basePath, { encoding: 'utf8', withFileTypes: true })
-
-const fileHasMarkdownExtension = (dirEntry) => dirEntry.isFile() && dirEntry.name.endsWith('.md')
-
-const checkProblemsForCheatsheets = (filePath) =>
-  withValue(filePath)
-    .thenDo(readFile)
-    .thenDo(enrichFileWithLines)
-    .thenDo((file) => checkKeywordsAtLine(1, file))
-    .thenDo((file) => checkLabelsAtLine(2, file))
-    .thenDo((file) => checkEmptyAtLine(3, file))
-    .thenDo((file) => checkTitleAtLine(4, file))
-    .value()
-
-const checkProblemsForNotes = (filePath) =>
-  withValue(filePath)
-    .thenDo(readFile)
-    .thenDo(enrichFileWithLines)
-    .thenDo((file) => checkLabelsAtLine(1, file))
-    .thenDo((file) => checkEmptyAtLine(2, file))
-    .thenDo((file) => checkTitleAtLine(3, file))
-    .value()
-
-const checkEmptyAtLine = (line, file) =>
-  printMessageIfDoesNotMatch(
-    line,
-    /^$/,
-    `File: ${file.path} (line: ${line})\n  Line must be empty`,
-    file
-  )
-
-const checkKeywordsAtLine = (line, file) =>
-  printMessageIfDoesNotMatch(
-    line,
-    /^keywords (?:[^,]+, )*(?:[^,]+)$/,
-    `File: ${file.path} (line: ${line})\n  Line must be a keywords expression`,
-    file
-  )
-
-const checkLabelsAtLine = (line, file) => 
-  printMessageIfDoesNotMatch(
-    line,
-    /^labels (?:[^,]+, )*(?:[^,]+)$/,
-    `File: ${file.path} (line: ${line})\n  Line must be a labels expression`,
-    file
-  )
-
-const checkTitleAtLine = (line, file) =>
-  printMessageIfDoesNotMatch(
-    line,
-    /^# .+$/,
-    `File: ${file.path} (line: ${line})\n  Line must be the title of the article`,
-    file
-  )
-
-
-const readFile = (filePath) => ({
-  path: filePath,
-  content: fs.readFileSync(filePath, 'utf8')
-})
-
-const enrichFileWithLines = (file) => ({
-  ...file,
-  lines: file.content.split('\n')
-})
-
-const printMessageIfDoesNotMatch = (line, regex, message, file) => {
-  if (!extractLineContent(line, file).match(regex)) {
-    return print(message, file)
-  } else {
-    return file
+function forEachFileInPath(basePath, callback) {
+  const dirEntries = fs.readdirSync(basePath, { encoding: 'utf8', withFileTypes: true })
+  for (const dirEntry of dirEntries) {
+    if (dirEntry.isDirectory()) {
+      forEachFileInPath(path.join(basePath, dirEntry.name), callback)
+    } else if (dirEntry.isFile()) {
+      callback(path.join(basePath, dirEntry.name))
+    }
   }
 }
 
-const extractLineContent = (line, file) => {
+function checkForProblems(callbacks) {
+  return function(filePath) {
+    if (path.extname(filePath) !== '.md') {
+      return
+    }
+
+    const name = path.basename(filePath, '.md')
+    const content = fs.readFileSync(filePath, 'utf8')
+    const lines = content.split('\n')
+
+    const file = {
+      path: filePath,
+      name,
+      content,
+      lines
+    }
+
+    for (const callback of callbacks) {
+      if (!callback(file)) {
+        break
+      }
+    }
+  }
+}
+
+function checkKeywordsAtLine(line) {
+  return function (file) {
+    const content = extractLine(line, file)
+    const pattern = /^keywords ((?:[^,]+, )*(?:[^,]+))$/
+    const matches = content.match(pattern)
+    if (!matches) {
+      printErrorMessage(file.path, line, 'Line must be a valid keywords expression')
+      return false
+    }
+
+    return true
+  }
+}
+
+function checkLabelsAtLine(line) {
+  return function (file) {
+    const content = extractLine(line, file)
+    const pattern = /^labels ((?:[^,]+, )*(?:[^,]+))$/
+    const matches = content.match(pattern)
+    if (!matches) {
+      printErrorMessage(file.path, line, 'Line must be a valid labels expression')
+      return false
+    }
+    
+    const labels = matches[1].split(', ')
+    const firstWordInFilename = file.name.split('-')[0].toLowerCase()
+    const firstLabel = labels[0].toLowerCase()
+    if (firstWordInFilename !== firstLabel) {
+      printErrorMessage(file.path, line, 'The first label must be the same with the first word in the filename')
+      return false
+    }
+
+    return true
+  }
+}
+
+function checkTitleAtLine(line) {
+  return function (file) {
+    const content = extractLine(line, file)
+    const pattern = /^# (.+: .+)$/
+    const matches = content.match(pattern)
+    if (!matches) {
+      printErrorMessage(file.path, line, 'Line must be a valid title')
+      return false
+    }
+    
+    const title = matches[1]
+    
+    const firstWordInFilename = file.name.split('-')[0].toLowerCase()
+    const firstWordInTitle = title.split(':')[0].toLowerCase()
+    if (firstWordInFilename !== firstWordInTitle) {
+      printErrorMessage(file.path, line, 'The first word in the title must be the same with the first word in the filename')
+      return false
+    }
+
+    return true
+  }
+}
+
+function checkEmptyAtLine(line) {
+  return function (file) {
+    const content = extractLine(line, file)
+    const pattern = /^$/
+    const matches = content.match(pattern)
+    const errorMessage = 'Line must be empty'
+    if (!matches) {
+      printErrorMessage(file.path, line, errorMessage)
+      return false
+    } else {
+      return true
+    }
+  }
+}
+
+function extractLine(line, file) {
   if (file.lines && file.lines.length >= line) {
     return file.lines[line - 1]
   } else {
@@ -105,19 +134,9 @@ const extractLineContent = (line, file) => {
   }
 }
 
-const withValue = (initialValue) => {
-  const makeFluentObject = (value) => ({
-    thenDo: (callback) => makeFluentObject(callback(value)),
-    value: () => value
-  })
-  return {
-    thenDo: (callback) => makeFluentObject(callback(initialValue))
-  }
-}
-
-const print = (text, value) => {
-  console.log(text)
-  return value
+function printErrorMessage(filePath, line, message) {
+  console.log(`In file: ${filePath}, line: ${line}`)
+  console.log(`  ${message}`)
 }
 
 main()

@@ -1,7 +1,7 @@
 keywords prompt, warning, notify, notification, before, tab, closed
-labels javascript
+labels web, javascript
 
-# Prompt Before Browser Tab is Closed
+# Web: Prompt Before Browser Tab is Closed
 This should be supported by all the mainstream webbrowsers.
 
 ```javascript
