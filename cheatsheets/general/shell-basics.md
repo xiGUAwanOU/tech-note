@@ -1,70 +1,31 @@
-# Basic Survival Guide
-### 1. Hello World!
+keywords shell, bash, script, basic, variable, input, if, switch, case, condition, for, while, loop
+labels shell
 
-A simplest shell script:
+# Shell Basics
+
+## 1. Hello World
 
 ```sh
-echo Hello world!
+echo hello world
 ```
 
-There is no need to add quotes around `Hello world!`. They are simply treated as 2 arguments of the `echo` command.
+There is no need to add quotes around `hello world`. They are simply treated as 2 arguments of the `echo` command.
 
 The double quote will make it as one argument:
-
 ```sh
-echo  Hello    world!   # Output: Hello world!
-echo "Hello    world!"  # Output: Hello   world!
+echo  hello    world   # Output: hello world
+echo "Hello    world"  # Output: hello    world
 ```
 
-### 2. Variables
-
-Simple, just like this:
+## 2. Variables
 
 ```sh
 NAME=xiGUAwanOU
+echo $NAME    # Output: xiGUAwanOU
+echo ${NAME}  # Output: xiGUAwanOU
 ```
 
-### 3. Some Words About Quotes
-
-There are three kinds of quotes in bash shell: single quote `'`, double quote `"` and backtick `\``.
-
-#### Single Quote
-
-Everything in single quote will be treated "as-is", for example:
-
-```sh
-NAME=xiGUAwanOU
-echo 'Hello $NAME!'  # Output: Hello $NAME!
-```
-
-Simply use `'\''` to escape single quote:
-
-```sh
-echo 'It'\''s Ok!'  # Output: It's Ok!
-```
-
-Actually, the string in this example is seperated into 3 parts. The first is `'It'`, the thrid is `'s Ok!'`, and there is a `\'` in between.
-
-#### Double Quote
-
-The variable will be intepreted in the double quotes:
-
-```sh
-NAME=xiGUAwanOU
-echo "Hello $NAME!"  # Output: Hello xiGUAwanOU!
-```
-
-Use `\` before a character to escape it.
-
-#### Backtick
-
-All contents in backticks will be intepreted as a command, and it will be replaced by the standard output of the command:
-
-```sh
-echo The time is `date +%H:%M:%S`  # Output: The time is 14:15:36
-```
-
-### 4. User Input
+## 3. User Input
 
 To get the user input, we could use `read` command to read user inputs into a variable:
 
@@ -74,9 +35,7 @@ read PASSWORD
 echo "Your password is: $PASSWORD. Now I know it!"
 ```
 
-### 5. If Statement
-
-An `if` statement in shell script could be like this:
+## 4. If Statement
 
 ```sh
 echo -n "Please enter the password: "
@@ -123,9 +82,26 @@ If condition (argument patterns of `[` command) list:
 | -w                 | True if the file is writable |
 | -x                 | True if the file is an executable |
 
-### 6. For Statement
 
-The `for` statement in shell script is simple:
+## 5. Case Statement
+
+```sh
+read INPUT_STRING
+case $INPUT_STRING in
+hello)
+	echo "Hello!"
+	;;
+bye)
+	echo "Goodbye1"
+	break
+	;;
+*)
+	echo "Sorry, I don't understand."
+	;;
+esac
+```
+
+## 6. For Statement
 
 ```sh
 for VAR in whitespace seperated string
@@ -138,9 +114,7 @@ done
 # string
 ```
 
-### 7. While Statement
-
-The `while` statement:
+## 7. While Statement
 
 ```sh
 echo -n "Enter the password: "
