@@ -1,5 +1,7 @@
-# CPU Stats Explained
+keywords cpu, user, system, idle, niceness, io, interrupts, stolen
+labels unix, performance 
 
+# Unix: CPU Stats Explained
 The 3 basic CPU states are:
 
 * Idle: which means it has nothing to do.
@@ -17,4 +19,4 @@ Usually, we see 7 CPU stats using the `top` command on a Linux system:
 * `wa`: waiting time of I/O operations.
 * `hi`: hardware interrupts processing time.
 * `si`: software interrupts processing time.
-* `st`: only related to virtual machines. The value shows how long the virtual CPU has spent waiting for the hypervisor to service anther virtual CPU running on a different virtual machine.
+* `st`: only related to virtual machines. The value shows how long the virtual CPU has spent waiting for the hypervisor to service another virtual CPU running on a different virtual machine.
