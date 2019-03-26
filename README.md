@@ -21,10 +21,13 @@ Within the two first-level sub-directories, the articles are seperated by its ap
 8. art
 9. ...
 
+## Filename
+Filename must be kebab-cased. The first word in the filename is the main technology that the tech note is talking about.
+
 ## Keywords
-Keywords are the primary searching criteria. They should be the first line of a note. Like:
+Keywords are one of the searching criteria. They should be specified like:
 ```text
-keywords css, flexbox, flex
+keywords responsive, head, viewport, meta, media, query, breakpoint, html, css
 ```
 
 ## Labels
@@ -33,7 +36,17 @@ Label can be added according to the:
 2. framework/library
 3. technology
 
-Labels are the secondary searching criteria. They should be the second line of a note. Like：
+Tech notes are categorized by their labels. They should be specified like:
 ```text
-labels javascript, vue.js, vue-router
+labels web, html, css, responsive
 ```
+
+The first label must match the first word in the filename.
+
+## Title
+Title is a summary of the content of the tech note, and also one of the searching criteria. Just use markdown first-level title:
+```markdown
+# Web: Responsive Design Basics
+```
+
+The first part of the title must match the first word in the filename.
