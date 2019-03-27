@@ -1,9 +1,9 @@
+keywords vuejs, router, vue-router, prop
+labels vuejs, vue-router
+
 # Router with Props
 
-There are several different ways to pass parameters as properties into a component.
-
-The simplest way of doing it is like following:
-
+## 1. Basic Usage
 ```javascript
 const router = new VueRouter({
   routes: [
@@ -12,10 +12,7 @@ const router = new VueRouter({
 })
 ```
 
-And the parameters in the path will be passed to the component as properties.
-
-If the properties are static, we could do something like this:
-
+## 2. Static Prop Value
 ```javascript
 const router = new VueRouter({
   routes: [
@@ -24,8 +21,7 @@ const router = new VueRouter({
 })
 ```
 
-If there is queries in the URL that we want to pass to components as properties, we could:
-
+## 3. Props in URL Query
 ```javascript
 const router = new VueRouter({
   routes: [

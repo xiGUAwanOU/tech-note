@@ -1,7 +1,7 @@
-# What Is `v-model` Short For?
+keywords vuejs, v-model, short for
+inputs vuejs, javascript
 
-For quick reference:
-
+# Vuejs: What Is `v-model` Short for
 ```html
 <input v-model="something">
 ```

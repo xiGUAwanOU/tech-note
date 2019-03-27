@@ -1,5 +1,5 @@
-keywords node, javascript, open, file, list, directory, test, is file, is directory, recursive, recursively
-labels node, javascript
+keywords nodejs, javascript, open, file, list, directory, test, is file, is directory, recursive, recursively
+labels nodejs, javascript
 
 # Node: File System Methods
 Only list some useful methods below:
