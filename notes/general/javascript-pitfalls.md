@@ -1,9 +1,8 @@
-# JavaScript ES6 Pitfalls
+labels javascript
 
-### Be Careful with `Array().fill()`
+# JavaScript: Pitfalls
 
-Be careful if the filled value does not have a primitive type:
-
+## 1. Fill an Array with Non-Primitive Type
 ```javascript
 let arr = Array(3).fill({})  // [{}, {}, {}]
 arr[0].hi = "hi"             // [{ hi: "hi" }, { hi: "hi" }, { hi: "hi" }]

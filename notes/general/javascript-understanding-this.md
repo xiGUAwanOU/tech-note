@@ -1,4 +1,6 @@
-# Understanding This
+labels javascript
+
+# JavaScript: Understanding This
 
 To understand `this` keyword in JavaScript, one could imagine that the `this` is evaluated at the time that a method is called. There are roughly 4 situations:
 1. Implicit binding;
