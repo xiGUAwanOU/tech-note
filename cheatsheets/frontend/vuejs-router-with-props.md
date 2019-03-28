@@ -1,7 +1,7 @@
 keywords vuejs, router, vue-router, prop
 labels vuejs, vue-router
 
-# Router with Props
+# VueJs: Router with Props
 
 ## 1. Basic Usage
 ```javascript

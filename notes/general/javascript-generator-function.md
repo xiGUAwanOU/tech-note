@@ -1,6 +1,6 @@
-# Generator Function
+labels javascript
 
-Not much to say, just example:
+# JavaScript: Generator Function
 
 ```javascript
 function* idMaker() {

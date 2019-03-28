@@ -1,7 +1,7 @@
 keywords nodejs, javascript, open, file, list, directory, test, is file, is directory, recursive, recursively
 labels nodejs, javascript
 
-# Node: File System Methods
+# NodeJs: File System Methods
 Only list some useful methods below:
 
 ```javascript
