@@ -17,6 +17,7 @@ POST <INDEX>/<DOC_TYPE>/
 {
   "key": "value"
 }
+```
 
 Upsert:
 ```text
