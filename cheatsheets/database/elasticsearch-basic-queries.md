@@ -54,16 +54,18 @@ Simplest search:
 POST <INDEX>/<DOC_TYPE>/_search
 {
   "query": {
-    "term": { "key1": "value1" }
+    "term": { "key": "value" }
   },
   "_source": {
     "include": [ "key1", "key2.*" ],
     "exclude": [ "*.key3" ],
-    "from": 0,
-    "size": 10
-  }
+  },
+  "from": 0,
+  "size": 10
 }
 ```
+
+
 
 Full text search:
 ```text
