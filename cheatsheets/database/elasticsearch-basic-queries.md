@@ -1,0 +1,58 @@
+keywords elasticsearch, basic, query, queries, survival, search, find, get, insert, upsert, add, delete, remove, update, modify
+labels elasticsearch, database
+
+# ElasticSearch: Basic Queries
+## Insert a Document
+Simplest version:
+```text
+PUT <INDEX>/<DOC_TYPE>/<ID>
+{
+  "key": "value"
+}
+```
+
+Generate ID automatically:
+```text
+POST <INDEX>/<DOC_TYPE>/
+{
+  "key": "value"
+}
+
+Upsert:
+```text
+POST <INDEX>/<DOC_TYPE>/<ID>/_update
+{
+  "doc": {
+    "key" : "value"
+  },
+  "doc_as_upsert" : true
+}
+```
+
+## Delete a Document
+Simplest version:
+```text
+DELETE <INDEX>/<DOC_TYPE>/<ID>
+```
+
+## Fetch & Search Documents
+Simplest fetch:
+```text
+GET <INDEX>/<DOC_TYPE>/<ID>
+```
+
+Simplest search:
+```text
+POST <INDEX>/<DOC_TYPE>/_search
+{
+  "_source": {
+    "include": [ "key1", "key2.*" ],
+    "exclude": [ "*.key3" ],
+    "from": 0,
+    "size": 10
+  },
+  "query": {
+    "term": { "key1": "value1" }
+  }
+}
+```
