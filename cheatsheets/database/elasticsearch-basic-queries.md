@@ -75,7 +75,7 @@ POST <INDEX>/<DOC_TYPE>/_search
 }
 ```
 
-More examples can be found in the [offical document](https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl.html).
+More examples can be found in the [official document](https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl.html).
 
 ## 4. Delete a Document
 Simplest version:
