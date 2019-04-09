@@ -98,10 +98,12 @@ $ npx tslint -c tslint.json src/**/*.ts
 Finally, update scripts in `package.json`:
 ```javascript
 // ... ...
+
 "scripts": {
   "build:dev": "webpack",
   "build:prod": "webpack -p",
   "lint": "tslint -c tslint.json src/**/*.ts"
 },
+
 // ... ...
 ```
