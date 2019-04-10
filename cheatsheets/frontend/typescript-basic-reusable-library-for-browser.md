@@ -33,6 +33,7 @@ Use following commands to compile and rollup:
 ```console
 $ npx tsc
 $ npx rollup dist/main.js --file dist/bundle.js --format umd --name "BundleName"
+```
 
 Configure TsLint (`tslint.json` file):
 ```javascript
