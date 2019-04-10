@@ -40,7 +40,7 @@ Configure TsLint (`tslint.json` file):
 {
   "defaultSeverity": "error",
   "extends": [
-      "tslint:recommended"
+    "tslint:recommended"
   ],
   "jsRules": {},
   "rules": {
