@@ -148,3 +148,19 @@ docClient.update({
   else console.log(data)
 })
 ```
+
+## 6. Delete an Item
+
+```javascript
+const docClient = new aws.DynamoDB.DocumentClient()
+
+docClient.delete({
+  TableName: 'Review',
+  Key:{
+    'id': id
+  }
+}, (err, data) => {
+  if (err) console.log(err)
+  else console.log(data)
+})
+```
