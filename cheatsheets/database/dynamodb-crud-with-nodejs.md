@@ -128,5 +128,23 @@ docClient.scan({
 ## 5. Update an Item
 
 ```javascript
+const docClient = new aws.DynamoDB.DocumentClient()
 
+docClient.update({
+  TableName: 'Reviews',
+  Key: {
+    'id': id,
+  },
+  UpdateExpression: 'set #datetime=:datetime',
+  ExpressionAttributeNames: {
+    '#datetime': 'datetime'
+  },
+  ExpressionAttributeValues:{
+    ':datetime': '2019-05-06T00:00:00Z'
+  },
+  ReturnValues:"UPDATED_NEW"
+}, (err, data) => {
+  if (err) console.log(err)
+  else console.log(data)
+})
 ```
