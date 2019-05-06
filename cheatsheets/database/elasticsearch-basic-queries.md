@@ -20,7 +20,7 @@ POST <INDEX>/<DOC_TYPE>/
 ```
 
 
-# 2. Update a Document
+## 2. Update a Document
 Simplest version:
 ```text
 POST <INDEX>/<DOC_TYPE>/<ID>/_update
