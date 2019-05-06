@@ -19,6 +19,11 @@ List all image IDs:
 $ docker image ls -aq
 ```
 
+Delete all images:
+```console
+$ docker image prune
+```
+
 ## Containers
 Run a container:
 ```console
