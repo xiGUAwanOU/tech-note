@@ -1,7 +1,7 @@
 keywords dynamodb, node, nodejs, javascript, basic, query, queries, survival, search, find, get, insert, upsert, add, delete, remove, update, modify
 labels dynamodb, nodejs, javascript
 
-# DynamoDb: CRUD with node.js
+# DynamoDB: CRUD with node.js
 
 Short words for how to run DynamoDB docker version in the local machine. Just type following commands:
 
@@ -45,8 +45,8 @@ dynamoDb.listTables({}, (err, data) => {
 ## 1. Create a Table
 
 ```javascript
-const createTableParams = {
-  TableName: 'Issues',
+dynamoDb.createTable({
+  TableName: 'Reviews',
   KeySchema: [
     { AttributeName: 'id', KeyType: 'HASH' }
   ],
@@ -57,9 +57,7 @@ const createTableParams = {
     ReadCapacityUnits: 5,
     WriteCapacityUnits: 5
   }
-}
-
-dynamoDb.createTable(createTableParams, (err, data) => {
+}, (err, data) => {
   if (err) console.log(err)
   else console.log(data)
 })
@@ -70,8 +68,8 @@ dynamoDb.createTable(createTableParams, (err, data) => {
 ```javascript
 const docClient = new aws.DynamoDB.DocumentClient()
 
-const putItemParams = {
-  TableName: 'Issues',
+docClient.put({
+  TableName: 'Reviews',
   Item: {
     'id': '00000000-0000-0000-000000000000',
     'content': 'dummy content',
@@ -80,9 +78,55 @@ const putItemParams = {
       'communication'
     ]
   }
-}
-docClient.put(putItemParams, (err, data) => {
+}, (err, data) => {
   if (err) console.log(err)
   else console.log(data)
 })
+```
+
+## 3. Query an Item
+
+```javascript
+const docClient = new aws.DynamoDB.DocumentClient()
+
+docClient.query({
+    TableName : "Reviews",
+    KeyConditionExpression: "#id = :id",
+    ExpressionAttributeNames: {
+      '#id': 'id'
+    },
+    ExpressionAttributeValues: {
+        ':id': '00000000-0000-0000-000000000000'
+    }
+}, (err, data) => {
+  if (err) console.log(err)
+  else console.log(data)
+})
+```
+
+## 4. Scan for Items
+
+```javascript
+const docClient = new aws.DynamoDB.DocumentClient()
+
+docClient.scan({
+  TableName: 'Reviews',
+  FilterExpression: '#datetime between :startTime and :endTime',
+  ExpressionAttributeNames: {
+    '#datetime': 'datetime',
+  },
+  ExpressionAttributeValues: {
+    ':startTime': '2019-01-01T00:00:00Z',
+    ':endTime': '2019-12-31T23:59:59Z'
+  }
+}, (err, data) => {
+  if (err) console.log(err)
+  else console.log(data)
+})
+```
+
+## 5. Update an Item
+
+```javascript
+
 ```
