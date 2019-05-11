@@ -23,7 +23,13 @@ After that, we should firstly make sure that the development application runs sm
 const { app, BrowserWindow } = require('electron')
 
 function createWindow () {
-  let mainWindow = new BrowserWindow({ width: 800, height: 600 })
+  const mainWindow = new BrowserWindow({
+    width: 700,
+    height: 500,
+    webPreferences: {
+      nodeIntegration: true
+    }
+  })
   mainWindow.loadURL('http://localhost:8080')
   mainWindow.webContents.openDevTools()
 }
@@ -67,7 +73,13 @@ const url = require('url')
 const path = require('path')
 
 function createWindow () {
-  mainWindow = new BrowserWindow({width: 800, height: 600})
+  const mainWindow = new BrowserWindow({
+    width: 700,
+    height: 500,
+    webPreferences: {
+      nodeIntegration: true
+    }
+  })
 
   if (process.argv[2] === 'dev') {
     mainWindow.loadURL('http://localhost:8080')
