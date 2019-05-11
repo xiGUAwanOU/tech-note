@@ -44,15 +44,15 @@ Edit the `package.json` file like this:
 Now we could start the development mode like this:
 
 ```console
-$ yarn serve
-$ yarn electron  # wait for the test server being fully started, and run this in another terminal
+$ npm run serve
+$ npm run electron  # wait for the test server being fully started, and run this in another terminal
 ```
 
 To distribute the application, firstly we should make sure the generated Vue.js app supports the `file://` URLs. Create the `vue.config.js` file like following:
 
 ```javascript
 module.exports = {
-  baseUrl: ''
+  publicPath: ''
 }
 ```
 
@@ -84,8 +84,8 @@ app.on('ready', createWindow)
 If now we try:
 
 ```console
-$ yarn build
-$ node node_modules/electron/cli.js .
+$ npm run build
+$ npx electron .
 ```
 
 There should be an electron application window showing up without debug console.
@@ -93,14 +93,14 @@ There should be an electron application window showing up without debug console.
 Add `electron-packager` dependency:
 
 ```console
-$ yarn add -D electron-packager
+$ npm install -D electron-packager
 ```
 
 Edit the `package.json` file so that it could build the executable automatically.
 
 ```diff
    "build": "vue-cli-service build",
-+  "package": "yarn build; electron-packager . --overwrite --platform=darwin --arch=x64 --prune=true --out=release",
++  "package": "npm run build && electron-packager . --overwrite --platform=darwin --arch=x64 --prune=true --out=release",
 ```
 
 Note that, change the `platform` and `arch` options accordingly.
@@ -108,7 +108,7 @@ Note that, change the `platform` and `arch` options accordingly.
 Now, we could run following command to build the release version of the application:
 
 ```console
-$ yarn package
+$ npm run package
 ```
 
 Finally, open the final application with following command:
