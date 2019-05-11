@@ -1,4 +1,7 @@
-# Electron + Vue Without Boilerplate
+keywords electron, vue, vuejs, basic, scaffolding, boilerplate
+labels electron, vuejs, javascript
+
+# Electron: Vue.js Project Without Boilerplate
 
 It is possible and actually easy.
 
