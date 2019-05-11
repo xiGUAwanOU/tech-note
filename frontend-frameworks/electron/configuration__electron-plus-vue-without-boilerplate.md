@@ -11,7 +11,7 @@ $ vue create <PROJECT_NAME>
 And then add `electron` dependency:
 
 ```shell
-$ yarn add -D electron
+$ npm install -D electron
 ```
 
 After that, we should firstly make sure that the development application runs smoothly. Add a file called `main.js` as the entry for Electron:
